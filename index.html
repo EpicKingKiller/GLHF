@@ -6,58 +6,6 @@
   <title>GLHF Public - Gaming Community</title>
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-  <!-- Add custom CSS for the gallery -->
-  <style>
-    /* Gallery container */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 10px;
-      margin-top: 30px;
-    }
-
-    /* Gallery item */
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.1);
-    }
-
-    /* Lightbox (optional) */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      align-items: center;
-      justify-content: center;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
-    }
-
-    .lightbox:target {
-      display: flex;
-    }
-  </style>
 </head>
 <body class="is-preload">
 
@@ -71,6 +19,12 @@
       
       <!-- Discord GIF -->
       <img src="https://cdn.discordapp.com/attachments/1353159630280196247/1354129632647188552/gif2-ezgif.com-video-to-gif-converter.gif" alt="Discord Server Preview" class="image fit" />
+
+      <!-- Minecraft Gif -->
+      <div style="margin-top: 20px;">
+        <h2>Check Out the Minecraft Hype Train!</h2>
+        <img src="https://media.tenor.com/images/9bcd78b8cd63c1b0e7e0b8e0e23256e0/tenor.gif" alt="Minecraft Mob Vote Hype" class="image fit" />
+      </div>
 
       <!-- Discord Invite Section -->
       <div class="discord-invite" style="background:#222; padding:1rem; margin-top:1rem; border-radius:5px; color:#fff;">
@@ -219,44 +173,6 @@
     <div id="copyright">
       <ul><li>&copy; GLHF Public</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
     </div>
-
-    <!-- Gallery Section -->
-    <section class="gallery">
-      <h2>Gallery</h2>
-      <div class="gallery-item">
-        <a href="#img1">
-          <img src="https://via.placeholder.com/500" alt="Image 1">
-        </a>
-      </div>
-      <div class="gallery-item">
-        <a href="#img2">
-          <img src="https://via.placeholder.com/500" alt="Image 2">
-        </a>
-      </div>
-      <div class="gallery-item">
-        <a href="#img3">
-          <img src="https://via.placeholder.com/500" alt="Image 3">
-        </a>
-      </div>
-    </section>
-
-    <!-- Lightbox for Images -->
-    <div class="lightbox" id="img1">
-      <a href="#">
-        <img src="https://via.placeholder.com/500" alt="Image 1 Full">
-      </a>
-    </div>
-    <div class="lightbox" id="img2">
-      <a href="#">
-        <img src="https://via.placeholder.com/500" alt="Image 2 Full">
-      </a>
-    </div>
-    <div class="lightbox" id="img3">
-      <a href="#">
-        <img src="https://via.placeholder.com/500" alt="Image 3 Full">
-      </a>
-    </div>
-
   </div>
 
   <!-- Scripts -->
