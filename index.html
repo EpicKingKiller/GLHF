@@ -413,5 +413,198 @@
     updateDisplay();
   </script>
 </body>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pixel Pet Care</title>
+  <link rel="icon" href="https://imgur.com/hFNrb9j.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #f0f0f5;
+      color: #333;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #ff6b81;
+    }
+
+    .pet-container {
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+    }
+
+    .pet {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 50%;
+      border: 5px solid #ff6b81;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('https://placekitten.com/200/200');
+      background-size: cover;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .pet:hover {
+      transform: scale(1.1);
+    }
+
+    .pet-name {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #ff6b81;
+    }
+
+    .pet-actions {
+      margin-top: 20px;
+    }
+
+    .pet-actions button {
+      padding: 10px 20px;
+      background-color: #ff6b81;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .pet-actions button:hover {
+      background-color: #f5a2b8;
+    }
+
+    .points {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: #ff6b81;
+    }
+
+    .shop button {
+      padding: 10px 20px;
+      background-color: #9b59b6;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .shop button:hover {
+      background-color: #7f3c7e;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>Pixel Pet Care</header>
+
+  <div class="pet-container">
+    <div class="pet" id="petImage">
+      <img src="https://placekitten.com/200/200" alt="Cute pet" style="display: none;" />
+    </div>
+    <div class="pet-name" id="petName">Fluffy</div>
+    <div class="pet-actions">
+      <button onclick="feedPet()">Feed</button>
+      <button onclick="petPet()">Pet</button>
+      <button onclick="playWithPet()">Play</button>
+    </div>
+    <div class="points" id="points">Love Points: 0</div>
+  </div>
+
+  <div class="shop">
+    <button onclick="buyToy()">Buy Toy (50 Love Points)</button>
+    <button onclick="buyFood()">Buy Food (30 Love Points)</button>
+  </div>
+
+  <script>
+    let lovePoints = 0;
+    let petName = "Fluffy";
+    let petAffection = 0; // Tracks how much the pet is loved
+
+    const petImage = document.getElementById("petImage");
+    const pointsDisplay = document.getElementById("points");
+    const petNameDisplay = document.getElementById("petName");
+
+    function updatePoints() {
+      pointsDisplay.innerText = `Love Points: ${lovePoints}`;
+    }
+
+    function feedPet() {
+      lovePoints += 10;
+      petAffection += 1;
+      petImage.style.backgroundImage = "url('https://placekitten.com/200/200')";
+      petImage.style.transition = "all 0.5s ease";
+      petNameDisplay.innerText = `${petName} loves you! 🐾`;
+      updatePoints();
+    }
+
+    function petPet() {
+      lovePoints += 5;
+      petAffection += 1;
+      petImage.style.transform = "scale(1.05)";
+      setTimeout(() => petImage.style.transform = "scale(1)", 200);
+      petNameDisplay.innerText = `${petName} is purring! 😽`;
+      updatePoints();
+    }
+
+    function playWithPet() {
+      lovePoints += 15;
+      petAffection += 2;
+      petImage.style.transform = "rotate(15deg)";
+      setTimeout(() => petImage.style.transform = "rotate(0deg)", 300);
+      petNameDisplay.innerText = `${petName} is playing! 🐾`;
+      updatePoints();
+    }
+
+    function buyToy() {
+      if (lovePoints >= 50) {
+        lovePoints -= 50;
+        petNameDisplay.innerText = `${petName} got a new toy! 🎉`;
+        updatePoints();
+      } else {
+        alert("You don't have enough Love Points to buy this!");
+      }
+    }
+
+    function buyFood() {
+      if (lovePoints >= 30) {
+        lovePoints -= 30;
+        petNameDisplay.innerText = `${petName} is enjoying their food! 🍲`;
+        updatePoints();
+      } else {
+        alert("You don't have enough Love Points to buy this!");
+      }
+    }
+  </script>
+
+</body>
+</html>
+
+
 </html>
 
