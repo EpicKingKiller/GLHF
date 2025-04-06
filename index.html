@@ -235,15 +235,73 @@
     </div>
   </div>
 
- <!-- Gallery Section -->
-  <div class="gallery-section">
-    <h3>✨ Gallery ✨</h3>
-    <div class="gallery-container">
-      <img src="https://cdn.discordapp.com/attachments/1333119346083364974/1358271442533355744/2025-01-23_22.png?ex=67f33c5b&is=67f1eadb&hm=b06a36e4a06fd5cbd41e25cffd3233126ffd0fd71365709652060e8cf2c6c55b&" alt="Gallery Image 1" />
-      <img src="https://media.discordapp.net/attachments/1333119346083364974/1358274889974419507/2025-01-19_00.png?ex=67f33f91&is=67f1ee11&hm=b66a3da523f7358eb5d8d351bcba8b10c22d1b9d442a90fc52bf4d70c951737e&=&format=webp&quality=lossless" alt="Gallery Image 2" />
-      <img src="https://media.discordapp.net/attachments/1333119346083364974/1358230742223683594/2025-04-05_20.01.39.png?ex=67f31673&is=67f1c4f3&hm=fe39b0c28c9783883e39e63001aaeb19ee9b5e0fa7e2c39551881c50be2ce0ff&=&format=webp&quality=lossless" alt="Gallery Image 3" />
+<!-- Gallery Section -->
+<div class="gallery-section">
+  <h3>✨ Gallery of Cute Moments ✨</h3>
+  <div class="gallery-wrapper">
+    <!-- Gallery Images -->
+    <div class="gallery-item">
+      <img src="https://cdn.discordapp.com/attachments/1333119346083364974/1358271442533355744/2025-01-23_22.png?ex=67f33c5b&is=67f1eadb&hm=b06a36e4a06fd5cbd41e25cffd3233126ffd0fd71365709652060e8cf2c6c55b&" alt="Image 1" />
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/1333119346083364974/1358274889974419507/2025-01-19_00.png?ex=67f33f91&is=67f1ee11&hm=b66a3da523f7358eb5d8d351bcba8b10c22d1b9d442a90fc52bf4d70c951737e&=&format=webp&quality=lossless" alt="Image 2" />
+    </div>
+    <div class="gallery-item">
+      <img src="https://media.discordapp.net/attachments/1333119346083364974/1358230742223683594/2025-04-05_20.01.39.png?ex=67f31673&is=67f1c4f3&hm=fe39b0c28c9783883e39e63001aaeb19ee9b5e0fa7e2c39551881c50be2ce0ff&=&format=webp&quality=lossless" alt="Image 3" />
     </div>
   </div>
+</div>
+
+<style>
+  .gallery-section {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .gallery-section h3 {
+    font-size: 2rem;
+    color: #b38bfa;
+    margin-bottom: 1rem;
+  }
+
+  .gallery-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+
+  .gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(179, 139, 250, 0.7);
+  }
+
+  @media (max-width: 600px) {
+    .gallery-wrapper {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+  }
+</style>
 
 
   
