@@ -2,22 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GLHF Public - Gamer Girl Server</title>
+  <link rel="icon" href="https://emoji.gg/assets/emoji/7524-pinkstar.gif" type="image/gif">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      cursor: url('https://cur.cursors-4u.net/games/gam-15/gam1430.cur'), auto;
+      cursor: url('https://cur.cursors-4u.net/games/gam-14/gam1328.cur'), auto;
     }
 
     body {
       font-family: 'Quicksand', sans-serif;
-      background-color: #141c2f;
-      color: #f5f5f5;
+      background-color: var(--bg);
+      color: var(--text);
       padding-left: 220px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    :root {
+      --bg: #1e1e2f;
+      --text: #ffffff;
+      --accent: #4476d6;
+    }
+
+    .light-theme {
+      --bg: #ffffff;
+      --text: #1e1e2f;
+      --accent: #b38bfa;
     }
 
     .sidebar {
@@ -26,7 +40,7 @@
       left: 0;
       width: 200px;
       height: 100vh;
-      background-color: #1c2541;
+      background-color: #2a2a40;
       padding-top: 2rem;
       box-shadow: 2px 0 5px rgba(0,0,0,0.5);
       overflow-y: auto;
@@ -34,14 +48,9 @@
 
     .sidebar h2 {
       font-family: 'Outfit', sans-serif;
-      color: #ffb6c1;
+      color: var(--accent);
       text-align: center;
       margin-bottom: 1.5rem;
-    }
-
-    .sidebar ul {
-      list-style: none;
-      padding: 0;
     }
 
     .sidebar ul li {
@@ -51,7 +60,7 @@
 
     .sidebar ul li a {
       text-decoration: none;
-      color: #ffb6c1;
+      color: var(--accent);
       font-weight: bold;
       display: block;
       padding: 0.5rem 1rem;
@@ -59,36 +68,31 @@
     }
 
     .sidebar ul li a:hover {
-      background-color: #415a77;
-      color: #fff;
+      background-color: var(--accent);
+      color: var(--bg);
       border-radius: 8px;
     }
 
     header {
-      background-color: #1c2541;
+      background-color: #2a2a40;
       padding: 2rem;
       text-align: center;
     }
 
     header h1 {
       font-family: 'Outfit', sans-serif;
-      color: #ffb6c1;
+      color: var(--accent);
       font-size: 3rem;
-      margin-bottom: 0.5rem;
     }
 
     header p {
       font-size: 1.2rem;
-      color: #f5f5f5;
-    }
-
-    .banner {
-      width: 100%;
-      overflow: hidden;
+      color: var(--accent);
     }
 
     .banner img {
       width: 100%;
+      height: auto;
       max-height: 400px;
       object-fit: cover;
       display: block;
@@ -98,32 +102,27 @@
       max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
-      background-color: #1f2a44;
+      background-color: #292940;
       border-radius: 12px;
-      box-shadow: 0 0 20px #8ab4f855;
+      box-shadow: 0 0 20px #4476d677;
     }
 
     .content h2 {
-      color: #ffb6c1;
+      color: var(--accent);
       font-family: 'Outfit', sans-serif;
       margin-bottom: 1rem;
     }
 
-    .content ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
     .content ul li::before {
-      content: '💖';
+      content: '💜';
       margin-right: 0.5rem;
     }
 
-    .content a.button {
+    .button {
       display: inline-block;
       margin-top: 1rem;
-      background-color: #ffb6c1;
-      color: #141c2f;
+      background-color: var(--accent);
+      color: #fff;
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
       font-weight: bold;
@@ -131,9 +130,8 @@
       transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    .content a.button:hover {
-      background-color: #f78dc8;
-      color: #fff;
+    .button:hover {
+      background-color: #3456a6;
     }
 
     .discord-widget {
@@ -142,35 +140,9 @@
       justify-content: center;
     }
 
-    .discord-widget iframe {
-      border: none;
-    }
-
-    .music-player {
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .music-player h3 {
-      color: #ffb6c1;
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .music-player iframe {
-      border-radius: 12px;
-      border: none;
-    }
-
-    .gif-section {
+    .gif-section, .gallery-section {
       margin-top: 3rem;
       text-align: center;
-    }
-
-    .gif-section h3 {
-      font-size: 2rem;
-      color: #ffb6c1;
-      margin-bottom: 1rem;
     }
 
     .scrolling-wrapper {
@@ -188,27 +160,12 @@
       height: 150px;
       margin: 0 10px;
       border-radius: 10px;
-      box-shadow: 0 0 15px #ffb6c1aa;
+      box-shadow: 0 0 15px #4476d6aa;
     }
 
     @keyframes scroll-left {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-
-    .gallery-section {
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .gallery-section h3 {
-      font-size: 2rem;
-      color: #ffb6c1;
-      margin-bottom: 1rem;
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
 
     .gallery-wrapper {
@@ -220,11 +177,10 @@
     }
 
     .gallery-item {
-      position: relative;
       overflow: hidden;
       border-radius: 12px;
       transition: all 0.3s ease-in-out;
-      box-shadow: 0 0 20px rgba(138, 180, 248, 0.4);
+      box-shadow: 0 0 20px rgba(68, 118, 214, 0.5);
     }
 
     .gallery-item img {
@@ -234,64 +190,48 @@
       transition: transform 0.4s ease, filter 0.4s ease;
     }
 
-    .large-item {
-      flex: 2;
-    }
-
-    .small-item {
-      flex: 1;
-    }
-
     .gallery-item:hover img {
       transform: scale(1.1);
       filter: brightness(1.2);
     }
 
-    .large-item:hover {
-      transform: rotate(-5deg);
+    .large-item:hover { transform: rotate(-10deg); }
+    .small-item:hover { transform: scale(1.05); }
+
+    .music-player {
+      margin-top: 2rem;
+      text-align: center;
     }
 
-    .small-item:hover {
-      transform: scale(1.05);
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
     }
 
     footer {
-      background-color: #1c2541;
+      background-color: #2a2a40;
       padding: 2rem;
       text-align: center;
       margin-top: 2rem;
     }
 
     footer p {
-      color: #ccc;
-      font-size: 0.9rem;
+      color: #aaa;
     }
 
     @media (max-width: 600px) {
-      body {
-        padding-left: 0;
-      }
-
-      .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        box-shadow: none;
-      }
-
-      .sidebar ul li {
-        display: inline-block;
-        margin: 0.5rem;
-      }
-
-      .banner img {
-        max-height: 250px;
-      }
+      body { padding-left: 0; }
+      .sidebar { width: 100%; position: relative; }
+      .sidebar ul li { display: inline-block; margin: 0.5rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Sidebar -->
+  <div class="theme-toggle">
+    <button onclick="document.body.classList.toggle('light-theme')" class="button">🌓 Toggle Theme</button>
+  </div>
+
   <div class="sidebar">
     <h2>Categories</h2>
     <ul>
@@ -304,18 +244,15 @@
     </ul>
   </div>
 
-  <!-- Header -->
   <header>
     <h1>GLHF Public</h1>
     <p>Welcome To The Home Of G.L.H.F. 🌸✨</p>
   </header>
 
-  <!-- Main Banner -->
   <div class="banner">
-    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHNjZzU1NnV5ZXZ0YTEzdHBlcTVoeDZzaWNvcmV4NXRua2I3eGFtZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCbdyB4ljtTBRTex7b/giphy.gif" alt="Main Banner GIF" />
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHNjZzU1NnV5ZXZ0YTEzdHBlcTVoeDZzaWNvcmV4NXRua2I3eGFtZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCbdyB4ljtTBRTex7b/giphy.gif" alt="Main Banner GIF">
   </div>
 
-  <!-- Main Content -->
   <div class="content">
     <h2>✨ Join Our Community ✨</h2>
     <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
@@ -332,18 +269,15 @@
     <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Join the Server</a>
 
     <div class="discord-widget">
-      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"
-        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </div>
+
+    <div class="music-player">
+      <h3>🎵 Lofi Vibes 🎧</h3>
+      <iframe style="border-radius:12px" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" width="300" height="180" allowfullscreen allow="autoplay"></iframe>
     </div>
   </div>
 
-  <!-- Music Player -->
-  <div class="music-player">
-    <h3>🎧 Lofi Girl Vibes</h3>
-    <iframe width="320" height="180" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-
-  <!-- GIF Ticker -->
   <div class="gif-section">
     <h3>✨ Cute & Cozy Vibes ✨</h3>
     <div class="scrolling-wrapper">
@@ -359,23 +293,21 @@
     </div>
   </div>
 
-  <!-- Gallery -->
   <div class="gallery-section">
     <h3>✨ Gallery of Cute Moments ✨</h3>
     <div class="gallery-wrapper">
       <div class="gallery-item large-item">
-        <img src="https://cdn.discordapp.com/attachments/1333119346083364974/1358271442533355744/2025-01-23_22.png" />
+        <img src="https://cdn.discordapp.com/attachments/1333119346083364974/1358271442533355744/2025-01-23_22.png" alt="Gallery Image 1" />
       </div>
       <div class="gallery-item small-item">
-        <img src="https://media.discordapp.net/attachments/1333119346083364974/1358274889974419507/2025-01-19_00.png" />
+        <img src="https://media.discordapp.net/attachments/1333119346083364974/1358274889974419507/2025-01-19_00.png" alt="Gallery Image 2" />
       </div>
       <div class="gallery-item small-item">
-        <img src="https://media.discordapp.net/attachments/1333119346083364974/1358230742223683594/2025-04-05_20.01.39.png" />
+        <img src="https://media.discordapp.net/attachments/1333119346083364974/1358230742223683594/2025-04-05_20.01.39.png" alt="Gallery Image 3" />
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 GLHF Public | Made with love ✨</p>
   </footer>
