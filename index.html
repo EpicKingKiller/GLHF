@@ -113,94 +113,60 @@
       margin-bottom: 1rem;
     }
 
-    .content ul li::before {
-      content: '💜';
-      margin-right: 0.5rem;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 1rem;
-      background-color: var(--accent);
+    .cookie-game {
+      margin-top: 4rem;
+      padding: 2rem;
+      background-color: #1f1f38;
+      border-radius: 12px;
+      text-align: center;
       color: #fff;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 0 0 20px #4476d666;
+      background-image: url('https://imgur.com/9rjDxtW.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
-    .button:hover {
+    .cookie-game h2 {
+      font-family: 'Outfit', sans-serif;
+      color: var(--accent);
+    }
+
+    .cookie {
+      width: 160px;
+      height: 160px;
+      margin: 20px auto;
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .cookie:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 15px rgba(68, 118, 214, 0.6);
+    }
+
+    .shop button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .shop button:hover {
       background-color: #3456a6;
     }
 
-    .discord-widget {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    .gif-section, .gallery-section {
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .scrolling-wrapper {
-      overflow: hidden;
-      white-space: nowrap;
-      position: relative;
-    }
-
-    .gif-track {
-      display: inline-block;
-      animation: scroll-left 60s linear infinite;
-    }
-
-    .gif-track img {
-      height: 150px;
-      margin: 0 10px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px #4476d6aa;
-    }
-
-    @keyframes scroll-left {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-
-    .gallery-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .gallery-item {
-      overflow: hidden;
-      border-radius: 12px;
-      transition: all 0.3s ease-in-out;
-      box-shadow: 0 0 20px rgba(68, 118, 214, 0.5);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      transition: transform 0.4s ease, filter 0.4s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.1);
-      filter: brightness(1.2);
-    }
-
-    .large-item:hover { transform: rotate(-10deg); }
-    .small-item:hover { transform: scale(1.05); }
-
-    .music-player {
-      margin-top: 2rem;
-      text-align: center;
+    .shop button img {
+      width: 18px;
+      height: 18px;
     }
 
     .theme-toggle {
@@ -220,78 +186,26 @@
       color: #aaa;
     }
 
-    /* Pet Care Game */
-    .pet-game {
+    /* Cookie Clicker Game */
+    .cookie-game {
       margin-top: 4rem;
       padding: 2rem;
-      background-color: #f9e0e6;
+      background-color: #1f1f38;
       border-radius: 12px;
       text-align: center;
-      color: #333;
-      box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+      color: #fff;
+      box-shadow: 0 0 20px #4476d666;
     }
 
-    .pet-game h2 {
-      font-family: 'Outfit', sans-serif;
-      color: #ff6b81;
+    /* Scroll Animation */
+    .cookie:hover {
+      animation: clickAnimation 0.2s ease-in-out;
     }
 
-    .pet {
-      width: 150px;
-      height: 150px;
-      margin: 20px auto;
-      background-color: #fff;
-      border-radius: 50%;
-      border: 5px solid #ff6b81;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: url('https://placekitten.com/200/200');
-      background-size: cover;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .pet-name {
-      font-size: 1.5rem;
-      margin-top: 10px;
-      color: #ff6b81;
-    }
-
-    .pet-actions button {
-      padding: 10px 20px;
-      background-color: #ff6b81;
-      color: white;
-      font-size: 1rem;
-      border: none;
-      border-radius: 10px;
-      cursor: pointer;
-      margin: 5px;
-      transition: background-color 0.3s ease;
-    }
-
-    .pet-actions button:hover {
-      background-color: #f5a2b8;
-    }
-
-    .points {
-      font-size: 1.2rem;
-      margin-top: 20px;
-      color: #ff6b81;
-    }
-
-    .shop button {
-      padding: 10px 20px;
-      background-color: #9b59b6;
-      color: white;
-      font-size: 1rem;
-      border: none;
-      border-radius: 10px;
-      margin: 10px;
-      cursor: pointer;
-    }
-
-    .shop button:hover {
-      background-color: #7f3c7e;
+    @keyframes clickAnimation {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+      100% { transform: scale(1); }
     }
 
   </style>
@@ -322,80 +236,63 @@
     <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHNjZzU1NnV5ZXZ0YTEzdHBlcTVoeDZzaWNvcmV4NXRua2I3eGFtZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCbdyB4ljtTBRTex7b/giphy.gif" alt="Main Banner GIF">
   </div>
 
-  <div class="content">
-    <h2>✨ Join Our Community ✨</h2>
-    <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
-    <ul>
-      <li>Friendly 18+ environment 💬</li>
-      <li>Weekly movie nights 🍿</li>
-      <li>Gamer channels & squads 🎮</li>
-      <li>Leveling system + ranks 💎</li>
-      <li>Arcade bots & fun commands 🤖</li>
-      <li>LGBTQ+ inclusive 🏳️‍🌈</li>
-      <li>Streamer-friendly 📸</li>
-      <li>420 & BYOB friendly 🍃🍻</li>
-    </ul>
-    <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Join the Server</a>
-
-    <div class="discord-widget">
-      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-    </div>
-
-    <div class="music-player">
-      <h3>🎵 Lofi Vibes 🎧</h3>
-      <iframe style="border-radius:12px" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" width="300" height="180" allowfullscreen allow="autoplay"></iframe>
-    </div>
-  </div>
-
-  <div class="gif-section">
-    <h3>✨ Cute & Cozy Vibes ✨</h3>
-    <div class="scrolling-wrapper">
-      <div class="gif-track">
-        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="GIF 1">
-        <img src="https://media.giphy.com/media/ZZ5LpwO-An4/giphy.gif" alt="GIF 2">
-        <img src="https://media.giphy.com/media/MFggn7K0ERn7y/giphy.gif" alt="GIF 3">
-        <img src="https://media.giphy.com/media/l2JhI5g6gbyG1hCU0/giphy.gif" alt="GIF 4">
-        <img src="https://media.giphy.com/media/5xtDawdFfPl2Nw8nYI/giphy.gif" alt="GIF 5">
-      </div>
-    </div>
-  </div>
-
-  <div class="gallery-section">
-    <h3>🖼️ Pixel Art & Aesthetic Galleries 🎨</h3>
-    <div class="gallery-wrapper">
-      <div class="gallery-item large-item">
-        <img src="https://example.com/art1.jpg" alt="Gallery 1">
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://example.com/art2.jpg" alt="Gallery 2">
-      </div>
-      <div class="gallery-item">
-        <img src="https://example.com/art3.jpg" alt="Gallery 3">
-      </div>
-    </div>
-  </div>
-
-  <div class="pet-game">
-    <h2>🐾 Pet Care Game 🐾</h2>
-    <div class="pet">
-      <div class="pet-name">Fluffy</div>
-    </div>
-    <div class="pet-actions">
-      <button>Feed</button>
-      <button>Play</button>
-      <button>Sleep</button>
-    </div>
-    <div class="points">
-      Points: 0
-    </div>
+  <!-- 🍪 Cookie Game Section -->
+  <div class="cookie-game">
+    <h2>🍪 Cozy Cookie Clicker</h2>
+    <p>Cookies: <span id="cookieCount">0</span></p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Chocolate_Chip_Cookie.png" alt="cookie" class="cookie" onclick="clickCookie()" />
     <div class="shop">
-      <button>Buy Toy 🧸</button>
-      <button>Buy Food 🍽️</button>
+      <button onclick="buyUpgrade('grandma')"><img src="https://img.icons8.com/ios/452/grandmother.png" alt="Grandma" /> Grandma (10 cookies)</button>
+      <button onclick="buyUpgrade('oven')"><img src="https://img.icons8.com/ios/452/oven.png" alt="Oven" /> Oven (50 cookies)</button>
+      <button onclick="buyUpgrade('factory')"><img src="https://img.icons8.com/ios/452/factory.png" alt="Factory" /> Factory (200 cookies)</button>
     </div>
   </div>
 
   <footer>
-    <p>🎮 GLHF Republic | Your Hub for All Things Fun and Gaming</p>
+    <p>&copy; 2025 GLHF Republic | Made with love ✨</p>
   </footer>
+
+  <script>
+    let cookies = parseInt(localStorage.getItem('cookies')) || 0;
+    let upgrades = JSON.parse(localStorage.getItem('upgrades')) || { grandma: 0, oven: 0, factory: 0 };
+
+    const cpsRates = { grandma: 1, oven: 5, factory: 15 };
+
+    function updateDisplay() {
+      document.getElementById("cookieCount").innerText = cookies;
+    }
+
+    function clickCookie() {
+      cookies++;
+      updateDisplay();
+      saveGame();
+    }
+
+    function buyUpgrade(type) {
+      const cost = { grandma: 10, oven: 50, factory: 200 }[type];
+      if (cookies >= cost) {
+        cookies -= cost;
+        upgrades[type]++;
+        updateDisplay();
+        saveGame();
+      }
+    }
+
+    function generateCookies() {
+      for (let key in upgrades) {
+        cookies += upgrades[key] * cpsRates[key];
+      }
+      updateDisplay();
+      saveGame();
+    }
+
+    function saveGame() {
+      localStorage.setItem('cookies', cookies);
+      localStorage.setItem('upgrades', JSON.stringify(upgrades));
+    }
+
+    setInterval(generateCookies, 1000);
+    updateDisplay();
+  </script>
 </body>
 </html>
