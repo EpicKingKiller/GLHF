@@ -10,12 +10,12 @@
   <!-- Lightbox CSS for Gallery -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
   <style>
-    /* Color Variables */
+    /* Color Variables (Dark Blue Theme) */
     :root {
-      --primary-gradient: linear-gradient(135deg, #ff66cc, #9933ff);
-      --sidebar-bg: #330033;
-      --content-bg: #2c002c;
-      --accent: #ff66cc;
+      --primary-gradient: linear-gradient(135deg, #001f3f, #003366);
+      --sidebar-bg: #001f3f;
+      --content-bg: #001933;
+      --accent: #003366;
       --text-light: #f5f5f5;
       --text-dark: #1e1e2f;
     }
@@ -35,10 +35,30 @@
       transition: background 0.3s, color 0.3s;
     }
     
-    /* Dark/Light Mode Toggle (will swap to a lighter scheme) */
+    /* Dark/Light Mode Toggle (lighter scheme) */
     body.light-mode {
       background: #fff;
       color: var(--text-dark);
+    }
+    
+    body.light-mode header, 
+    body.light-mode .sidebar, 
+    body.light-mode footer {
+      background-color: #ddd;
+    }
+    
+    body.light-mode header h1, 
+    body.light-mode .sidebar h2 {
+      color: #333;
+    }
+    
+    body.light-mode .sidebar ul li a {
+      color: #333;
+    }
+    
+    body.light-mode .sidebar ul li a:hover {
+      background-color: var(--accent);
+      color: #fff;
     }
     
     /* Sidebar (Categories Tab Bar) */
@@ -132,7 +152,7 @@
     }
     
     .header-controls button:hover {
-      background-color: #b38bfa;
+      background-color: #002e4d;
       color: #fff;
     }
     
@@ -144,7 +164,8 @@
     
     .banner img {
       width: 100%;
-      height: auto;
+      max-height: 400px; /* Resized main GIF */
+      object-fit: cover;
       display: block;
     }
     
@@ -155,7 +176,7 @@
       padding: 2rem;
       background-color: var(--content-bg);
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
+      box-shadow: 0 0 20px rgba(0,51,102,0.5);
     }
     
     .content h2 {
@@ -187,7 +208,7 @@
     }
     
     .content a.button:hover {
-      background-color: #b38bfa;
+      background-color: #002e4d;
       color: #fff;
     }
     
@@ -198,7 +219,7 @@
       padding: 2rem;
       background-color: var(--content-bg);
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
+      box-shadow: 0 0 20px rgba(0,51,102,0.5);
     }
     
     .news-section h2 {
@@ -220,7 +241,7 @@
       padding: 2rem;
       background-color: var(--content-bg);
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
+      box-shadow: 0 0 20px rgba(0,51,102,0.5);
     }
     
     .events-section h2 {
@@ -237,7 +258,7 @@
       background-color: var(--content-bg);
       border-radius: 12px;
       text-align: center;
-      box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
+      box-shadow: 0 0 20px rgba(0,51,102,0.5);
     }
     
     .newsletter input[type="email"] {
@@ -259,7 +280,7 @@
     }
     
     .newsletter button:hover {
-      background-color: #b38bfa;
+      background-color: #002e4d;
       color: #fff;
     }
     
@@ -270,7 +291,7 @@
       padding: 2rem;
       background-color: var(--content-bg);
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
+      box-shadow: 0 0 20px rgba(0,51,102,0.5);
     }
     
     .poll-section h2 {
@@ -286,7 +307,7 @@
       padding: 2rem;
       background-color: var(--content-bg);
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
+      box-shadow: 0 0 20px rgba(0,51,102,0.5);
     }
     
     .comments-section h2 {
@@ -339,7 +360,7 @@
       height: 150px;
       margin: 0 10px;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255,102,204,0.5);
+      box-shadow: 0 0 15px rgba(0,51,102,0.5);
     }
     
     @keyframes scroll-left {
@@ -374,7 +395,7 @@
       width: 300px;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255,102,204,0.5);
+      box-shadow: 0 0 15px rgba(0,51,102,0.5);
       transition: transform 0.4s ease;
     }
     
