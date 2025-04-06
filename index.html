@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="GLHF Public - Gamer Girl Server. Join our community for gaming, movies, music, art, tech, and more!">
+  <meta name="description" content="GLHF Public - Gamer Girl Server. Join our community for gaming, movies, music, art, tech, and more!" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GLHF Public - Gamer Girl Server</title>
   <!-- Fonts -->
@@ -10,40 +10,37 @@
   <!-- Lightbox CSS for Gallery -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
   <style>
+    /* Color Variables */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #ff66cc, #9933ff);
+      --sidebar-bg: #330033;
+      --content-bg: #2c002c;
+      --accent: #ff66cc;
+      --text-light: #f5f5f5;
+      --text-dark: #1e1e2f;
+    }
+    
     /* Basic Reset */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+    
     body {
       font-family: 'Quicksand', sans-serif;
-      background-color: #1e1e2f;
-      color: #f5f5f5;
+      background: var(--primary-gradient);
+      color: var(--text-light);
       padding-left: 220px; /* Leave space for sidebar */
-      transition: background-color 0.3s, color 0.3s;
+      transition: background 0.3s, color 0.3s;
     }
-    /* Dark/Light Mode */
+    
+    /* Dark/Light Mode Toggle (will swap to a lighter scheme) */
     body.light-mode {
-      background-color: #f5f5f5;
-      color: #1e1e2f;
+      background: #fff;
+      color: var(--text-dark);
     }
-    body.light-mode header, 
-    body.light-mode .sidebar, 
-    body.light-mode footer {
-      background-color: #ddd;
-    }
-    body.light-mode header h1, 
-    body.light-mode .sidebar h2 {
-      color: #333;
-    }
-    body.light-mode .sidebar ul li a {
-      color: #333;
-    }
-    body.light-mode .sidebar ul li a:hover {
-      background-color: #b38bfa;
-      color: #fff;
-    }
+    
     /* Sidebar (Categories Tab Bar) */
     .sidebar {
       position: fixed;
@@ -51,55 +48,64 @@
       left: 0;
       width: 200px;
       height: 100vh;
-      background-color: #2a2a40;
+      background-color: var(--sidebar-bg);
       padding-top: 2rem;
       box-shadow: 2px 0 5px rgba(0,0,0,0.5);
       overflow-y: auto;
     }
+    
     .sidebar h2 {
       font-family: 'Outfit', sans-serif;
-      color: #b38bfa;
+      color: var(--accent);
       text-align: center;
       margin-bottom: 1.5rem;
     }
+    
     .sidebar ul {
       list-style: none;
       padding: 0;
     }
+    
     .sidebar ul li {
       margin: 1rem 0;
       text-align: center;
     }
+    
     .sidebar ul li a {
       text-decoration: none;
-      color: #ffb6c1;
+      color: var(--accent);
       font-weight: bold;
       display: block;
       padding: 0.5rem 1rem;
       transition: background-color 0.3s ease;
     }
+    
     .sidebar ul li a:hover {
-      background-color: #b38bfa;
-      color: #1e1e2f;
+      background-color: var(--accent);
+      color: var(--text-dark);
       border-radius: 8px;
     }
+    
     /* Header */
     header {
-      background-color: #2a2a40;
+      background: var(--primary-gradient);
       padding: 2rem;
       text-align: center;
       position: relative;
     }
+    
     header h1 {
       font-family: 'Outfit', sans-serif;
-      color: #b38bfa;
+      color: var(--text-light);
       font-size: 3rem;
       margin-bottom: 0.5rem;
     }
+    
     header p {
       font-size: 1.2rem;
-      color: #ffb6c1;
+      color: var(--text-light);
     }
+    
     /* Search Bar & Toggle Button in Header */
     .header-controls {
       position: absolute;
@@ -108,114 +114,132 @@
       display: flex;
       gap: 1rem;
     }
+    
     .header-controls input[type="search"] {
       padding: 0.5rem;
       border-radius: 8px;
       border: none;
     }
+    
     .header-controls button {
       padding: 0.5rem 1rem;
       border: none;
       border-radius: 8px;
-      background-color: #ffb6c1;
-      color: #1e1e2f;
+      background-color: var(--accent);
+      color: var(--text-dark);
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
+    
     .header-controls button:hover {
       background-color: #b38bfa;
       color: #fff;
     }
+    
     /* Main Banner */
     .banner {
       width: 100%;
       overflow: hidden;
     }
+    
     .banner img {
       width: 100%;
       height: auto;
       display: block;
     }
+    
     /* Content */
     .content {
       max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
-      background-color: #292940;
+      background-color: var(--content-bg);
       border-radius: 12px;
-      box-shadow: 0 0 20px #b38bfa55;
+      box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
     }
+    
     .content h2 {
-      color: #b38bfa;
+      color: var(--accent);
       font-family: 'Outfit', sans-serif;
       margin-bottom: 1rem;
     }
+    
     .content ul {
       list-style: none;
       padding-left: 0;
     }
+    
     .content ul li::before {
       content: '💜';
       margin-right: 0.5rem;
     }
+    
     .content a.button {
       display: inline-block;
       margin-top: 1rem;
-      background-color: #ffb6c1;
-      color: #1e1e2f;
+      background-color: var(--accent);
+      color: var(--text-dark);
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
+    
     .content a.button:hover {
       background-color: #b38bfa;
       color: #fff;
     }
+    
     /* News Section */
     .news-section {
       max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
-      background-color: #292940;
+      background-color: var(--content-bg);
       border-radius: 12px;
-      box-shadow: 0 0 20px #b38bfa55;
+      box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
     }
+    
     .news-section h2 {
-      color: #b38bfa;
+      color: var(--accent);
       font-family: 'Outfit', sans-serif;
       margin-bottom: 1rem;
     }
+    
     .news-item {
       margin-bottom: 1rem;
       border-bottom: 1px solid #444;
       padding-bottom: 1rem;
     }
+    
     /* Upcoming Events Section */
     .events-section {
       max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
-      background-color: #292940;
+      background-color: var(--content-bg);
       border-radius: 12px;
-      box-shadow: 0 0 20px #b38bfa55;
+      box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
     }
+    
     .events-section h2 {
-      color: #b38bfa;
+      color: var(--accent);
       font-family: 'Outfit', sans-serif;
       margin-bottom: 1rem;
     }
+    
     /* Newsletter Signup */
     .newsletter {
       max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
-      background-color: #292940;
+      background-color: var(--content-bg);
       border-radius: 12px;
       text-align: center;
-      box-shadow: 0 0 20px #b38bfa55;
+      box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
     }
+    
     .newsletter input[type="email"] {
       padding: 0.75rem;
       width: 60%;
@@ -223,130 +247,141 @@
       border: none;
       margin-right: 1rem;
     }
+    
     .newsletter button {
       padding: 0.75rem 1.5rem;
       border: none;
       border-radius: 8px;
-      background-color: #ffb6c1;
-      color: #1e1e2f;
+      background-color: var(--accent);
+      color: var(--text-dark);
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
+    
     .newsletter button:hover {
       background-color: #b38bfa;
       color: #fff;
     }
+    
     /* Poll / Survey Section */
     .poll-section {
       max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
-      background-color: #292940;
+      background-color: var(--content-bg);
       border-radius: 12px;
-      box-shadow: 0 0 20px #b38bfa55;
+      box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
     }
+    
     .poll-section h2 {
-      color: #b38bfa;
+      color: var(--accent);
       font-family: 'Outfit', sans-serif;
       margin-bottom: 1rem;
     }
+    
     /* Comments Section */
     .comments-section {
       max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
-      background-color: #292940;
+      background-color: var(--content-bg);
       border-radius: 12px;
-      box-shadow: 0 0 20px #b38bfa55;
+      box-shadow: 0 0 20px rgba(179, 139, 250, 0.5);
     }
+    
     .comments-section h2 {
-      color: #b38bfa;
+      color: var(--accent);
       font-family: 'Outfit', sans-serif;
       margin-bottom: 1rem;
     }
+    
     .comment {
       margin-bottom: 1rem;
       border-bottom: 1px solid #444;
       padding-bottom: 1rem;
     }
+    
     /* Discord Widget */
     .discord-widget {
       margin-top: 2rem;
       display: flex;
       justify-content: center;
     }
+    
     .discord-widget iframe {
       border: none;
     }
+    
     /* GIF Section (Ticker) */
     .gif-section {
       margin-top: 3rem;
       text-align: center;
     }
+    
     .gif-section h3 {
       font-size: 2rem;
-      color: #b38bfa;
+      color: var(--accent);
       margin-bottom: 1rem;
     }
+    
     .scrolling-wrapper {
       overflow: hidden;
       white-space: nowrap;
       position: relative;
     }
+    
     .gif-track {
       display: inline-block;
       animation: scroll-left 60s linear infinite;
     }
+    
     .gif-track img {
       height: 150px;
       margin: 0 10px;
       border-radius: 10px;
-      box-shadow: 0 0 15px #ffb6c1aa;
+      box-shadow: 0 0 15px rgba(255,102,204,0.5);
     }
+    
     @keyframes scroll-left {
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+    
     /* Gallery Section with Lightbox */
     .gallery-section {
       margin-top: 3rem;
       text-align: center;
     }
+    
     .gallery-section h3 {
       font-size: 2rem;
-      color: #b38bfa;
+      color: var(--accent);
       margin-bottom: 1rem;
     }
+    
     .gallery-container {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
       flex-wrap: wrap;
     }
+    
     .gallery-container a {
       display: block;
     }
+    
     .gallery-container img {
       width: 300px;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 0 15px #ffb6c1aa;
+      box-shadow: 0 0 15px rgba(255,102,204,0.5);
       transition: transform 0.4s ease;
     }
+    
     .gallery-container img:hover {
       transform: scale(1.05);
     }
-    /* Footer */
-    footer {
-      background-color: #2a2a40;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 2rem;
-    }
-    footer p {
-      color: #aaa;
-      font-size: 0.9rem;
-    }
+    
     /* Social Media Section */
     .social-media {
       max-width: 900px;
@@ -354,11 +389,26 @@
       padding: 2rem;
       text-align: center;
     }
+    
     .social-media h2 {
-      color: #b38bfa;
+      color: var(--accent);
       font-family: 'Outfit', sans-serif;
       margin-bottom: 1rem;
     }
+    
+    /* Footer */
+    footer {
+      background-color: var(--sidebar-bg);
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    
+    footer p {
+      color: #ddd;
+      font-size: 0.9rem;
+    }
+    
     /* Responsive */
     @media (max-width: 600px) {
       body { padding-left: 0; }
@@ -473,7 +523,6 @@
   <!-- Comments Section -->
   <div class="comments-section">
     <h2>Comments</h2>
-    <!-- Placeholder for comments; in a real site you might integrate Disqus or a similar system -->
     <div class="comment">
       <p><strong>User1:</strong> This server is awesome!</p>
     </div>
@@ -482,7 +531,7 @@
     </div>
     <form action="#" method="post">
       <textarea placeholder="Leave a comment..." rows="4" style="width: 100%; border-radius: 8px; padding: 0.5rem;"></textarea>
-      <button type="submit" style="margin-top: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 8px; background-color: #ffb6c1; color: #1e1e2f;">Post Comment</button>
+      <button type="submit" style="margin-top: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 8px; background-color: var(--accent); color: var(--text-dark);">Post Comment</button>
     </form>
   </div>
 
@@ -513,30 +562,26 @@
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 GLHF Public | Made with love ✨</p>
-    <!-- Google Analytics Placeholder -->
-    <!-- <script>
-      // Replace with your own Google Analytics tracking code
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-XXXXXXXXX-X', 'auto');
-      ga('send', 'pageview');
-    </script> -->
+    <!-- Google Analytics Placeholder (Insert your tracking code below) -->
+    <!-- 
+    <script>
+      // Google Analytics tracking code goes here
+    </script>
+    -->
   </footer>
 
   <!-- Live Chat Widget (Example: Tawk.to) -->
   <script type="text/javascript">
-  // Replace with your own Tawk.to widget code if available
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/default';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-  })();
+    // Replace with your own Tawk.to widget code if available
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"), s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/default';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
   </script>
 
   <!-- Lightbox JS for Gallery -->
