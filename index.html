@@ -1,186 +1,157 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>GLHF Public - Gaming Community</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLHF Public - Gamer Girl Server</title>
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Welcome to GLHF Public</h1>
-						<p>GLHF Website Testing – Testing, Beep Boop 010101001010101</p>
+  <!-- Style -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      background-color: #1e1e2f;
+      color: #f5f5f5;
+    }
 
-						<!-- Discord GIF -->
-						<img src="https://cdn.discordapp.com/attachments/1353159630280196247/1354129632647188552/gif2-ezgif.com-video-to-gif-converter.gif?ex=67f159fe&is=67f0087e&hm=45fd9484afb7f626f50d588e1d4287811d2f1623201d91a9f17f8c1b58df8b68" alt="Discord Server GIF" style="max-width:100%; height:auto;">
-						
-						<!-- Discord Invite Info -->
-						<div style="background: #222; padding: 1rem; margin-top: 1rem; border-radius: 5px; color: #fff;">
-							<h2>Join Our SFW Gaming Community!</h2>
-							<p>
-								Feel free to come join us on our SFW gaming community Discord server! We have multiple games, forums, channels and more! (18+💎)
-							</p>
-							<ul>
-								<li>🪽 Be kind &amp; civil – we'll see you in the server!</li>
-								<li>🕊️ Building friendships &amp; making memories!</li>
-								<li>🍿 ~ Weekly movie theater nights</li>
-								<li>🎮 ~ Multiple gaming channels</li>
-								<li>💎 ~ Ranking + leveling up</li>
-								<li>📰 ~ Gaming News Feed</li>
-								<li>🤖 ~ Mini arcade games</li>
-								<li>📸 ~ Streamer Support</li>
-								<li>🌈 ~ LGBT+ Friendly</li>
-								<li>🌿 ~ 420 Friendly</li>
-								<li>🍻 ~ BYOB GLHF</li>
-							</ul>
-							<p>
-								<a href="YOUR_DISCORD_INVITE_LINK" class="button">Join Our Discord</a>
-							</p>
+    header, footer {
+      background-color: #2a2a40;
+      padding: 2rem;
+      text-align: center;
+    }
 
-							<!-- Discord Widget Embed -->
-							<div style="margin-top: 2rem; display: flex; justify-content: center;">
-								<iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-							</div>
-						</div>
+    header h1 {
+      font-family: 'Outfit', sans-serif;
+      color: #b38bfa;
+      font-size: 3rem;
+      margin: 0;
+    }
 
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+    header p {
+      font-size: 1.2rem;
+      color: #ffb6c1;
+      margin-top: 0.5rem;
+    }
 
-				<!-- Header -->
-				<header id="header">
-					<a href="index.html" class="logo">GLHF Public</a>
-				</header>
+    .content {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #292940;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #b38bfa55;
+    }
 
-				<!-- Nav -->
-				<nav id="nav">
-					<ul class="links">
-						<li class="active"><a href="index.html">Home</a></li>
-						<li><a href="generic.html">Generic Page</a></li>
-						<li><a href="elements.html">Elements Reference</a></li>
-					</ul>
-					<ul class="icons">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					</ul>
-				</nav>
+    .content h2 {
+      color: #b38bfa;
+      font-family: 'Outfit', sans-serif;
+      margin-top: 0;
+    }
 
-				<!-- Main -->
-				<div id="main">
-					<!-- Featured Post -->
-					<article class="post featured">
-						<header class="major">
-							<span class="date">April 25, 2017</span>
-							<h2><a href="#">And this is a<br />massive headline</a></h2>
-							<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-							facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-							amet nullam sed etiam veroeros.</p>
-						</header>
-						<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-						<ul class="actions special">
-							<li><a href="#" class="button large">Full Story</a></li>
-						</ul>
-					</article>
+    .content ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
-					<!-- Posts -->
-					<section class="posts">
-						<!-- Individual posts here (unchanged) -->
-						<!-- ... -->
-					</section>
+    .content ul li::before {
+      content: '💜';
+      margin-right: 0.5rem;
+    }
 
-					<!-- Footer -->
-					<footer>
-						<div class="pagination">
-							<a href="#" class="page active">1</a>
-							<a href="#" class="page">2</a>
-							<a href="#" class="page">3</a>
-							<span class="extra">&hellip;</span>
-							<a href="#" class="page">8</a>
-							<a href="#" class="page">9</a>
-							<a href="#" class="page">10</a>
-							<a href="#" class="next">Next</a>
-						</div>
-					</footer>
-				</div>
+    .content a.button {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #ffb6c1;
+      color: #1e1e2f;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
 
-				<!-- Footer -->
-				<footer id="footer">
-					<section>
-						<form method="post" action="#">
-							<div class="fields">
-								<div class="field">
-									<label for="name">Name</label>
-									<input type="text" name="name" id="name" />
-								</div>
-								<div class="field">
-									<label for="email">Email</label>
-									<input type="text" name="email" id="email" />
-								</div>
-								<div class="field">
-									<label for="message">Message</label>
-									<textarea name="message" id="message" rows="3"></textarea>
-								</div>
-							</div>
-							<ul class="actions">
-								<li><input type="submit" value="Send Message" /></li>
-							</ul>
-						</form>
-					</section>
-					<section class="split contact">
-						<section class="alt">
-							<h3>Address</h3>
-							<p>1234 Somewhere Road #87257<br />
-							Nashville, TN 00000-0000</p>
-						</section>
-						<section>
-							<h3>Phone</h3>
-							<p><a href="#">(000) 000-0000</a></p>
-						</section>
-						<section>
-							<h3>Email</h3>
-							<p><a href="#">info@untitled.tld</a></p>
-						</section>
-						<section>
-							<h3>Social</h3>
-							<ul class="icons alt">
-								<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-								<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-								<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-								<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-							</ul>
-						</section>
-					</section>
-				</footer>
+    .content a.button:hover {
+      background-color: #b38bfa;
+      color: #fff;
+    }
 
-				<!-- Copyright -->
-				<div id="copyright">
-					<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-				</div>
+    .discord-widget {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
 
-			</div>
+    img.server-gif {
+      max-width: 100%;
+      border-radius: 10px;
+      margin: 1rem 0;
+      box-shadow: 0 0 15px #ffb6c1aa;
+    }
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+    footer p {
+      color: #aaa;
+      font-size: 0.9rem;
+    }
 
-	</body>
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .content {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+
+      .discord-widget iframe {
+        width: 100% !important;
+        height: 500px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>GLHF Public</h1>
+    <p>welcome to the coziest gamer girl server 🌸✨</p>
+  </header>
+
+  <!-- Main Content -->
+  <div class="content">
+    <img class="server-gif" src="https://cdn.discordapp.com/attachments/1353159630280196247/1354129632647188552/gif2-ezgif.com-video-to-gif-converter.gif?ex=67f159fe&is=67f0087e&hm=45fd9484afb7f626f50d588e1d4287811d2f1623201d91a9f17f8c1b58df8b68" alt="Discord Server GIF" />
+
+    <h2>✨ Join Our Community ✨</h2>
+    <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
+
+    <ul>
+      <li>Friendly 18+ environment 💬</li>
+      <li>Weekly movie nights 🍿</li>
+      <li>Gamer channels & squads 🎮</li>
+      <li>Leveling system + ranks 💎</li>
+      <li>Arcade bots & fun commands 🤖</li>
+      <li>LGBTQ+ inclusive 🏳️‍🌈</li>
+      <li>Streamer-friendly 📸</li>
+      <li>420 & BYOB friendly 🍃🍻</li>
+    </ul>
+
+    <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Join the Server</a>
+
+    <!-- Discord Widget -->
+    <div class="discord-widget">
+      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 GLHF Public | Made with love ✨</p>
+  </footer>
+
+</body>
 </html>
