@@ -2,18 +2,17 @@
 <div class="gallery-section">
   <h3>✨ Gallery of Cute Moments ✨</h3>
   <div class="gallery-wrapper">
-    <!-- Container for the gallery images -->
-    <div class="gallery-item-container">
-      <div class="gallery-item large-item">
-        <img src="https://cdn.discordapp.com/attachments/1333119346083364974/1358271442533355744/2025-01-23_22.png?ex=67f33c5b&is=67f1eadb&hm=b06a36e4a06fd5cbd41e25cffd3233126ffd0fd71365709652060e8cf2c6c55b&" alt="Image 1" />
-      </div>
-      <!-- Smaller Images -->
-      <div class="gallery-item small-item">
-        <img src="https://media.discordapp.net/attachments/1333119346083364974/1358274889974419507/2025-01-19_00.png?ex=67f33f91&is=67f1ee11&hm=b66a3da523f7358eb5d8d351bcba8b10c22d1b9d442a90fc52bf4d70c951737e&=&format=webp&quality=lossless" alt="Image 2" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://media.discordapp.net/attachments/1333119346083364974/1358230742223683594/2025-04-05_20.01.39.png?ex=67f31673&is=67f1c4f3&hm=fe39b0c28c9783883e39e63001aaeb19ee9b5e0fa7e2c39551881c50be2ce0ff&=&format=webp&quality=lossless" alt="Image 3" />
-      </div>
+    <!-- Larger Image (Initially on the left) -->
+    <div class="gallery-item large-item">
+      <img src="https://cdn.discordapp.com/attachments/1333119346083364974/1358271442533355744/2025-01-23_22.png?ex=67f33c5b&is=67f1eadb&hm=b06a36e4a06fd5cbd41e25cffd3233126ffd0fd71365709652060e8cf2c6c55b&" alt="Image 1" />
+    </div>
+
+    <!-- Two Smaller Images -->
+    <div class="gallery-item small-item">
+      <img src="https://media.discordapp.net/attachments/1333119346083364974/1358274889974419507/2025-01-19_00.png?ex=67f33f91&is=67f1ee11&hm=b66a3da523f7358eb5d8d351bcba8b10c22d1b9d442a90fc52bf4d70c951737e&=&format=webp&quality=lossless" alt="Image 2" />
+    </div>
+    <div class="gallery-item small-item">
+      <img src="https://media.discordapp.net/attachments/1333119346083364974/1358230742223683594/2025-04-05_20.01.39.png?ex=67f31673&is=67f1c4f3&hm=fe39b0c28c9783883e39e63001aaeb19ee9b5e0fa7e2c39551881c50be2ce0ff&=&format=webp&quality=lossless" alt="Image 3" />
     </div>
   </div>
 </div>
@@ -37,14 +36,6 @@
     gap: 1rem;
   }
 
-  .gallery-item-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 80%;
-  }
-
   .gallery-item {
     position: relative;
     overflow: hidden;
@@ -60,18 +51,15 @@
     transition: transform 0.4s ease, filter 0.4s ease;
   }
 
-  /* Large Image */
+  /* Large Image - Initially */
   .large-item {
     flex: 2;
     transform-origin: center;
-    position: absolute;
-    transition: opacity 1s ease-in-out;
   }
 
   /* Smaller Images */
   .small-item {
     flex: 1;
-    transition: transform 0.4s ease-in-out;
   }
 
   /* Hover Effects */
@@ -107,35 +95,3 @@
     }
   }
 </style>
-
-<!-- JavaScript for the Image Rotation -->
-<script>
-  const images = [
-    "https://cdn.discordapp.com/attachments/1333119346083364974/1358271442533355744/2025-01-23_22.png?ex=67f33c5b&is=67f1eadb&hm=b06a36e4a06fd5cbd41e25cffd3233126ffd0fd71365709652060e8cf2c6c55b&",
-    "https://media.discordapp.net/attachments/1333119346083364974/1358274889974419507/2025-01-19_00.png?ex=67f33f91&is=67f1ee11&hm=b66a3da523f7358eb5d8d351bcba8b10c22d1b9d442a90fc52bf4d70c951737e&=&format=webp&quality=lossless",
-    "https://media.discordapp.net/attachments/1333119346083364974/1358230742223683594/2025-04-05_20.01.39.png?ex=67f31673&is=67f1c4f3&hm=fe39b0c28c9783883e39e63001aaeb19ee9b5e0fa7e2c39551881c50be2ce0ff&=&format=webp&quality=lossless",
-    // Add more images here as needed
-  ];
-
-  let currentImageIndex = 0;
-
-  // Set up the gallery images for rotation
-  const largeImage = document.querySelector('.large-item img');
-  
-  function rotateImages() {
-    currentImageIndex = (currentImageIndex + 1) % images.length; // cycle through the images
-    largeImage.style.opacity = 0; // fade out the current image
-
-    // After fading out, update the image and fade it in
-    setTimeout(() => {
-      largeImage.src = images[currentImageIndex]; // change the source
-      largeImage.style.opacity = 1; // fade it back in
-    }, 1000); // wait for fade-out to complete before updating image
-  }
-
-  // Rotate images every 5 seconds
-  setInterval(rotateImages, 5000);
-
-  // Initialize with the first image
-  rotateImages();
-</script>
