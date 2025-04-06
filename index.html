@@ -16,7 +16,8 @@
 
     body {
       font-family: 'Quicksand', sans-serif;
-      background-color: var(--bg);
+      background: url('https://your-image-link.com/background.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: var(--text);
       padding-left: 220px;
       transition: background 0.3s ease, color 0.3s ease;
@@ -74,9 +75,10 @@
     }
 
     header {
-      background-color: #2a2a40;
+      background-color: rgba(42, 42, 64, 0.8);
       padding: 2rem;
       text-align: center;
+      border-radius: 10px;
     }
 
     header h1 {
@@ -195,9 +197,6 @@
       filter: brightness(1.2);
     }
 
-    .large-item:hover { transform: rotate(-10deg); }
-    .small-item:hover { transform: scale(1.05); }
-
     .music-player {
       margin-top: 2rem;
       text-align: center;
@@ -220,80 +219,59 @@
       color: #aaa;
     }
 
-    /* Pet Care Game */
-    .pet-game {
+    /* Cookie Clicker Game */
+    .cookie-game {
       margin-top: 4rem;
       padding: 2rem;
-      background-color: #f9e0e6;
+      background-color: #1f1f38;
       border-radius: 12px;
       text-align: center;
-      color: #333;
-      box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+      color: #fff;
+      box-shadow: 0 0 20px #4476d666;
     }
 
-    .pet-game h2 {
+    .cookie-game h2 {
       font-family: 'Outfit', sans-serif;
-      color: #ff6b81;
+      color: var(--accent);
     }
 
-    .pet {
+    .cookie {
       width: 150px;
       height: 150px;
       margin: 20px auto;
-      background-color: #fff;
-      border-radius: 50%;
-      border: 5px solid #ff6b81;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-image: url('https://placekitten.com/200/200');
-      background-size: cover;
-      transition: all 0.3s ease-in-out;
-    }
-
-    .pet-name {
-      font-size: 1.5rem;
-      margin-top: 10px;
-      color: #ff6b81;
-    }
-
-    .pet-actions button {
-      padding: 10px 20px;
-      background-color: #ff6b81;
-      color: white;
-      font-size: 1rem;
-      border: none;
-      border-radius: 10px;
       cursor: pointer;
-      margin: 5px;
-      transition: background-color 0.3s ease;
+      transition: transform 0.2s ease;
     }
 
-    .pet-actions button:hover {
-      background-color: #f5a2b8;
-    }
-
-    .points {
-      font-size: 1.2rem;
-      margin-top: 20px;
-      color: #ff6b81;
+    .cookie:hover {
+      transform: scale(1.1);
     }
 
     .shop button {
-      padding: 10px 20px;
-      background-color: #9b59b6;
-      color: white;
-      font-size: 1rem;
-      border: none;
-      border-radius: 10px;
       margin: 10px;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     .shop button:hover {
-      background-color: #7f3c7e;
+      background-color: #3456a6;
     }
 
+    .shop img {
+      width: 30px;
+      margin-right: 10px;
+    }
+
+    @media (max-width: 600px) {
+      body { padding-left: 0; }
+      .sidebar { width: 100%; position: relative; }
+      .sidebar ul li { display: inline-block; margin: 0.5rem; }
+    }
   </style>
 </head>
 <body>
@@ -347,55 +325,72 @@
     </div>
   </div>
 
-  <div class="gif-section">
-    <h3>✨ Cute & Cozy Vibes ✨</h3>
-    <div class="scrolling-wrapper">
-      <div class="gif-track">
-        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="GIF 1">
-        <img src="https://media.giphy.com/media/ZZ5LpwO-An4/giphy.gif" alt="GIF 2">
-        <img src="https://media.giphy.com/media/MFggn7K0ERn7y/giphy.gif" alt="GIF 3">
-        <img src="https://media.giphy.com/media/l2JhI5g6gbyG1hCU0/giphy.gif" alt="GIF 4">
-        <img src="https://media.giphy.com/media/5xtDawdFfPl2Nw8nYI/giphy.gif" alt="GIF 5">
-      </div>
-    </div>
-  </div>
-
-  <div class="gallery-section">
-    <h3>🖼️ Pixel Art & Aesthetic Galleries 🎨</h3>
-    <div class="gallery-wrapper">
-      <div class="gallery-item large-item">
-        <img src="https://example.com/art1.jpg" alt="Gallery 1">
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://example.com/art2.jpg" alt="Gallery 2">
-      </div>
-      <div class="gallery-item">
-        <img src="https://example.com/art3.jpg" alt="Gallery 3">
-      </div>
-    </div>
-  </div>
-
-  <div class="pet-game">
-    <h2>🐾 Pet Care Game 🐾</h2>
-    <div class="pet">
-      <div class="pet-name">Fluffy</div>
-    </div>
-    <div class="pet-actions">
-      <button>Feed</button>
-      <button>Play</button>
-      <button>Sleep</button>
-    </div>
-    <div class="points">
-      Points: 0
-    </div>
+  <!-- 🍪 Cookie Game Section -->
+  <div class="cookie-game">
+    <h2>🍪 Cozy Cookie Clicker</h2>
+    <p>Cookies: <span id="cookieCount">0</span></p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Chocolate_Chip_Cookie.png" alt="cookie" class="cookie" onclick="clickCookie()" />
     <div class="shop">
-      <button>Buy Toy 🧸</button>
-      <button>Buy Food 🍽️</button>
+      <button onclick="buyUpgrade('grandma')">
+        <img src="https://img.icons8.com/ios/452/granny.png" alt="Grandma Icon" />
+        👵 Grandma (10 cookies)
+      </button>
+      <button onclick="buyUpgrade('oven')">
+        <img src="https://img.icons8.com/ios/452/oven.png" alt="Oven Icon" />
+        🔥 Oven (50 cookies)
+      </button>
+      <button onclick="buyUpgrade('factory')">
+        <img src="https://img.icons8.com/ios/452/factory.png" alt="Factory Icon" />
+        🏭 Factory (200 cookies)
+      </button>
     </div>
   </div>
 
   <footer>
-    <p>🎮 GLHF Republic | Your Hub for All Things Fun and Gaming</p>
+    <p>&copy; 2025 GLHF Republic | Made with love ✨</p>
   </footer>
+
+  <script>
+    let cookies = parseInt(localStorage.getItem('cookies')) || 0;
+    let upgrades = JSON.parse(localStorage.getItem('upgrades')) || { grandma: 0, oven: 0, factory: 0 };
+
+    const cpsRates = { grandma: 1, oven: 5, factory: 15 };
+
+    function updateDisplay() {
+      document.getElementById("cookieCount").innerText = cookies;
+    }
+
+    function clickCookie() {
+      cookies++;
+      updateDisplay();
+      saveGame();
+    }
+
+    function buyUpgrade(type) {
+      const cost = { grandma: 10, oven: 50, factory: 200 }[type];
+      if (cookies >= cost) {
+        cookies -= cost;
+        upgrades[type]++;
+        updateDisplay();
+        saveGame();
+      }
+    }
+
+    function generateCookies() {
+      for (let key in upgrades) {
+        cookies += upgrades[key] * cpsRates[key];
+      }
+      updateDisplay();
+      saveGame();
+    }
+
+    function saveGame() {
+      localStorage.setItem('cookies', cookies);
+      localStorage.setItem('upgrades', JSON.stringify(upgrades));
+    }
+
+    setInterval(generateCookies, 1000);
+    updateDisplay();
+  </script>
 </body>
 </html>
