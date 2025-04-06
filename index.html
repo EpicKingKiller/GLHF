@@ -220,62 +220,25 @@
       color: #aaa;
     }
 
-    /* Cookie Clicker Game */
-    .cookie-game {
+    /* Pet Care Game */
+    .pet-game {
       margin-top: 4rem;
       padding: 2rem;
-      background-color: #1f1f38;
+      background-color: #f9e0e6;
       border-radius: 12px;
       text-align: center;
-      color: #fff;
-      box-shadow: 0 0 20px #4476d666;
+      color: #333;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
     }
 
-    .cookie-game h2 {
+    .pet-game h2 {
       font-family: 'Outfit', sans-serif;
-      color: var(--accent);
-    }
-
-    .cookie {
-      width: 150px;
-      height: 150px;
-      margin: 20px auto;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .cookie:hover {
-      transform: scale(1.1);
-    }
-
-    .shop button {
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .shop button:hover {
-      background-color: #3456a6;
-    }
-
-    /* Pet Game */
-    .pet-container {
-      margin: 20px auto;
-      background-color: #fff;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      max-width: 600px;
+      color: #ff6b81;
     }
 
     .pet {
-      width: 200px;
-      height: 200px;
+      width: 150px;
+      height: 150px;
       margin: 20px auto;
       background-color: #fff;
       border-radius: 50%;
@@ -288,18 +251,10 @@
       transition: all 0.3s ease-in-out;
     }
 
-    .pet:hover {
-      transform: scale(1.1);
-    }
-
     .pet-name {
       font-size: 1.5rem;
       margin-top: 10px;
       color: #ff6b81;
-    }
-
-    .pet-actions {
-      margin-top: 20px;
     }
 
     .pet-actions button {
@@ -364,93 +319,83 @@
   </header>
 
   <div class="banner">
-    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHNjZzU1NnV5ZXZ0YTEzdHBlcTVoeDZzaWNvcmV4NXRua2I3eGFtZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCbdyB4ljtTB0NJhz6/giphy.gif" alt="Banner">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHNjZzU1NnV5ZXZ0YTEzdHBlcTVoeDZzaWNvcmV4NXRua2I3eGFtZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCbdyB4ljtTBRTex7b/giphy.gif" alt="Main Banner GIF">
   </div>
 
   <div class="content">
-    <h2>Fun Activities</h2>
-    <p>Explore different features of this interactive space:</p>
+    <h2>✨ Join Our Community ✨</h2>
+    <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
     <ul>
-      <li>🎮 Play games (like cookie clicker and pet games)</li>
-      <li>🎵 Listen to music</li>
-      <li>🖼 Browse cool artwork and gifs</li>
+      <li>Friendly 18+ environment 💬</li>
+      <li>Weekly movie nights 🍿</li>
+      <li>Gamer channels & squads 🎮</li>
+      <li>Leveling system + ranks 💎</li>
+      <li>Arcade bots & fun commands 🤖</li>
+      <li>LGBTQ+ inclusive 🏳️‍🌈</li>
+      <li>Streamer-friendly 📸</li>
+      <li>420 & BYOB friendly 🍃🍻</li>
     </ul>
-  </div>
+    <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Join the Server</a>
 
-  <div class="cookie-game">
-    <h2>Cookie Clicker Game</h2>
-    <img src="https://example.com/cookie.png" alt="Cookie" class="cookie" onclick="clickCookie()" />
-    <div id="cookie-count">Cookies: 0</div>
-    <div class="shop">
-      <button onclick="buyUpgrade()">Buy Upgrade (10 Cookies)</button>
+    <div class="discord-widget">
+      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </div>
+
+    <div class="music-player">
+      <h3>🎵 Lofi Vibes 🎧</h3>
+      <iframe style="border-radius:12px" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" width="300" height="180" allowfullscreen allow="autoplay"></iframe>
     </div>
   </div>
 
   <div class="gif-section">
-    <h2>Fun GIFs</h2>
+    <h3>✨ Cute & Cozy Vibes ✨</h3>
     <div class="scrolling-wrapper">
       <div class="gif-track">
-        <img src="https://media.giphy.com/media/l0HlU3C7j9m7gt3Yw/giphy.gif" alt="gif1">
-        <img src="https://media.giphy.com/media/xUOwGbywxfYu4NVuCk/giphy.gif" alt="gif2">
-        <img src="https://media.giphy.com/media/l0HlTzdhXdxYqfWiE/giphy.gif" alt="gif3">
-        <img src="https://media.giphy.com/media/l41m4pS4WSNLOJ1as/giphy.gif" alt="gif4">
-        <img src="https://media.giphy.com/media/l0HlQOYk3Lq8fSzXy/giphy.gif" alt="gif5">
+        <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="GIF 1">
+        <img src="https://media.giphy.com/media/ZZ5LpwO-An4/giphy.gif" alt="GIF 2">
+        <img src="https://media.giphy.com/media/MFggn7K0ERn7y/giphy.gif" alt="GIF 3">
+        <img src="https://media.giphy.com/media/l2JhI5g6gbyG1hCU0/giphy.gif" alt="GIF 4">
+        <img src="https://media.giphy.com/media/5xtDawdFfPl2Nw8nYI/giphy.gif" alt="GIF 5">
       </div>
     </div>
   </div>
 
   <div class="gallery-section">
-    <h2>Image Gallery</h2>
+    <h3>🖼️ Pixel Art & Aesthetic Galleries 🎨</h3>
     <div class="gallery-wrapper">
       <div class="gallery-item large-item">
-        <img src="https://via.placeholder.com/600x400" alt="Image1">
+        <img src="https://example.com/art1.jpg" alt="Gallery 1">
       </div>
       <div class="gallery-item small-item">
-        <img src="https://via.placeholder.com/300x200" alt="Image2">
+        <img src="https://example.com/art2.jpg" alt="Gallery 2">
       </div>
-      <div class="gallery-item small-item">
-        <img src="https://via.placeholder.com/300x200" alt="Image3">
-      </div>
-      <div class="gallery-item large-item">
-        <img src="https://via.placeholder.com/600x400" alt="Image4">
+      <div class="gallery-item">
+        <img src="https://example.com/art3.jpg" alt="Gallery 3">
       </div>
     </div>
   </div>
 
-  <div class="music-player">
-    <h3>🎶 Music Player</h3>
-    <audio controls>
-      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-    </audio>
-  </div>
-
-  <div class="discord-widget">
-    <iframe src="https://discord.com/widget?id=your-discord-widget-id" width="350" height="500" frameborder="0" allowtransparency="true"></iframe>
+  <div class="pet-game">
+    <h2>🐾 Pet Care Game 🐾</h2>
+    <div class="pet">
+      <div class="pet-name">Fluffy</div>
+    </div>
+    <div class="pet-actions">
+      <button>Feed</button>
+      <button>Play</button>
+      <button>Sleep</button>
+    </div>
+    <div class="points">
+      Points: 0
+    </div>
+    <div class="shop">
+      <button>Buy Toy 🧸</button>
+      <button>Buy Food 🍽️</button>
+    </div>
   </div>
 
   <footer>
-    <p>2025 &copy; GLHF Republic | All Rights Reserved</p>
+    <p>🎮 GLHF Republic | Your Hub for All Things Fun and Gaming</p>
   </footer>
-
-  <script>
-    let cookieCount = 0;
-    let upgrades = 0;
-
-    function clickCookie() {
-      cookieCount++;
-      document.getElementById('cookie-count').innerText = `Cookies: ${cookieCount}`;
-    }
-
-    function buyUpgrade() {
-      if (cookieCount >= 10) {
-        cookieCount -= 10;
-        upgrades++;
-        document.getElementById('cookie-count').innerText = `Cookies: ${cookieCount}`;
-        alert('Upgrade purchased! Now you earn cookies faster!');
-      } else {
-        alert('Not enough cookies!');
-      }
-    }
-  </script>
 </body>
 </html>
