@@ -2,454 +2,295 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="GLHF Public - Gamer Girl Server. Join our community for gaming, movies, music, art, tech, and more!" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GLHF Public - Gamer Girl Server</title>
-  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
-  <!-- Lightbox CSS for Gallery -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
   <style>
-    /* Color Variables (Dark Blue Theme) */
-    :root {
-      --primary-gradient: linear-gradient(135deg, #001f3f, #003366);
-      --sidebar-bg: #001f3f;
-      --content-bg: #001933;
-      --accent: #003366;
-      --text-light: #f5f5f5;
-      --text-dark: #1e1e2f;
-    }
-    
-    /* Basic Reset */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    
+
     body {
       font-family: 'Quicksand', sans-serif;
-      background: var(--primary-gradient);
-      color: var(--text-light);
-      padding-left: 220px; /* Leave space for sidebar */
-      transition: background 0.3s, color 0.3s;
+      background-color: #141c2f;
+      color: #f5f5f5;
+      padding-left: 220px;
     }
-    
-    /* Dark/Light Mode Toggle (lighter scheme) */
-    body.light-mode {
-      background: #fff;
-      color: var(--text-dark);
-    }
-    
-    body.light-mode header, 
-    body.light-mode .sidebar, 
-    body.light-mode footer {
-      background-color: #ddd;
-    }
-    
-    body.light-mode header h1, 
-    body.light-mode .sidebar h2 {
-      color: #333;
-    }
-    
-    body.light-mode .sidebar ul li a {
-      color: #333;
-    }
-    
-    body.light-mode .sidebar ul li a:hover {
-      background-color: var(--accent);
-      color: #fff;
-    }
-    
-    /* Sidebar (Categories Tab Bar) */
+
     .sidebar {
       position: fixed;
       top: 0;
       left: 0;
       width: 200px;
       height: 100vh;
-      background-color: var(--sidebar-bg);
+      background-color: #1c2541;
       padding-top: 2rem;
       box-shadow: 2px 0 5px rgba(0,0,0,0.5);
       overflow-y: auto;
     }
-    
+
     .sidebar h2 {
       font-family: 'Outfit', sans-serif;
-      color: var(--accent);
+      color: #ffb6c1;
       text-align: center;
       margin-bottom: 1.5rem;
     }
-    
+
     .sidebar ul {
       list-style: none;
       padding: 0;
     }
-    
+
     .sidebar ul li {
       margin: 1rem 0;
       text-align: center;
     }
-    
+
     .sidebar ul li a {
       text-decoration: none;
-      color: var(--accent);
+      color: #ffb6c1;
       font-weight: bold;
       display: block;
       padding: 0.5rem 1rem;
       transition: background-color 0.3s ease;
     }
-    
+
     .sidebar ul li a:hover {
-      background-color: var(--accent);
-      color: var(--text-dark);
+      background-color: #415a77;
+      color: #fff;
       border-radius: 8px;
     }
-    
-    /* Header */
+
     header {
-      background: var(--primary-gradient);
+      background-color: #1c2541;
       padding: 2rem;
       text-align: center;
-      position: relative;
     }
-    
+
     header h1 {
       font-family: 'Outfit', sans-serif;
-      color: var(--text-light);
+      color: #ffb6c1;
       font-size: 3rem;
       margin-bottom: 0.5rem;
     }
-    
+
     header p {
       font-size: 1.2rem;
-      color: var(--text-light);
+      color: #f5f5f5;
     }
-    
-    /* Search Bar & Toggle Button in Header */
-    .header-controls {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      display: flex;
-      gap: 1rem;
-    }
-    
-    .header-controls input[type="search"] {
-      padding: 0.5rem;
-      border-radius: 8px;
-      border: none;
-    }
-    
-    .header-controls button {
-      padding: 0.5rem 1rem;
-      border: none;
-      border-radius: 8px;
-      background-color: var(--accent);
-      color: var(--text-dark);
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    
-    .header-controls button:hover {
-      background-color: #002e4d;
-      color: #fff;
-    }
-    
-    /* Main Banner */
+
     .banner {
       width: 100%;
       overflow: hidden;
     }
-    
+
     .banner img {
       width: 100%;
-      max-height: 400px; /* Resized main GIF */
+      max-height: 400px;
       object-fit: cover;
       display: block;
     }
-    
-    /* Content */
+
     .content {
       max-width: 900px;
       margin: 2rem auto;
       padding: 2rem;
-      background-color: var(--content-bg);
+      background-color: #1f2a44;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,51,102,0.5);
+      box-shadow: 0 0 20px #8ab4f855;
     }
-    
+
     .content h2 {
-      color: var(--accent);
+      color: #ffb6c1;
       font-family: 'Outfit', sans-serif;
       margin-bottom: 1rem;
     }
-    
+
     .content ul {
       list-style: none;
       padding-left: 0;
     }
-    
+
     .content ul li::before {
-      content: '💜';
+      content: '💖';
       margin-right: 0.5rem;
     }
-    
+
     .content a.button {
       display: inline-block;
       margin-top: 1rem;
-      background-color: var(--accent);
-      color: var(--text-dark);
+      background-color: #ffb6c1;
+      color: #141c2f;
       padding: 0.75rem 1.5rem;
       border-radius: 8px;
       font-weight: bold;
       text-decoration: none;
       transition: background-color 0.3s ease, color 0.3s ease;
     }
-    
+
     .content a.button:hover {
-      background-color: #002e4d;
+      background-color: #f78dc8;
       color: #fff;
     }
-    
-    /* News Section */
-    .news-section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: var(--content-bg);
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,51,102,0.5);
-    }
-    
-    .news-section h2 {
-      color: var(--accent);
-      font-family: 'Outfit', sans-serif;
-      margin-bottom: 1rem;
-    }
-    
-    .news-item {
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #444;
-      padding-bottom: 1rem;
-    }
-    
-    /* Upcoming Events Section */
-    .events-section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: var(--content-bg);
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,51,102,0.5);
-    }
-    
-    .events-section h2 {
-      color: var(--accent);
-      font-family: 'Outfit', sans-serif;
-      margin-bottom: 1rem;
-    }
-    
-    /* Newsletter Signup */
-    .newsletter {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: var(--content-bg);
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(0,51,102,0.5);
-    }
-    
-    .newsletter input[type="email"] {
-      padding: 0.75rem;
-      width: 60%;
-      border-radius: 8px;
-      border: none;
-      margin-right: 1rem;
-    }
-    
-    .newsletter button {
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 8px;
-      background-color: var(--accent);
-      color: var(--text-dark);
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    
-    .newsletter button:hover {
-      background-color: #002e4d;
-      color: #fff;
-    }
-    
-    /* Poll / Survey Section */
-    .poll-section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: var(--content-bg);
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,51,102,0.5);
-    }
-    
-    .poll-section h2 {
-      color: var(--accent);
-      font-family: 'Outfit', sans-serif;
-      margin-bottom: 1rem;
-    }
-    
-    /* Comments Section */
-    .comments-section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background-color: var(--content-bg);
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,51,102,0.5);
-    }
-    
-    .comments-section h2 {
-      color: var(--accent);
-      font-family: 'Outfit', sans-serif;
-      margin-bottom: 1rem;
-    }
-    
-    .comment {
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #444;
-      padding-bottom: 1rem;
-    }
-    
-    /* Discord Widget */
+
     .discord-widget {
       margin-top: 2rem;
       display: flex;
       justify-content: center;
     }
-    
+
     .discord-widget iframe {
       border: none;
     }
-    
-    /* GIF Section (Ticker) */
+
     .gif-section {
       margin-top: 3rem;
       text-align: center;
     }
-    
+
     .gif-section h3 {
       font-size: 2rem;
-      color: var(--accent);
+      color: #ffb6c1;
       margin-bottom: 1rem;
     }
-    
+
     .scrolling-wrapper {
       overflow: hidden;
       white-space: nowrap;
       position: relative;
     }
-    
+
     .gif-track {
       display: inline-block;
       animation: scroll-left 60s linear infinite;
     }
-    
+
     .gif-track img {
       height: 150px;
       margin: 0 10px;
       border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,51,102,0.5);
+      box-shadow: 0 0 15px #ffb6c1aa;
     }
-    
+
     @keyframes scroll-left {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
     }
-    
-    /* Gallery Section with Lightbox */
+
     .gallery-section {
       margin-top: 3rem;
       text-align: center;
     }
-    
+
     .gallery-section h3 {
       font-size: 2rem;
-      color: var(--accent);
+      color: #ffb6c1;
       margin-bottom: 1rem;
     }
-    
-    .gallery-container {
+
+    .gallery-wrapper {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      align-items: center;
+      gap: 1rem;
       flex-wrap: wrap;
     }
-    
-    .gallery-container a {
-      display: block;
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 20px rgba(138, 180, 248, 0.4);
     }
-    
-    .gallery-container img {
-      width: 300px;
+
+    .gallery-item img {
+      width: 100%;
       height: auto;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,51,102,0.5);
-      transition: transform 0.4s ease;
+      transition: transform 0.4s ease, filter 0.4s ease;
     }
-    
-    .gallery-container img:hover {
+
+    .large-item {
+      flex: 2;
+    }
+
+    .small-item {
+      flex: 1;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+      filter: brightness(1.2);
+    }
+
+    .large-item:hover {
+      transform: rotate(-5deg);
+    }
+
+    .small-item:hover {
       transform: scale(1.05);
     }
-    
-    /* Social Media Section */
-    .social-media {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 2rem;
-      text-align: center;
-    }
-    
-    .social-media h2 {
-      color: var(--accent);
-      font-family: 'Outfit', sans-serif;
-      margin-bottom: 1rem;
-    }
-    
-    /* Footer */
+
     footer {
-      background-color: var(--sidebar-bg);
+      background-color: #1c2541;
       padding: 2rem;
       text-align: center;
       margin-top: 2rem;
     }
-    
+
     footer p {
-      color: #ddd;
+      color: #ccc;
       font-size: 0.9rem;
     }
-    
-    /* Responsive */
+
+    .music-player {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .music-player h3 {
+      color: #ffb6c1;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .music-player iframe {
+      border-radius: 12px;
+      border: none;
+    }
+
     @media (max-width: 600px) {
-      body { padding-left: 0; }
+      body {
+        padding-left: 0;
+      }
+
       .sidebar {
         width: 100%;
         height: auto;
         position: relative;
         box-shadow: none;
       }
+
       .sidebar ul li {
         display: inline-block;
         margin: 0.5rem;
       }
-      .header-controls { flex-direction: column; }
-      .header-controls input[type="search"] { width: 100%; margin-bottom: 0.5rem; }
+
+      .banner img {
+        max-height: 250px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Sidebar (Categories Tab Bar) -->
+  <!-- Sidebar -->
   <div class="sidebar">
     <h2>Categories</h2>
     <ul>
@@ -459,26 +300,21 @@
       <li><a href="#">Art</a></li>
       <li><a href="#">Tech</a></li>
       <li><a href="#">Community</a></li>
-      <li><a href="#">Login</a></li>
     </ul>
   </div>
 
-  <!-- Header with Main Banner & Controls -->
+  <!-- Header -->
   <header>
     <h1>GLHF Public</h1>
     <p>Welcome To The Home Of G.L.H.F. 🌸✨</p>
-    <div class="header-controls">
-      <input type="search" placeholder="Search..." />
-      <button id="toggleMode">Toggle Dark/Light</button>
-    </div>
   </header>
 
-  <!-- Main Banner Image -->
+  <!-- Main Banner -->
   <div class="banner">
-    <img class="server-gif" src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHNjZzU1NnV5ZXZ0YTEzdHBlcTVoeDZzaWNvcmV4NXRua2I3eGFtZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCbdyB4ljtTBRTex7b/giphy.gif" alt="Main Banner GIF" />
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHNjZzU1NnV5ZXZ0YTEzdHBlcTVoeDZzaWNvcmV4NXRua2I3eGFtZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCbdyB4ljtTBRTex7b/giphy.gif" alt="Main Banner GIF" />
   </div>
 
-  <!-- Main Content (Join Our Community) -->
+  <!-- Main Content -->
   <div class="content">
     <h2>✨ Join Our Community ✨</h2>
     <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
@@ -493,127 +329,54 @@
       <li>420 & BYOB friendly 🍃🍻</li>
     </ul>
     <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Join the Server</a>
-    <!-- Discord Widget -->
+
     <div class="discord-widget">
-      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"
+        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
     </div>
   </div>
 
-  <!-- News & Updates Section -->
-  <div class="news-section">
-    <h2>Latest News</h2>
-    <div class="news-item">
-      <h3>Community Update</h3>
-      <p>We just reached 10,000 members! Check out our new gaming tournaments and weekly movie nights.</p>
+  <!-- Music Player -->
+  <div class="music-player">
+    <h3>🎵 Chill Music While You Browse</h3>
+    <iframe width="300" height="80" src="https://www.youtube.com/embed/LDU_Txk06tM?autoplay=1&mute=1&loop=1&playlist=LDU_Txk06tM" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+
+  <!-- GIF Ticker -->
+  <div class="gif-section">
+    <h3>✨ Cute & Cozy Vibes ✨</h3>
+    <div class="scrolling-wrapper">
+      <div class="gif-track">
+        <div style="display: inline-flex;">
+          <img src="https://media.giphy.com/media/3oEjHEMzT5R53QYjgk/giphy.gif" />
+          <img src="https://media.giphy.com/media/b4ab9TBk9Ornvrt9W8/giphy.gif" />
+          <img src="https://media.giphy.com/media/zWs1QFtBkzMLE7B04A/giphy.gif" />
+          <img src="https://media.giphy.com/media/3og0Iwmo4TUQXIxH44/giphy.gif" />
+          <img src="https://media.giphy.com/media/l4FGs65VfUSS8pf1e/giphy.gif" />
+        </div>
+      </div>
     </div>
-    <div class="news-item">
-      <h3>Server Improvements</h3>
-      <p>Our server now has upgraded bots, new channels, and improved moderation tools.</p>
-    </div>
   </div>
 
-  <!-- Upcoming Events Section -->
-  <div class="events-section">
-    <h2>Upcoming Events</h2>
-    <!-- Example: Embedded Google Calendar (Replace src with your calendar embed code) -->
-    <iframe src="https://calendar.google.com/calendar/embed?src=your_calendar_id%40group.calendar.google.com&ctz=America%2FNew_York" style="border: 0" width="900" height="300" frameborder="0" scrolling="no"></iframe>
-  </div>
-
-  <!-- Newsletter Signup Section -->
-  <div class="newsletter">
-    <h2>Newsletter Signup</h2>
-    <p>Subscribe to receive the latest updates and exclusive content.</p>
-    <form action="#" method="post">
-      <input type="email" placeholder="Your email address" required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </div>
-
-  <!-- Poll / Survey Section -->
-  <div class="poll-section">
-    <h2>Community Poll</h2>
-    <p>Which new feature would you like to see next?</p>
-    <form action="#" method="post">
-      <label><input type="radio" name="poll" value="new-channels" /> New Channels</label><br/>
-      <label><input type="radio" name="poll" value="custom-roles" /> Custom Roles</label><br/>
-      <label><input type="radio" name="poll" value="game-tournaments" /> Game Tournaments</label><br/>
-      <button type="submit">Vote</button>
-    </form>
-  </div>
-
-  <!-- Comments Section -->
-  <div class="comments-section">
-    <h2>Comments</h2>
-    <div class="comment">
-      <p><strong>User1:</strong> This server is awesome!</p>
-    </div>
-    <div class="comment">
-      <p><strong>User2:</strong> Loving the new movie nights!</p>
-    </div>
-    <form action="#" method="post">
-      <textarea placeholder="Leave a comment..." rows="4" style="width: 100%; border-radius: 8px; padding: 0.5rem;"></textarea>
-      <button type="submit" style="margin-top: 0.5rem; padding: 0.5rem 1rem; border: none; border-radius: 8px; background-color: var(--accent); color: var(--text-dark);">Post Comment</button>
-    </form>
-  </div>
-
-  <!-- Gallery Section with Lightbox -->
+  <!-- Gallery -->
   <div class="gallery-section">
     <h3>✨ Gallery of Cute Moments ✨</h3>
-    <div class="gallery-container">
-      <a href="https://cdn.discordapp.com/attachments/1333119346083364974/1358271442533355744/2025-01-23_22.png" data-lightbox="gallery" data-title="Gallery Image 1">
-        <img src="https://cdn.discordapp.com/attachments/1333119346083364974/1358271442533355744/2025-01-23_22.png" alt="Gallery Image 1" />
-      </a>
-      <a href="https://media.discordapp.net/attachments/1333119346083364974/1358274889974419507/2025-01-19_00.png" data-lightbox="gallery" data-title="Gallery Image 2">
-        <img src="https://media.discordapp.net/attachments/1333119346083364974/1358274889974419507/2025-01-19_00.png" alt="Gallery Image 2" />
-      </a>
-      <a href="https://media.discordapp.net/attachments/1333119346083364974/1358230742223683594/2025-04-05_20.01.39.png" data-lightbox="gallery" data-title="Gallery Image 3">
-        <img src="https://media.discordapp.net/attachments/1333119346083364974/1358230742223683594/2025-04-05_20.01.39.png" alt="Gallery Image 3" />
-      </a>
+    <div class="gallery-wrapper">
+      <div class="gallery-item large-item">
+        <img src="https://cdn.discordapp.com/attachments/1333119346083364974/1358271442533355744/2025-01-23_22.png" />
+      </div>
+      <div class="gallery-item small-item">
+        <img src="https://media.discordapp.net/attachments/1333119346083364974/1358274889974419507/2025-01-19_00.png" />
+      </div>
+      <div class="gallery-item small-item">
+        <img src="https://media.discordapp.net/attachments/1333119346083364974/1358230742223683594/2025-04-05_20.01.39.png" />
+      </div>
     </div>
-  </div>
-
-  <!-- Social Media Section -->
-  <div class="social-media">
-    <h2>Follow Us</h2>
-    <!-- Example: Embedded Twitter Timeline -->
-    <a class="twitter-timeline" data-height="400" href="https://twitter.com/TwitterDev?ref_src=twsrc%5Etfw">Tweets by GLHF Public</a>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2025 GLHF Public | Made with love ✨</p>
-    <!-- Google Analytics Placeholder (Insert your tracking code below) -->
-    <!-- 
-    <script>
-      // Google Analytics tracking code goes here
-    </script>
-    -->
   </footer>
-
-  <!-- Live Chat Widget (Example: Tawk.to) -->
-  <script type="text/javascript">
-    // Replace with your own Tawk.to widget code if available
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-      var s1=document.createElement("script"), s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/default';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-    })();
-  </script>
-
-  <!-- Lightbox JS for Gallery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-
-  <!-- Dark/Light Mode Toggle Script -->
-  <script>
-    const toggleButton = document.getElementById('toggleMode');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('light-mode');
-    });
-  </script>
 </body>
 </html>
