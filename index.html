@@ -16,7 +16,8 @@
 
     body {
       font-family: 'Quicksand', sans-serif;
-      background-color: var(--bg);
+      background: url('https://your-image-link.com/background.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: var(--text);
       padding-left: 220px;
       transition: background 0.3s ease, color 0.3s ease;
@@ -74,9 +75,10 @@
     }
 
     header {
-      background-color: #2a2a40;
+      background-color: rgba(42, 42, 64, 0.8);
       padding: 2rem;
       text-align: center;
+      border-radius: 10px;
     }
 
     header h1 {
@@ -195,9 +197,6 @@
       filter: brightness(1.2);
     }
 
-    .large-item:hover { transform: rotate(-10deg); }
-    .small-item:hover { transform: scale(1.05); }
-
     .music-player {
       margin-top: 2rem;
       text-align: center;
@@ -263,6 +262,11 @@
       background-color: #3456a6;
     }
 
+    .shop img {
+      width: 30px;
+      margin-right: 10px;
+    }
+
     @media (max-width: 600px) {
       body { padding-left: 0; }
       .sidebar { width: 100%; position: relative; }
@@ -321,48 +325,24 @@
     </div>
   </div>
 
-  <div class="gif-section">
-    <h3>✨ Cute & Cozy Vibes ✨</h3>
-    <div class="scrolling-wrapper">
-      <div class="gif-track">
-        <div style="display: inline-flex;">
-          <img src="https://media.giphy.com/media/3oEjHEMzT5R53QYjgk/giphy.gif" />
-          <img src="https://media.giphy.com/media/b4ab9TBk9Ornvrt9W8/giphy.gif" />
-          <img src="https://media.giphy.com/media/zWs1QFtBkzMLE7B04A/giphy.gif" />
-          <img src="https://media.giphy.com/media/3og0Iwmo4TUQXIxH44/giphy.gif" />
-          <img src="https://media.giphy.com/media/l4FGs65VfUSS8pf1e/giphy.gif" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="gallery-section">
-    <h3>✨ Gallery of Cute Moments ✨</h3>
-    <div class="gallery-wrapper">
-      <div class="gallery-item large-item">
-        <img src="https://i.imgur.com/0PZVjVc.png" alt="Gallery Image 1" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://i.imgur.com/prVoFUS.png" alt="Gallery Image 2" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://imgur.com/9b1uu7C" alt="Gallery Image 3" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://i.imgur.com/XvqyvOM.png" alt="Gallery Image 4" />
-      </div>
-    </div>
-  </div>
-
   <!-- 🍪 Cookie Game Section -->
   <div class="cookie-game">
     <h2>🍪 Cozy Cookie Clicker</h2>
     <p>Cookies: <span id="cookieCount">0</span></p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Chocolate_Chip_Cookie.png" alt="cookie" class="cookie" onclick="clickCookie()" />
     <div class="shop">
-      <button onclick="buyUpgrade('grandma')">👵 Grandma (10 cookies)</button>
-      <button onclick="buyUpgrade('oven')">🔥 Oven (50 cookies)</button>
-      <button onclick="buyUpgrade('factory')">🏭 Factory (200 cookies)</button>
+      <button onclick="buyUpgrade('grandma')">
+        <img src="https://img.icons8.com/ios/452/granny.png" alt="Grandma Icon" />
+        👵 Grandma (10 cookies)
+      </button>
+      <button onclick="buyUpgrade('oven')">
+        <img src="https://img.icons8.com/ios/452/oven.png" alt="Oven Icon" />
+        🔥 Oven (50 cookies)
+      </button>
+      <button onclick="buyUpgrade('factory')">
+        <img src="https://img.icons8.com/ios/452/factory.png" alt="Factory Icon" />
+        🏭 Factory (200 cookies)
+      </button>
     </div>
   </div>
 
