@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GLHF Republic </title>
+  <title>GLHF Republic</title>
   <link rel="icon" href="https://imgur.com/hFNrb9j.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
@@ -220,6 +220,49 @@
       color: #aaa;
     }
 
+    /* Cookie Clicker Game */
+    .cookie-game {
+      margin-top: 4rem;
+      padding: 2rem;
+      background-color: #1f1f38;
+      border-radius: 12px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 20px #4476d666;
+    }
+
+    .cookie-game h2 {
+      font-family: 'Outfit', sans-serif;
+      color: var(--accent);
+    }
+
+    .cookie {
+      width: 150px;
+      height: 150px;
+      margin: 20px auto;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .cookie:hover {
+      transform: scale(1.1);
+    }
+
+    .shop button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .shop button:hover {
+      background-color: #3456a6;
+    }
+
     @media (max-width: 600px) {
       body { padding-left: 0; }
       .sidebar { width: 100%; position: relative; }
@@ -311,8 +354,63 @@
     </div>
   </div>
 
+  <!-- 🍪 Cookie Game Section -->
+  <div class="cookie-game">
+    <h2>🍪 Cozy Cookie Clicker</h2>
+    <p>Cookies: <span id="cookieCount">0</span></p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Chocolate_Chip_Cookie.png" alt="cookie" class="cookie" onclick="clickCookie()" />
+    <div class="shop">
+      <button onclick="buyUpgrade('grandma')">👵 Grandma (10 cookies)</button>
+      <button onclick="buyUpgrade('oven')">🔥 Oven (50 cookies)</button>
+      <button onclick="buyUpgrade('factory')">🏭 Factory (200 cookies)</button>
+    </div>
+  </div>
+
   <footer>
-    <p>&copy; 2025 GLHF Reublic | Made with love ✨</p>
+    <p>&copy; 2025 GLHF Republic | Made with love ✨</p>
   </footer>
+
+  <script>
+    let cookies = parseInt(localStorage.getItem('cookies')) || 0;
+    let upgrades = JSON.parse(localStorage.getItem('upgrades')) || { grandma: 0, oven: 0, factory: 0 };
+
+    const cpsRates = { grandma: 1, oven: 5, factory: 15 };
+
+    function updateDisplay() {
+      document.getElementById("cookieCount").innerText = cookies;
+    }
+
+    function clickCookie() {
+      cookies++;
+      updateDisplay();
+      saveGame();
+    }
+
+    function buyUpgrade(type) {
+      const cost = { grandma: 10, oven: 50, factory: 200 }[type];
+      if (cookies >= cost) {
+        cookies -= cost;
+        upgrades[type]++;
+        updateDisplay();
+        saveGame();
+      }
+    }
+
+    function generateCookies() {
+      for (let key in upgrades) {
+        cookies += upgrades[key] * cpsRates[key];
+      }
+      updateDisplay();
+      saveGame();
+    }
+
+    function saveGame() {
+      localStorage.setItem('cookies', cookies);
+      localStorage.setItem('upgrades', JSON.stringify(upgrades));
+    }
+
+    setInterval(generateCookies, 1000);
+    updateDisplay();
+  </script>
 </body>
 </html>
