@@ -263,10 +263,47 @@
       background-color: #3456a6;
     }
 
-    @media (max-width: 600px) {
-      body { padding-left: 0; }
-      .sidebar { width: 100%; position: relative; }
-      .sidebar ul li { display: inline-block; margin: 0.5rem; }
+    /* Pet Game */
+    .pet-game {
+      margin-top: 3rem;
+      padding: 2rem;
+      background-color: #292940;
+      border-radius: 12px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 0 20px #4476d6aa;
+    }
+
+    .pet-game h2 {
+      font-family: 'Outfit', sans-serif;
+      color: var(--accent);
+    }
+
+    .pet-image {
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .pet-buttons {
+      margin-top: 1rem;
+    }
+
+    .pet-buttons button {
+      background-color: var(--accent);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .pet-buttons button:hover {
+      background-color: #3456a6;
     }
   </style>
 </head>
@@ -366,6 +403,17 @@
     </div>
   </div>
 
+  <!-- 🐾 Pet Game Section -->
+  <div class="pet-game">
+    <h2>🐾 Adopt Your Pet</h2>
+    <img id="petImage" src="https://placekitten.com/150/150" alt="Pet" class="pet-image" />
+    <div class="pet-buttons">
+      <button onclick="feedPet()">Feed</button>
+      <button onclick="playWithPet()">Play</button>
+    </div>
+    <p>Happiness: <span id="petHappiness">0</span></p>
+  </div>
+
   <footer>
     <p>&copy; 2025 GLHF Republic | Made with love ✨</p>
   </footer>
@@ -373,11 +421,13 @@
   <script>
     let cookies = parseInt(localStorage.getItem('cookies')) || 0;
     let upgrades = JSON.parse(localStorage.getItem('upgrades')) || { grandma: 0, oven: 0, factory: 0 };
-
     const cpsRates = { grandma: 1, oven: 5, factory: 15 };
+
+    let petHappiness = 0;
 
     function updateDisplay() {
       document.getElementById("cookieCount").innerText = cookies;
+      document.getElementById("petHappiness").innerText = petHappiness;
     }
 
     function clickCookie() {
@@ -407,6 +457,16 @@
     function saveGame() {
       localStorage.setItem('cookies', cookies);
       localStorage.setItem('upgrades', JSON.stringify(upgrades));
+    }
+
+    function feedPet() {
+      petHappiness += 10;
+      updateDisplay();
+    }
+
+    function playWithPet() {
+      petHappiness += 5;
+      updateDisplay();
     }
 
     setInterval(generateCookies, 1000);
