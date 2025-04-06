@@ -16,8 +16,7 @@
 
     body {
       font-family: 'Quicksand', sans-serif;
-      background: url('https://your-image-link.com/background.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background-color: var(--bg);
       color: var(--text);
       padding-left: 220px;
       transition: background 0.3s ease, color 0.3s ease;
@@ -75,10 +74,9 @@
     }
 
     header {
-      background-color: rgba(42, 42, 64, 0.8);
+      background-color: #2a2a40;
       padding: 2rem;
       text-align: center;
-      border-radius: 10px;
     }
 
     header h1 {
@@ -197,6 +195,9 @@
       filter: brightness(1.2);
     }
 
+    .large-item:hover { transform: rotate(-10deg); }
+    .small-item:hover { transform: scale(1.05); }
+
     .music-player {
       margin-top: 2rem;
       text-align: center;
@@ -262,16 +263,79 @@
       background-color: #3456a6;
     }
 
-    .shop img {
-      width: 30px;
-      margin-right: 10px;
+    /* Pet Game */
+    .pet-container {
+      margin: 20px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      text-align: center;
     }
 
-    @media (max-width: 600px) {
-      body { padding-left: 0; }
-      .sidebar { width: 100%; position: relative; }
-      .sidebar ul li { display: inline-block; margin: 0.5rem; }
+    .pet {
+      width: 200px;
+      height: 200px;
+      margin: 20px auto;
+      background-color: #fff;
+      border-radius: 50%;
+      border: 5px solid #ff6b81;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('https://placekitten.com/200/200');
+      background-size: cover;
+      transition: all 0.3s ease-in-out;
     }
+
+    .pet:hover {
+      transform: scale(1.1);
+    }
+
+    .pet-name {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #ff6b81;
+    }
+
+    .pet-actions button {
+      padding: 10px 20px;
+      background-color: #ff6b81;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .pet-actions button:hover {
+      background-color: #f5a2b8;
+    }
+
+    .points {
+      font-size: 1.2rem;
+      margin-top: 20px;
+      color: #ff6b81;
+    }
+
+    .shop button {
+      padding: 10px 20px;
+      background-color: #9b59b6;
+      color: white;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      margin: 10px;
+      cursor: pointer;
+    }
+
+    .shop button:hover {
+      background-color: #7f3c7e;
+    }
+
   </style>
 </head>
 <body>
@@ -292,105 +356,4 @@
   </div>
 
   <header>
-    <h1>GLHF Republic</h1>
-    <p>Welcome To The Home Of G.L.H.F. 🌸✨</p>
-  </header>
-
-  <div class="banner">
-    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHNjZzU1NnV5ZXZ0YTEzdHBlcTVoeDZzaWNvcmV4NXRua2I3eGFtZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCbdyB4ljtTBRTex7b/giphy.gif" alt="Main Banner GIF">
-  </div>
-
-  <div class="content">
-    <h2>✨ Join Our Community ✨</h2>
-    <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
-    <ul>
-      <li>Friendly 18+ environment 💬</li>
-      <li>Weekly movie nights 🍿</li>
-      <li>Gamer channels & squads 🎮</li>
-      <li>Leveling system + ranks 💎</li>
-      <li>Arcade bots & fun commands 🤖</li>
-      <li>LGBTQ+ inclusive 🏳️‍🌈</li>
-      <li>Streamer-friendly 📸</li>
-      <li>420 & BYOB friendly 🍃🍻</li>
-    </ul>
-    <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Join the Server</a>
-
-    <div class="discord-widget">
-      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-    </div>
-
-    <div class="music-player">
-      <h3>🎵 Lofi Vibes 🎧</h3>
-      <iframe style="border-radius:12px" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" width="300" height="180" allowfullscreen allow="autoplay"></iframe>
-    </div>
-  </div>
-
-  <!-- 🍪 Cookie Game Section -->
-  <div class="cookie-game">
-    <h2>🍪 Cozy Cookie Clicker</h2>
-    <p>Cookies: <span id="cookieCount">0</span></p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Chocolate_Chip_Cookie.png" alt="cookie" class="cookie" onclick="clickCookie()" />
-    <div class="shop">
-      <button onclick="buyUpgrade('grandma')">
-        <img src="https://img.icons8.com/ios/452/granny.png" alt="Grandma Icon" />
-        👵 Grandma (10 cookies)
-      </button>
-      <button onclick="buyUpgrade('oven')">
-        <img src="https://img.icons8.com/ios/452/oven.png" alt="Oven Icon" />
-        🔥 Oven (50 cookies)
-      </button>
-      <button onclick="buyUpgrade('factory')">
-        <img src="https://img.icons8.com/ios/452/factory.png" alt="Factory Icon" />
-        🏭 Factory (200 cookies)
-      </button>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 GLHF Republic | Made with love ✨</p>
-  </footer>
-
-  <script>
-    let cookies = parseInt(localStorage.getItem('cookies')) || 0;
-    let upgrades = JSON.parse(localStorage.getItem('upgrades')) || { grandma: 0, oven: 0, factory: 0 };
-
-    const cpsRates = { grandma: 1, oven: 5, factory: 15 };
-
-    function updateDisplay() {
-      document.getElementById("cookieCount").innerText = cookies;
-    }
-
-    function clickCookie() {
-      cookies++;
-      updateDisplay();
-      saveGame();
-    }
-
-    function buyUpgrade(type) {
-      const cost = { grandma: 10, oven: 50, factory: 200 }[type];
-      if (cookies >= cost) {
-        cookies -= cost;
-        upgrades[type]++;
-        updateDisplay();
-        saveGame();
-      }
-    }
-
-    function generateCookies() {
-      for (let key in upgrades) {
-        cookies += upgrades[key] * cpsRates[key];
-      }
-      updateDisplay();
-      saveGame();
-    }
-
-    function saveGame() {
-      localStorage.setItem('cookies', cookies);
-      localStorage.setItem('upgrades', JSON.stringify(upgrades));
-    }
-
-    setInterval(generateCookies, 1000);
-    updateDisplay();
-  </script>
-</body>
-</html>
+    <h1>
