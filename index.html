@@ -389,82 +389,6 @@
       <iframe style="border-radius:12px" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" width="300" height="180" allowfullscreen allow="autoplay"></iframe>
     </div>
   </div>
-
-  <div class="gif-section">
-    <h3>✨ Cute & Cozy Vibes ✨</h3>
-    <div class="scrolling-wrapper">
-      <div class="gif-track">
-        <div style="display: inline-flex;">
-          <img src="https://media.giphy.com/media/3oEjHEMzT5R53QYjgk/giphy.gif" />
-          <img src="https://media.giphy.com/media/b4ab9TBk9Ornvrt9W8/giphy.gif" />
-          <img src="https://media.giphy.com/media/zWs1QFtBkzMLE7B04A/giphy.gif" />
-          <img src="https://media.giphy.com/media/3og0Iwmo4TUQXIxH44/giphy.gif" />
-          <img src="https://media.giphy.com/media/l4FGs65VfUSS8pf1e/giphy.gif" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="gallery-section">
-    <h3>✨ Gallery of Cute Moments ✨</h3>
-    <div class="gallery-wrapper">
-      <div class="gallery-item large-item">
-        <img src="https://i.imgur.com/0PZVjVc.png" alt="Gallery Image 1" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://i.imgur.com/prVoFUS.png" alt="Gallery Image 2" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://imgur.com/9b1uu7C" alt="Gallery Image 3" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://i.imgur.com/XvqyvOM.png" alt="Gallery Image 4" />
-      </div>
-    </div>
-  </div>
-
-  <!-- 🍪 Cookie Game Section -->
-  <div class="cookie-game">
-    <h2>🍪 Cozy Cookie Clicker</h2>
-    <p>Cookies: <span id="cookieCount">0</span></p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Cookie_clicker_icon.svg" alt="Cookie Icon" class="cookie" onclick="clickCookie()">
-    <div class="shop">
-      <h3>Shop</h3>
-      <button onclick="buyUpgrade(10, 1)">Upgrade 1 (10 Cookies)</button>
-      <button onclick="buyUpgrade(50, 2)">Upgrade 2 (50 Cookies)</button>
-    </div>
-    <div class="leaderboard">
-      <h3>Leaderboard</h3>
-      <ul id="leaderboard">
-        <!-- Leaderboard entries go here -->
-      </ul>
-      <input type="text" id="username" placeholder="Enter your name" />
-      <button onclick="saveScore()">Save Score</button>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 GLHF Republic - All rights reserved.</p>
-  </footer>
-
-  <script>
-    let cookieCount = 0;
-    let upgrades = [1, 2]; // Example upgrades
-
-    function clickCookie() {
-      cookieCount++;
-      document.getElementById("cookieCount").textContent = cookieCount;
-    }
-
-    function buyUpgrade(cost, upgradeId) {
-      if (cookieCount >= cost) {
-        cookieCount -= cost;
-        document.getElementById("cookieCount").textContent = cookieCount;
-        upgrades[upgradeId - 1]++;
-      } else {
-        alert("Not enough cookies!");
-      }
-    }
 <!-- Weather Widget HTML -->
 <div class="weather-widget">
   <h3>Current Weather</h3>
@@ -545,6 +469,82 @@
   // Load weather data when the page is ready
   window.onload = fetchWeather;
 </script>
+
+  <div class="gif-section">
+    <h3>✨ Cute & Cozy Vibes ✨</h3>
+    <div class="scrolling-wrapper">
+      <div class="gif-track">
+        <div style="display: inline-flex;">
+          <img src="https://media.giphy.com/media/3oEjHEMzT5R53QYjgk/giphy.gif" />
+          <img src="https://media.giphy.com/media/b4ab9TBk9Ornvrt9W8/giphy.gif" />
+          <img src="https://media.giphy.com/media/zWs1QFtBkzMLE7B04A/giphy.gif" />
+          <img src="https://media.giphy.com/media/3og0Iwmo4TUQXIxH44/giphy.gif" />
+          <img src="https://media.giphy.com/media/l4FGs65VfUSS8pf1e/giphy.gif" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gallery-section">
+    <h3>✨ Gallery of Cute Moments ✨</h3>
+    <div class="gallery-wrapper">
+      <div class="gallery-item large-item">
+        <img src="https://i.imgur.com/0PZVjVc.png" alt="Gallery Image 1" />
+      </div>
+      <div class="gallery-item small-item">
+        <img src="https://i.imgur.com/prVoFUS.png" alt="Gallery Image 2" />
+      </div>
+      <div class="gallery-item small-item">
+        <img src="https://imgur.com/9b1uu7C" alt="Gallery Image 3" />
+      </div>
+      <div class="gallery-item small-item">
+        <img src="https://i.imgur.com/XvqyvOM.png" alt="Gallery Image 4" />
+      </div>
+    </div>
+  </div>
+
+  <!-- 🍪 Cookie Game Section -->
+  <div class="cookie-game">
+    <h2>🍪 Cozy Cookie Clicker</h2>
+    <p>Cookies: <span id="cookieCount">0</span></p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Cookie_clicker_icon.svg" alt="Cookie Icon" class="cookie" onclick="clickCookie()">
+    <div class="shop">
+      <h3>Shop</h3>
+      <button onclick="buyUpgrade(10, 1)">Upgrade 1 (10 Cookies)</button>
+      <button onclick="buyUpgrade(50, 2)">Upgrade 2 (50 Cookies)</button>
+    </div>
+    <div class="leaderboard">
+      <h3>Leaderboard</h3>
+      <ul id="leaderboard">
+        <!-- Leaderboard entries go here -->
+      </ul>
+      <input type="text" id="username" placeholder="Enter your name" />
+      <button onclick="saveScore()">Save Score</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 GLHF Republic - All rights reserved.</p>
+  </footer>
+
+  <script>
+    let cookieCount = 0;
+    let upgrades = [1, 2]; // Example upgrades
+
+    function clickCookie() {
+      cookieCount++;
+      document.getElementById("cookieCount").textContent = cookieCount;
+    }
+
+    function buyUpgrade(cost, upgradeId) {
+      if (cookieCount >= cost) {
+        cookieCount -= cost;
+        document.getElementById("cookieCount").textContent = cookieCount;
+        upgrades[upgradeId - 1]++;
+      } else {
+        alert("Not enough cookies!");
+      }
+    }
 
     // Save score to localStorage and update leaderboard
     function saveScore() {
