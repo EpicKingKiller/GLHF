@@ -389,7 +389,7 @@
       <iframe style="border-radius:12px" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" width="300" height="180" allowfullscreen allow="autoplay"></iframe>
     </div>
   </div>
-<!-- Weather Widget HTML -->
+<!-- Weather Widget HTML (place this inside the <body> section where you want the weather widget to appear) -->
 <div class="weather-widget">
   <h3>Current Weather</h3>
   <div class="weather-container">
@@ -401,7 +401,7 @@
   </div>
 </div>
 
-<!-- Add this inside your <head> section -->
+<!-- Add this inside your <head> section for styling -->
 <style>
   .weather-widget {
     background-color: #2a2a40;
@@ -447,7 +447,7 @@
   }
 </style>
 
-<!-- Add this inside your <body> tag just before the closing </body> tag -->
+<!-- Add this inside your <body> section just before the closing </body> tag -->
 <script>
   const apiKey = 'YOUR_API_KEY'; // Replace with your weather API key
   const city = 'YOUR_CITY'; // Replace with your city name (e.g., 'London', 'New York')
@@ -469,6 +469,7 @@
   // Load weather data when the page is ready
   window.onload = fetchWeather;
 </script>
+
 
   <div class="gif-section">
     <h3>✨ Cute & Cozy Vibes ✨</h3>
