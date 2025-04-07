@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -371,13 +368,10 @@
       <li>420 & BYOB friendly 🍃🍻</li>
     </ul>
 
-
-
-    <!-- Add the Discord login button here -->
     <a href="https://discord.com/oauth2/authorize?client_id=1358599573328887946&scope=identify%20guilds&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdiscord%2Fcallback">
       <button>Login with Discord</button>
     </a>
-    
+
     <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Join the Server</a>
 
     <div class="discord-widget">
@@ -389,197 +383,21 @@
       <iframe style="border-radius:12px" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" width="300" height="180" allowfullscreen allow="autoplay"></iframe>
     </div>
   </div>
-<!-- Weather Widget HTML (place this inside the <body> section where you want the weather widget to appear) -->
-<div class="weather-widget">
-  <h3>Current Weather</h3>
-  <div class="weather-container">
-    <div id="weather-icon" class="weather-icon"></div>
-    <div id="weather-info" class="weather-info">
-      <p id="temperature"></p>
-      <p id="condition"></p>
-    </div>
-  </div>
-</div>
 
-<!-- Add this inside your <head> section for styling -->
-<style>
-  .weather-widget {
-    background-color: #2a2a40;
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(68, 118, 214, 0.5);
-    text-align: center;
-    width: 250px;
-    color: #fff;
-    font-family: 'Quicksand', sans-serif;
-    margin-top: 20px;
-  }
-
-  .weather-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .weather-icon {
-    width: 50px;
-    height: 50px;
-    background-size: cover;
-    background-position: center;
-    animation: weather-icon-animation 2s infinite ease-in-out;
-  }
-
-  .weather-info p {
-    margin: 0;
-  }
-
-  @keyframes weather-icon-animation {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-</style>
-
-<!-- Add this inside your <body> section just before the closing </body> tag -->
-<script>
-  const apiKey = 'YOUR_API_KEY'; // Replace with your weather API key
-  const city = 'YOUR_CITY'; // Replace with your city name (e.g., 'London', 'New York')
-
-  async function fetchWeather() {
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`);
-    const data = await response.json();
-
-    const temperature = data.main.temp;
-    const condition = data.weather[0].description;
-    const iconCode = data.weather[0].icon;
-
-    // Update the widget with weather data
-    document.getElementById("temperature").textContent = `${temperature}°C`;
-    document.getElementById("condition").textContent = condition;
-    document.getElementById("weather-icon").style.backgroundImage = `url('https://openweathermap.org/img/wn/${iconCode}.png')`;
-  }
-
-  // Load weather data when the page is ready
-  window.onload = fetchWeather;
-</script>
-
-
-  <div class="gif-section">
-    <h3>✨ Cute & Cozy Vibes ✨</h3>
-    <div class="scrolling-wrapper">
-      <div class="gif-track">
-        <div style="display: inline-flex;">
-          <img src="https://media.giphy.com/media/3oEjHEMzT5R53QYjgk/giphy.gif" />
-          <img src="https://media.giphy.com/media/b4ab9TBk9Ornvrt9W8/giphy.gif" />
-          <img src="https://media.giphy.com/media/zWs1QFtBkzMLE7B04A/giphy.gif" />
-          <img src="https://media.giphy.com/media/3og0Iwmo4TUQXIxH44/giphy.gif" />
-          <img src="https://media.giphy.com/media/l4FGs65VfUSS8pf1e/giphy.gif" />
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="gallery-section">
-    <h3>✨ Gallery of Cute Moments ✨</h3>
-    <div class="gallery-wrapper">
-      <div class="gallery-item large-item">
-        <img src="https://i.imgur.com/0PZVjVc.png" alt="Gallery Image 1" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://i.imgur.com/prVoFUS.png" alt="Gallery Image 2" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://imgur.com/9b1uu7C" alt="Gallery Image 3" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://i.imgur.com/XvqyvOM.png" alt="Gallery Image 4" />
-      </div>
-    </div>
-  </div>
-
-  <!-- 🍪 Cookie Game Section -->
-  <div class="cookie-game">
-    <h2>🍪 Cozy Cookie Clicker</h2>
-    <p>Cookies: <span id="cookieCount">0</span></p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Cookie_clicker_icon.svg" alt="Cookie Icon" class="cookie" onclick="clickCookie()">
-    <div class="shop">
-      <h3>Shop</h3>
-      <button onclick="buyUpgrade(10, 1)">Upgrade 1 (10 Cookies)</button>
-      <button onclick="buyUpgrade(50, 2)">Upgrade 2 (50 Cookies)</button>
-    </div>
-    <div class="leaderboard">
-      <h3>Leaderboard</h3>
-      <ul id="leaderboard">
-        <!-- Leaderboard entries go here -->
-      </ul>
-      <input type="text" id="username" placeholder="Enter your name" />
-      <button onclick="saveScore()">Save Score</button>
+  <!-- Weather Widget -->
+  <div class="weather-widget">
+    <h3>Current Weather</h3>
+    <div class="weather-container">
+      <div id="weather" style="font-size:1.5rem;"></div>
     </div>
   </div>
 
   <footer>
-    <p>&copy; 2025 GLHF Republic - All rights reserved.</p>
+    <p>&copy; 2025 GLHF Republic. All Rights Reserved.</p>
   </footer>
+</body>
+</html>
 
-  <script>
-    let cookieCount = 0;
-    let upgrades = [1, 2]; // Example upgrades
-
-    function clickCookie() {
-      cookieCount++;
-      document.getElementById("cookieCount").textContent = cookieCount;
-    }
-
-    function buyUpgrade(cost, upgradeId) {
-      if (cookieCount >= cost) {
-        cookieCount -= cost;
-        document.getElementById("cookieCount").textContent = cookieCount;
-        upgrades[upgradeId - 1]++;
-      } else {
-        alert("Not enough cookies!");
-      }
-    }
-
-    // Save score to localStorage and update leaderboard
-    function saveScore() {
-      const username = document.getElementById("username").value;
-      if (username.trim() === "") {
-        alert("Please enter a username!");
-        return;
-      }
-      let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
-      leaderboard.push({ username, score: cookieCount });
-      leaderboard.sort((a, b) => b.score - a.score); // Sort by score
-      localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
-
-      // Update leaderboard UI
-      updateLeaderboard();
-    }
-
-    function updateLeaderboard() {
-      const leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
-      const leaderboardList = document.getElementById("leaderboard");
-      leaderboardList.innerHTML = "";
-      leaderboard.slice(0, 5).forEach(entry => {
-        const li = document.createElement("li");
-        li.textContent = `${entry.username}: ${entry.score} cookies`;
-        leaderboardList.appendChild(li);
-      });
-    }
-
-    // Initialize leaderboard
-    window.onload = function() {
-      updateLeaderboard();
-    };
-  </script>
-</body
 
 
 
