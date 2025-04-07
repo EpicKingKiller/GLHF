@@ -220,111 +220,44 @@
       color: #aaa;
     }
 
-    /* Cookie Clicker Game */
-    .cookie-game {
-      margin-top: 4rem;
-      padding: 2rem;
+    /* Weather Widget */
+    .weather {
       background-color: #1f1f38;
+      padding: 1rem;
+      margin-top: 2rem;
       border-radius: 12px;
       text-align: center;
       color: #fff;
-      box-shadow: 0 0 20px #4476d666;
     }
 
-    .cookie-game h2 {
-      font-family: 'Outfit', sans-serif;
-      color: var(--accent);
+    /* Trending Tweets */
+    .tweets {
+      margin-top: 2rem;
+      background-color: #292940;
+      padding: 1rem;
+      border-radius: 12px;
+      color: #fff;
+      text-align: center;
     }
 
-    .cookie {
-      width: 150px;
-      height: 150px;
-      margin: 20px auto;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-    }
-
-    .cookie:hover {
-      transform: scale(1.1);
-    }
-
-    .shop button {
-      margin: 10px;
-      padding: 10px 20px;
-      background-color: var(--accent);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .shop button:hover {
-      background-color: #3456a6;
-    }
-
-    /* Leaderboard Section */
-    .leaderboard {
-      margin-top: 4rem;
+    /* Poll Section */
+    .poll {
+      margin-top: 2rem;
       background-color: #292940;
       padding: 2rem;
-      color: #fff;
       border-radius: 12px;
-      box-shadow: 0 0 20px #4476d6aa;
+      color: #fff;
       text-align: center;
     }
 
-    .leaderboard ul {
-      list-style-type: none;
-      padding: 0;
-    }
-
-    .leaderboard li {
-      margin: 1rem 0;
-      font-size: 1.2rem;
-    }
-
-    /* Pet Game Section */
-    .pet-game {
+    /* Countdown Timer */
+    .countdown {
       margin-top: 3rem;
+      background-color: #4476d6;
       padding: 2rem;
-      background-color: #292940;
       border-radius: 12px;
       color: #fff;
       text-align: center;
-      box-shadow: 0 0 20px #4476d6aa;
-    }
-
-    .pet-game h2 {
-      font-family: 'Outfit', sans-serif;
-      color: var(--accent);
-    }
-
-    .pet-image {
-      width: 150px;
-      height: 150px;
-      margin: 10px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .pet-buttons {
-      margin-top: 1rem;
-    }
-
-    .pet-buttons button {
-      background-color: var(--accent);
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 8px;
-      font-weight: bold;
-      margin: 10px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    .pet-buttons button:hover {
-      background-color: #3456a6;
     }
   </style>
 </head>
@@ -365,135 +298,41 @@
       <li>Arcade bots & fun commands 🤖</li>
       <li>LGBTQ+ inclusive 🏳️‍🌈</li>
       <li>Streamer-friendly 📸</li>
-      <li>420 & BYOB friendly 🍃🍻</li>
     </ul>
-
-
-
-    <!-- Add the Discord login button here -->
-    <a href="https://discord.com/oauth2/authorize?client_id=1358599573328887946&scope=identify%20guilds&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdiscord%2Fcallback">
-      <button>Login with Discord</button>
-    </a>
-    
-    <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Join the Server</a>
-
-    <div class="discord-widget">
-      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-    </div>
-
-    <div class="music-player">
-      <h3>🎵 Lofi Vibes 🎧</h3>
-      <iframe style="border-radius:12px" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" width="300" height="180" allowfullscreen allow="autoplay"></iframe>
-    </div>
+    <a href="https://discord.gg/yourinvite" class="button">Join The Fun!</a>
   </div>
 
-  <div class="gif-section">
-    <h3>✨ Cute & Cozy Vibes ✨</h3>
-    <div class="scrolling-wrapper">
-      <div class="gif-track">
-        <div style="display: inline-flex;">
-          <img src="https://media.giphy.com/media/3oEjHEMzT5R53QYjgk/giphy.gif" />
-          <img src="https://media.giphy.com/media/b4ab9TBk9Ornvrt9W8/giphy.gif" />
-          <img src="https://media.giphy.com/media/zWs1QFtBkzMLE7B04A/giphy.gif" />
-          <img src="https://media.giphy.com/media/3og0Iwmo4TUQXIxH44/giphy.gif" />
-          <img src="https://media.giphy.com/media/l4FGs65VfUSS8pf1e/giphy.gif" />
-        </div>
-      </div>
-    </div>
+  <!-- Weather Widget -->
+  <div class="weather">
+    <h3>Current Weather</h3>
+    <p>Location: New York</p>
+    <p>Temperature: 18°C</p>
+    <p>Condition: Clear Sky</p>
   </div>
 
-  <div class="gallery-section">
-    <h3>✨ Gallery of Cute Moments ✨</h3>
-    <div class="gallery-wrapper">
-      <div class="gallery-item large-item">
-        <img src="https://i.imgur.com/0PZVjVc.png" alt="Gallery Image 1" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://i.imgur.com/prVoFUS.png" alt="Gallery Image 2" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://imgur.com/9b1uu7C" alt="Gallery Image 3" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://i.imgur.com/XvqyvOM.png" alt="Gallery Image 4" />
-      </div>
-    </div>
+  <!-- Trending Tweets -->
+  <div class="tweets">
+    <h3>Trending Tweets</h3>
+    <p>@example: "Check out this amazing new game!"</p>
+    <p>@anotherExample: "Who else is excited for the next big movie?"</p>
   </div>
 
-  <!-- 🍪 Cookie Game Section -->
-  <div class="cookie-game">
-    <h2>🍪 Cozy Cookie Clicker</h2>
-    <p>Cookies: <span id="cookieCount">0</span></p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Cookie_clicker_icon.svg" alt="Cookie Icon" class="cookie" onclick="clickCookie()">
-    <div class="shop">
-      <h3>Shop</h3>
-      <button onclick="buyUpgrade(10, 1)">Upgrade 1 (10 Cookies)</button>
-      <button onclick="buyUpgrade(50, 2)">Upgrade 2 (50 Cookies)</button>
-    </div>
-    <div class="leaderboard">
-      <h3>Leaderboard</h3>
-      <ul id="leaderboard">
-        <!-- Leaderboard entries go here -->
-      </ul>
-      <input type="text" id="username" placeholder="Enter your name" />
-      <button onclick="saveScore()">Save Score</button>
-    </div>
+  <!-- Poll Section -->
+  <div class="poll">
+    <h3>Poll: What’s your favorite game?</h3>
+    <button>Option 1: Game A</button>
+    <button>Option 2: Game B</button>
+    <button>Option 3: Game C</button>
+  </div>
+
+  <!-- Countdown Timer -->
+  <div class="countdown">
+    <h3>Countdown to Event</h3>
+    <p>Event Starts In: 01:00:00</p>
   </div>
 
   <footer>
-    <p>&copy; 2025 GLHF Republic - All rights reserved.</p>
+    <p>Made with 💜 by GLHF Republic</p>
   </footer>
-
-  <script>
-    let cookieCount = 0;
-    let upgrades = [1, 2]; // Example upgrades
-
-    function clickCookie() {
-      cookieCount++;
-      document.getElementById("cookieCount").textContent = cookieCount;
-    }
-
-    function buyUpgrade(cost, upgradeId) {
-      if (cookieCount >= cost) {
-        cookieCount -= cost;
-        document.getElementById("cookieCount").textContent = cookieCount;
-        upgrades[upgradeId - 1]++;
-      } else {
-        alert("Not enough cookies!");
-      }
-    }
-
-    // Save score to localStorage and update leaderboard
-    function saveScore() {
-      const username = document.getElementById("username").value;
-      if (username.trim() === "") {
-        alert("Please enter a username!");
-        return;
-      }
-      let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
-      leaderboard.push({ username, score: cookieCount });
-      leaderboard.sort((a, b) => b.score - a.score); // Sort by score
-      localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
-
-      // Update leaderboard UI
-      updateLeaderboard();
-    }
-
-    function updateLeaderboard() {
-      const leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
-      const leaderboardList = document.getElementById("leaderboard");
-      leaderboardList.innerHTML = "";
-      leaderboard.slice(0, 5).forEach(entry => {
-        const li = document.createElement("li");
-        li.textContent = `${entry.username}: ${entry.score} cookies`;
-        leaderboardList.appendChild(li);
-      });
-    }
-
-    // Initialize leaderboard
-    window.onload = function() {
-      updateLeaderboard();
-    };
-  </script>
 </body>
 </html>
