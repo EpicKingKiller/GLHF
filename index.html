@@ -579,5 +579,429 @@
       updateLeaderboard();
     };
   </script>
+</body
+
+
+  
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GLHF Republic</title>
+  <link rel="icon" href="https://imgur.com/hFNrb9j.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      cursor: url('https://cur.cursors-4u.net/games/gam-14/gam1328.cur'), auto;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      padding-left: 220px;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    :root {
+      --bg: #1e1e2f;
+      --text: #ffffff;
+      --accent: #4476d6;
+    }
+
+    .light-theme {
+      --bg: #ffffff;
+      --text: #1e1e2f;
+      --accent: #b38bfa;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100vh;
+      background-color: #2a2a40;
+      padding-top: 2rem;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.5);
+      overflow-y: auto;
+    }
+
+    .sidebar h2 {
+      font-family: 'Outfit', sans-serif;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .sidebar ul li {
+      margin: 1rem 0;
+      text-align: center;
+    }
+
+    .sidebar ul li a {
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: bold;
+      display: block;
+      padding: 0.5rem 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: var(--accent);
+      color: var(--bg);
+      border-radius: 8px;
+    }
+
+    header {
+      background-color: #2a2a40;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Outfit', sans-serif;
+      color: var(--accent);
+      font-size: 3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+      max-height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .content {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #292940;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #4476d677;
+    }
+
+    .content h2 {
+      color: var(--accent);
+      font-family: 'Outfit', sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    .content ul li::before {
+      content: '💜';
+      margin-right: 0.5rem;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: var(--accent);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #3456a6;
+    }
+
+    .discord-widget {
+      margin-top: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .gif-section, .gallery-section {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .scrolling-wrapper {
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .gif-track {
+      display: inline-block;
+      animation: scroll-left 60s linear infinite;
+    }
+
+    .gif-track img {
+      height: 150px;
+      margin: 0 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #4476d677;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .gallery-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 12px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 20px rgba(68, 118, 214, 0.5);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+      filter: brightness(1.2);
+    }
+
+    .large-item:hover { transform: rotate(-10deg); }
+    .small-item:hover { transform: scale(1.05); }
+
+    .music-player {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .theme-toggle {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    footer {
+      background-color: #2a2a40;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    footer p {
+      color: #aaa;
+    }
+
+    /* Cookie Clicker Game */
+    .cookie-game {
+      margin-top: 4rem;
+      padding: 2rem;
+      background-color: #1f1f38;
+      border-radius: 12px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 0 20px #4476d666;
+    }
+
+    .cookie-game h2 {
+      font-family: 'Outfit', sans-serif;
+      color: var(--accent);
+    }
+
+    .cookie {
+      width: 150px;
+      height: 150px;
+      margin: 20px auto;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .cookie:hover {
+      transform: scale(1.1);
+    }
+
+    .shop button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: var(--accent);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .shop button:hover {
+      background-color: #3456a6;
+    }
+
+    /* Leaderboard Section */
+    .leaderboard {
+      margin-top: 4rem;
+      background-color: #292940;
+      padding: 2rem;
+      color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #4476d6aa;
+      text-align: center;
+    }
+
+    .leaderboard ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .leaderboard li {
+      margin: 1rem 0;
+      font-size: 1.2rem;
+    }
+
+    /* Pet Game Section */
+    .pet-game {
+      margin-top: 3rem;
+      padding: 2rem;
+      background-color: #292940;
+      border-radius: 12px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 0 20px #4476d6aa;
+    }
+
+    .pet-game h2 {
+      font-family: 'Outfit', sans-serif;
+      color: var(--accent);
+    }
+
+    .pet-image {
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .pet-buttons {
+      margin-top: 1rem;
+    }
+
+    .pet-buttons button {
+      background-color: var(--accent);
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .pet-buttons button:hover {
+      background-color: #3456a6;
+    }
+  </style>
+</head>
+<body>
+  <div class="theme-toggle">
+    <button onclick="document.body.classList.toggle('light-theme')" class="button">🌓 Toggle Theme</button>
+  </div>
+
+  <div class="sidebar">
+    <h2>Categories</h2>
+    <ul>
+      <li><a href="newpage1.html" target="_blank">Gaming</a></li>
+      <li><a href="newpage2.html" target="_blank">Movies</a></li>
+      <li><a href="newpage3.html" target="_blank">Music</a></li>
+      <li><a href="newpage4.html" target="_blank">Art</a></li>
+      <li><a href="newpage5.html" target="_blank">Tech</a></li>
+      <li><a href="newpage6.html" target="_blank">Community</a></li>
+      <li><a href="newpage7.html" target="_blank">Mini Games</a></li>
+      <li><a href="newpage8.html" target="_blank">Discord Bots</a></li>
+    </ul>
+  </div>
+
+  <header>
+    <h1>GLHF Republic</h1>
+    <p>Welcome To The Home Of G.L.H.F. 🌸✨</p>
+  </header>
+
+  <div class="banner">
+    <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHNjZzU1NnV5ZXZ0YTEzdHBlcTVoeDZzaWNvcmV4NXRua2I3eGFtZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCbdyB4ljtTBRTex7b/giphy.gif" alt="Main Banner GIF">
+  </div>
+
+  <div class="content">
+    <h2>✨ Join Our Community ✨</h2>
+    <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
+    <ul>
+      <li>Friendly 18+ environment 💬</li>
+      <li>Weekly movie nights 🍿</li>
+      <li>Gamer channels & squads 🎮</li>
+      <li>Leveling system + ranks 💎</li>
+      <li>Arcade bots & fun commands 🤖</li>
+      <li>LGBTQ+ inclusive 🏳️‍🌈</li>
+      <li>Streamer-friendly 📸</li>
+      <li>420 & BYOB friendly 🍃🍻</li>
+    </ul>
+
+    <a href="https://discord.com/oauth2/authorize?client_id=1358599573328887946&scope=identify%20guilds&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdiscord%2Fcallback">
+      <button>Login with Discord</button>
+    </a>
+    
+    <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Join the Server</a>
+
+    <div class="discord-widget">
+      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </div>
+
+    <div class="music-player">
+      <h3>🎵 Lofi Vibes 🎧</h3>
+      <iframe src="https://open.spotify.com/embed/track/4lKbcwpkDmpqEkHZFyRYOe?utm_source=generator" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+  </div>
+
+  <div class="cookie-game">
+    <h2>🍪 Cookie Clicker Game 🍪</h2>
+    <img class="cookie" src="https://media.giphy.com/media/xT0GqXxFGZyGhtSOp2/giphy.gif" alt="Cookie" onclick="incrementCookies()">
+    <div class="cookies">Cookies: <span id="cookieCount">0</span></div>
+    <div class="shop">
+      <button onclick="buyUpgrade()">Upgrade (Cost: 100 cookies)</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 GLHF Republic | All rights reserved</p>
+  </footer>
+
+  <script>
+    let cookies = 0;
+    let upgradeCost = 100;
+
+    function incrementCookies() {
+      cookies++;
+      document.getElementById("cookieCount").innerText = cookies;
+    }
+
+    function buyUpgrade() {
+      if (cookies >= upgradeCost) {
+        cookies -= upgradeCost;
+        upgradeCost *= 1.5;
+        document.getElementById("cookieCount").innerText = cookies;
+      } else {
+        alert("Not enough cookies!");
+      }
+    }
+  </script>
 </body>
 </html>
