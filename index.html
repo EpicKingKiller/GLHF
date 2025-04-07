@@ -583,7 +583,7 @@
 
 
 
-  
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -689,6 +689,9 @@
       background-color: #292940;
       border-radius: 12px;
       box-shadow: 0 0 20px #4476d677;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
 
     .content h2 {
@@ -920,14 +923,14 @@
   <div class="sidebar">
     <h2>Categories</h2>
     <ul>
-      <li><a href="#gaming">Gaming</a></li>
-      <li><a href="#movies">Movies</a></li>
-      <li><a href="#music">Music</a></li>
-      <li><a href="#art">Art</a></li>
-      <li><a href="#tech">Tech</a></li>
-      <li><a href="#community">Community</a></li>
-      <li><a href="#minigames">Mini Games</a></li>
-      <li><a href="#discordbots">Discord Bots</a></li>
+      <li><a href="#gaming"><img src="https://media.giphy.com/media/26tP7E3B7a1ElvvcY/giphy.gif" alt="Gaming" style="width: 40px; height: 40px; vertical-align: middle;"> Gaming</a></li>
+      <li><a href="#movies"><img src="https://media.giphy.com/media/l4FGGwvVfgs97eFgY/giphy.gif" alt="Movies" style="width: 40px; height: 40px; vertical-align: middle;"> Movies</a></li>
+      <li><a href="#music"><img src="https://media.giphy.com/media/l4KhQTx9n2l6fgmTG/giphy.gif" alt="Music" style="width: 40px; height: 40px; vertical-align: middle;"> Music</a></li>
+      <li><a href="#art"><img src="https://media.giphy.com/media/d2jlI6rHltbKAYZ8/giphy.gif" alt="Art" style="width: 40px; height: 40px; vertical-align: middle;"> Art</a></li>
+      <li><a href="#tech"><img src="https://media.giphy.com/media/xT9KAhvVxjgsJJ7c2I/giphy.gif" alt="Tech" style="width: 40px; height: 40px; vertical-align: middle;"> Tech</a></li>
+      <li><a href="#community"><img src="https://media.giphy.com/media/8Vx6txoT5kKXYgF57y/giphy.gif" alt="Community" style="width: 40px; height: 40px; vertical-align: middle;"> Community</a></li>
+      <li><a href="#minigames"><img src="https://media.giphy.com/media/MXkHpN8swPxpc/giphy.gif" alt="Mini Games" style="width: 40px; height: 40px; vertical-align: middle;"> Mini Games</a></li>
+      <li><a href="#discordbots"><img src="https://media.giphy.com/media/Jn4u1z40r9h9OjI8s6/giphy.gif" alt="Discord Bots" style="width: 40px; height: 40px; vertical-align: middle;"> Discord Bots</a></li>
     </ul>
   </div>
 
@@ -995,78 +998,4 @@
 
   <div class="content" id="tech">
     <h2>💻 Tech</h2>
-    <p>Discuss the latest in technology. From hardware to software, let's talk all things tech!</p>
-    <ul>
-      <li>Programming</li>
-      <li>AI and Robotics</li>
-      <li>Web Development</li>
-      <li>Gadgets</li>
-      <li>Tech News</li>
-    </ul>
-    <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Join the Techies</a>
-  </div>
-
-  <div class="content" id="community">
-    <h2>💬 Community</h2>
-    <p>Our community is a space for everyone. Join us for discussions, support, and fun events!</p>
-    <ul>
-      <li>General Chat</li>
-      <li>Help & Support</li>
-      <li>Server Events</li>
-      <li>Introductions</li>
-      <li>Memes & Fun</li>
-    </ul>
-    <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Join the Community</a>
-  </div>
-
-  <div class="content" id="minigames">
-    <h2>🎮 Mini Games</h2>
-    <p>Take a break and play fun mini games. There are plenty of games to enjoy with others!</p>
-    <ul>
-      <li>Trivia</li>
-      <li>Guess the Song</li>
-      <li>Role-Playing Games</li>
-      <li>Puzzle Games</li>
-      <li>Server-wide Challenges</li>
-    </ul>
-    <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Play Mini Games</a>
-  </div>
-
-  <div class="content" id="discordbots">
-    <h2>🤖 Discord Bots</h2>
-    <p>We’ve got a collection of fun bots to use! From music bots to game bots, we've got it all!</p>
-    <ul>
-      <li>Music Bots</li>
-      <li>Game Bots</li>
-      <li>Utility Bots</li>
-      <li>Moderation Bots</li>
-      <li>Fun Bots</li>
-    </ul>
-    <a href="https://discord.gg/YOUR_INVITE_CODE" class="button">💖 Use Bots</a>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 GLHF Republic | All rights reserved</p>
-  </footer>
-
-  <script>
-    let cookies = 0;
-    let upgradeCost = 100;
-
-    function incrementCookies() {
-      cookies++;
-      document.getElementById("cookieCount").innerText = cookies;
-    }
-
-    function buyUpgrade() {
-      if (cookies >= upgradeCost) {
-        cookies -= upgradeCost;
-        upgradeCost *= 1.5;
-        document.getElementById("cookieCount").innerText = cookies;
-      } else {
-        alert("Not enough cookies!");
-      }
-    }
-  </script>
-</body>
-</html>
+    <p>Discuss the latest in technology. From hardware to software
