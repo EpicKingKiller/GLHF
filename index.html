@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -93,16 +92,18 @@
     .content ul li { margin: .5rem 0; }
     .discord-layout {
       display: flex;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: flex-start;
       gap: 2rem;
       margin-top: 2rem;
     }
     .side-text {
-      width: 150px;
-      text-align: center;
-      color: var(--text);
-      font-size: .9rem;
+      width: 350px;
+      background: #2a2a40;
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #4476d677;
+      color: #fff;
     }
     .discord-widget iframe {
       display: block;
@@ -110,44 +111,16 @@
       height: 500px;
       border: none;
     }
-    .music-player, .weather-widget, .gif-section,
-    .gallery-section, .cookie-game { margin-top: 2rem; text-align: center; }
-    .weather-container {
-      display: flex; justify-content: center; align-items: center;
+    .staff-list {
       margin-top: 1rem;
     }
-    .weather-icon {
-      width: 50px; height: 50px; background-size: cover;
-      margin-right: 10px;
+    .staff-list ul {
+      list-style: none;
     }
-    .scrolling-wrapper { overflow-x: auto; white-space: nowrap; }
-    .gif-track img {
-      height: 150px; margin: 0 10px; border-radius: 15px;
+    .staff-list li {
+      margin: .5rem 0;
+      color: #fff;
     }
-    .gallery-wrapper {
-      display: flex; flex-wrap: wrap; justify-content: center;
-      gap: 1rem;
-    }
-    .gallery-item img { border-radius: 15px; width: 100%; height: auto; }
-    .cookie-game img.cookie {
-      width: 150px; cursor: pointer;
-      transition: transform .2s ease;
-    }
-    .cookie-game img.cookie:hover { transform: scale(1.1); }
-    .shop button {
-      margin: 10px; padding: 10px 20px;
-      background: var(--accent); color: #fff;
-      border: none; border-radius: 8px; cursor: pointer;
-      transition: background .3s;
-    }
-    .shop button:hover { background: #3456a6; }
-    .leaderboard ul { list-style: none; padding: 0; }
-    .leaderboard li { margin: 1rem 0; font-size: 1.2rem; color: #fff; }
-    footer {
-      background: #2a2a40; padding: 2rem; text-align: center;
-      margin-top: 2rem;
-    }
-    footer p { color: #aaa; font-size: .8rem; }
   </style>
 </head>
 <body>
@@ -211,56 +184,26 @@
       </iframe>
     </div>
 
-  <!-- Staff List Section -->
-  <div class="side-text">
-    <p>👑 Meet Our Staff</p>
-    <ul>
-      <li>Event Planner: [Staff Name]</li>
-      <li>Moderator: [Staff Name]</li>
-      <li>Support: [Staff Name]</li>
-      <li>Admin: [Staff Name]</li>
-    </ul>
+    <!-- Staff List Section -->
+    <div class="side-text staff-list">
+      <p>👑 Meet Our Staff</p>
+      <ul>
+        <li>Event Planner: [Staff Name]</li>
+        <li>Moderator: [Staff Name]</li>
+        <li>Support: [Staff Name]</li>
+        <li>Admin: [Staff Name]</li>
+      </ul>
+    </div>
   </div>
-</div>
 
   <div class="music-player">
     <h3>🎵 Lofi Vibes 🎧</h3>
     <iframe style="border-radius:12px"
             src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1"
-            width="300" height="180"
-            allowfullscreen allow="autoplay">
-    </iframe>
-  </div>
-
-  <div class="weather-widget">
-    <h3>Current Weather</h3>
-    <div class="weather-container">
-      <div id="weather-icon" class="weather-icon"></div>
-      <div id="weather-info">
-        <p id="temperature"></p>
-        <p id="condition"></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="gif-section">
-    <h3>✨ Cute & Cozy Vibes ✨</h3>
-    <div class="scrolling-wrapper gif-track">
-      <img src="https://media.giphy.com/media/xT0GqeSlGSRQut4p5i/giphy.gif" alt="cozy1">
-      <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif" alt="cozy2">
-      <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="cozy3">
-    </div>
+            width="300" height="380" frameborder="0" allow="autoplay; encrypted-media"
+            allowfullscreen></iframe>
   </div>
 </div>
 
-<footer>
-  <p>&copy; 2025 GLHF Republic. All rights reserved.</p>
-</footer>
-
 </body>
 </html>
-
-
-
-
-
