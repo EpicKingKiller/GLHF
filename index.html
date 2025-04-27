@@ -7,7 +7,7 @@
   <link rel="icon" href="https://imgur.com/hFNrb9j.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* (All your CSS is here) */
+    /* (All your CSS is here — keeping everything exactly how you had it) */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -175,23 +175,6 @@
       background-color: #2a2a40;
       margin-top: 2rem;
     }
-    
-    /* Styling for the Discord widget layout */
-    .discord-layout {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 2rem;
-    }
-    .discord-text {
-      width: 45%;
-      color: var(--text);
-    }
-    .discord-widget iframe {
-      width: 45%;
-      height: 500px;
-      border-radius: 10px;
-    }
   </style>
 </head>
 <body>
@@ -238,16 +221,75 @@
     <a href="https://discord.com/oauth2/authorize?client_id=1358599573328887946&scope=identify%20guilds&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdiscord%2Fcallback" class="button">Login with Discord</a>
 
     <a href="https://discord.gg/glhf" class="button">💖 Join the Server</a>
+
+    <div class="discord-widget">
+      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-same-origin allow-scripts"></iframe>
+    </div>
+
+    <div class="music-player">
+      <h3>🎵 Lofi Vibes 🎧</h3>
+      <iframe style="border-radius:12px" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" width="300" height="180" allowfullscreen allow="autoplay"></iframe>
+    </div>
+
+    <div class="weather-widget">
+      <h3>Current Weather</h3>
+      <div class="weather-container">
+        <div id="weather-icon" class="weather-icon"></div>
+        <div id="weather-info" class="weather-info">
+          <p id="temperature"></p>
+          <p id="condition"></p>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Discord Widget Section -->
-  <div class="discord-layout">
-    <div class="discord-text">
-      <h3>Join our Discord Community!</h3>
-      <p>We have a great community waiting for you. Chat, play games, and enjoy all kinds of activities with us!</p>
+  <div class="gif-section">
+    <h3>✨ Cute & Cozy Vibes ✨</h3>
+    <div class="scrolling-wrapper">
+      <div class="gif-track">
+        <div style="display: inline-flex;">
+          <img src="https://media.giphy.com/media/3oEjHEMzT5R53QYjgk/giphy.gif" />
+          <img src="https://media.giphy.com/media/b4ab9TBk9Ornvrt9W8/giphy.gif" />
+          <img src="https://media.giphy.com/media/zWs1QFtBkzMLE7B04A/giphy.gif" />
+          <img src="https://media.giphy.com/media/3og0Iwmo4TUQXIxH44/giphy.gif" />
+          <img src="https://media.giphy.com/media/l4FGs65VfUSS8pf1e/giphy.gif" />
+        </div>
+      </div>
     </div>
-    <div class="discord-widget">
-      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-same-origin allow-scripts"></iframe>
+  </div>
+
+  <div class="gallery-section">
+    <h3>✨ Gallery of Cute Moments ✨</h3>
+    <div class="gallery-wrapper">
+      <div class="gallery-item large-item">
+        <img src="https://i.imgur.com/0PZVjVc.png" alt="Gallery Image 1" />
+      </div>
+      <div class="gallery-item small-item">
+        <img src="https://i.imgur.com/prVoFUS.png" alt="Gallery Image 2" />
+      </div>
+      <div class="gallery-item small-item">
+        <img src="https://imgur.com/9b1uu7C.png" alt="Gallery Image 3" />
+      </div>
+      <div class="gallery-item small-item">
+        <img src="https://i.imgur.com/XvqyvOM.png" alt="Gallery Image 4" />
+      </div>
+    </div>
+  </div>
+
+  <div class="cookie-game">
+    <h2>🍪 Cozy Cookie Clicker</h2>
+    <p>Cookies: <span id="cookieCount">0</span></p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Cookie_clicker_icon.svg" alt="Cookie Icon" class="cookie" onclick="clickCookie()">
+    <div class="shop">
+      <h3>Shop</h3>
+      <button onclick="buyUpgrade(10, 1)">Upgrade 1 (10 Cookies)</button>
+      <button onclick="buyUpgrade(50, 2)">Upgrade 2 (50 Cookies)</button>
+    </div>
+    <div class="leaderboard">
+      <h3>Leaderboard</h3>
+      <ul id="leaderboard"></ul>
+      <input type="text" id="username" placeholder="Enter your name" />
+      <button onclick="saveScore()">Save Score</button>
     </div>
   </div>
 
@@ -255,5 +297,38 @@
     <p>&copy; 2025 GLHF Republic - All rights reserved.</p>
   </footer>
 
+  <script>
+    let cookieCount = 0;
+    let upgrades = [1, 2];
+
+    function clickCookie() {
+      cookieCount++;
+      document.getElementById("cookieCount").textContent = cookieCount;
+    }
+
+    function buyUpgrade(cost, upgradeId) {
+      if (cookieCount >= cost) {
+        cookieCount -= cost;
+        upgrades[upgradeId - 1]++;
+        document.getElementById("cookieCount").textContent = cookieCount;
+      } else {
+        alert("Not enough cookies!");
+      }
+    }
+
+    function saveScore() {
+      const username = document.getElementById("username").value.trim();
+      if (username) {
+        const leaderboard = document.getElementById("leaderboard");
+        const li = document.createElement("li");
+        li.textContent = `${username}: ${cookieCount} cookies`;
+        leaderboard.appendChild(li);
+      } else {
+        alert("Please enter a username!");
+      }
+    }
+  </script>
+
 </body>
 </html>
+
