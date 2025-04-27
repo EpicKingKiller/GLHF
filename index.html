@@ -147,6 +147,34 @@
       margin-top: 2rem;
     }
     footer p { color: #aaa; font-size: .8rem; }
+    
+    /* New Styles for Staff & Announcements */
+    .side-text h3 {
+      font-size: 1.5rem;
+      color: var(--accent);
+      background: var(--bg);
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .announcement-tab {
+      background-color: var(--accent);
+      color: #fff;
+      font-size: 1.5rem;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      width: 100%;
+    }
+    .announcement-tab h3 {
+      margin-bottom: 1rem;
+    }
+    .announcement-tab p {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
   </style>
 </head>
 <body>
@@ -209,48 +237,31 @@
               sandbox="allow-popups allow-same-origin allow-scripts">
       </iframe>
     </div>
+
     <div class="side-text">
-      <p>👋 Welcome to GLHF Republic!</p>
-      <p>Chat, game, and hang out with us.</p>
-    </div>
-    <div class="side-text">
-      <p>📢 Latest Announcements</p>
-      <p>Stay updated on events!</p>
-    </div>
-  </div>
-
-  <div class="music-player">
-    <h3>🎵 Lofi Vibes 🎧</h3>
-    <iframe style="border-radius:12px"
-            src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1"
-            width="300" height="180"
-            allowfullscreen allow="autoplay">
-    </iframe>
-  </div>
-
-  <div class="weather-widget">
-    <h3>Current Weather</h3>
-    <div class="weather-container">
-      <div id="weather-icon" class="weather-icon"></div>
-      <div id="weather-info">
-        <p id="temperature"></p>
-        <p id="condition"></p>
-      </div>
+      <h3>Staff Members</h3>
+      <p>Meet the amazing staff keeping GLHF running!</p>
+      <!-- Staff Members List -->
+      <ul>
+        <li><strong>✨ Mino</strong> (Owner)</li>
+        <li><strong>🎬 Megumi</strong> (Event Planner)</li>
+        <li><strong>⚡ Riot</strong> (Head Admin)</li>
+        <li><strong>🎮 Kaze</strong> (Moderator)</li>
+      </ul>
     </div>
   </div>
 
-  <div class="gif-section">
-    <h3>✨ Cute & Cozy Vibes ✨</h3>
-    <div class="scrolling-wrapper gif-track">
-      <img src="https://media.giphy.com/media/xT0GqeSlGSRQut4p5i/giphy.gif" alt="cozy1">
-      <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif" alt="cozy2">
-      <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="cozy3">
-    </div>
+  <div class="announcement-tab">
+    <h3>Latest Announcements</h3>
+    <p>🚀 We are adding new mini-games to the server soon! Stay tuned for updates.</p>
+    <p>💻 Server upgrades in progress, more channels coming!</p>
+    <p>🎉 Thank you to all our boosters for supporting GLHF!</p>
   </div>
+
 </div>
 
 <footer>
-  <p>&copy; 2025 GLHF Republic. All rights reserved.</p>
+  <p>&copy; 2025 GLHF Republic | All Rights Reserved</p>
 </footer>
 
 </body>
