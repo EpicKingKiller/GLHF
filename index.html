@@ -91,15 +91,24 @@
     .content ul { list-style: none; margin-top: 1rem; }
     .content ul li { margin: .5rem 0; }
     .discord-layout {
-      display: flex; justify-content: space-between; align-items: center;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 2rem;
       margin-top: 2rem;
-      flex-direction: row-reverse; /* FLIP the layout */
     }
     .side-text {
-      width: 120px; text-align: center; color: var(--text);
+      width: 150px;
+      text-align: center;
+      color: var(--text);
       font-size: .9rem;
     }
-    .discord-widget iframe { display: block; margin: 0 auto; }
+    .discord-widget iframe {
+      display: block;
+      width: 350px;
+      height: 500px;
+      border: none;
+    }
     .music-player, .weather-widget, .gif-section,
     .gallery-section, .cookie-game { margin-top: 2rem; text-align: center; }
     .weather-container {
@@ -193,17 +202,16 @@
   <a href="https://discord.gg/glhf" class="button">💖 Join the Server</a>
 
   <div class="discord-layout">
-    <div class="side-text">
-      <p>👋 Welcome to GLHF Republic!</p>
-      <p>Chat, game, and hang out with us.</p>
-    </div>
     <div class="discord-widget">
       <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark"
-              width="350" height="500"
               allowtransparency="true"
               frameborder="0"
               sandbox="allow-popups allow-same-origin allow-scripts">
       </iframe>
+    </div>
+    <div class="side-text">
+      <p>👋 Welcome to GLHF Republic!</p>
+      <p>Chat, game, and hang out with us.</p>
     </div>
     <div class="side-text">
       <p>📢 Latest Announcements</p>
