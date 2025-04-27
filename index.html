@@ -7,7 +7,7 @@
   <link rel="icon" href="https://imgur.com/hFNrb9j.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* (All your CSS is here — keeping everything exactly how you had it) */
+    /* (All your CSS here — keeping everything intact) */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -213,6 +213,7 @@
     <p>Welcome To The Home Of G.L.H.F. 🌸✨</p>
   </header>
 
+  <!-- Top Supporters Section (5 Circle Avatars) -->
   <div class="top-supporters">
     <div class="avatar"></div>
     <div class="avatar"></div>
@@ -221,10 +222,32 @@
     <div class="avatar"></div>
   </div>
 
+  <!-- Your GIFs and Banner Content -->
   <div class="banner">
     <img src="https://media2.giphy.com/media/mCbdyB4ljtTBRTex7b/giphy.gif" alt="Main Banner GIF">
   </div>
 
+  <!-- Cookie Clicker Game Section -->
+  <div class="cookie-game">
+    <h2>🍪 Cookie Clicker Game</h2>
+    <img class="cookie" src="https://i.imgur.com/Zmt8M8P.gif" alt="Cookie Game GIF">
+    <button class="button" onclick="alert('Cookie Clicked!')">Click Me!</button>
+  </div>
+
+  <!-- Scrollable GIF Section -->
+  <div class="gif-section">
+    <h2>🖼️ Scrolling GIFs</h2>
+    <div class="scrolling-wrapper">
+      <div class="gif-track">
+        <img src="https://media.giphy.com/media/26AHtXPS0z7kdd2V6/giphy.gif" alt="GIF 1">
+        <img src="https://media.giphy.com/media/l0MYu9lxGxRfrL8Vk/giphy.gif" alt="GIF 2">
+        <img src="https://media.giphy.com/media/3o6Zt8Lu2u34OHVKhW/giphy.gif" alt="GIF 3">
+        <img src="https://media.giphy.com/media/fhZEKH5tddjIQ/giphy.gif" alt="GIF 4">
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Area with Server Join Links and Discord Widget -->
   <div class="content">
     <h2>✨ Join Our Community ✨</h2>
     <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
@@ -245,22 +268,6 @@
 
     <div class="discord-widget">
       <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-same-origin allow-scripts"></iframe>
-    </div>
-
-    <div class="music-player">
-      <h3>🎵 Lofi Vibes 🎧</h3>
-      <iframe style="border-radius:12px" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" width="300" height="180" allowfullscreen allow="autoplay"></iframe>
-    </div>
-
-    <div class="weather-widget">
-      <h3>Current Weather</h3>
-      <div class="weather-container">
-        <div id="weather-icon" class="weather-icon"></div>
-        <div id="weather-info" class="weather-info">
-          <p id="temperature"></p>
-          <p id="condition"></p>
-        </div>
-      </div>
     </div>
   </div>
 
