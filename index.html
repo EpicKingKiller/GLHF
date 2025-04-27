@@ -7,13 +7,13 @@
   <link rel="icon" href="https://imgur.com/hFNrb9j.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* (All your CSS is here — keeping everything exactly how you had it) */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       cursor: url('https://cur.cursors-4u.net/games/gam-14/gam1328.cur'), auto;
     }
+
     body {
       font-family: 'Quicksand', sans-serif;
       background-color: var(--bg);
@@ -21,16 +21,19 @@
       padding-left: 220px;
       transition: background 0.3s ease, color 0.3s ease;
     }
+
     :root {
       --bg: #1e1e2f;
       --text: #ffffff;
       --accent: #4476d6;
     }
+
     .light-theme {
       --bg: #ffffff;
       --text: #1e1e2f;
       --accent: #b38bfa;
     }
+
     .sidebar {
       position: fixed;
       top: 0;
@@ -42,19 +45,23 @@
       box-shadow: 2px 0 5px rgba(0,0,0,0.5);
       overflow-y: auto;
     }
+
     .sidebar h2 {
       font-family: 'Outfit', sans-serif;
       color: var(--accent);
       text-align: center;
       margin-bottom: 1.5rem;
     }
+
     .sidebar ul {
       list-style: none;
     }
+
     .sidebar ul li {
       margin: 1rem 0;
       text-align: center;
     }
+
     .sidebar ul li a {
       text-decoration: none;
       color: var(--accent);
@@ -63,20 +70,51 @@
       padding: 0.5rem;
       transition: background 0.3s;
     }
+
     .sidebar ul li a:hover {
       background-color: var(--accent);
       color: #fff;
       border-radius: 5px;
     }
+
+    .page {
+      display: flex;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .left, .middle, .right {
+      padding: 20px;
+    }
+
+    .left {
+      flex: 1;
+      background-color: #2a2a40;
+      color: white;
+    }
+
+    .middle {
+      flex: 2;
+      background-color: #1e1e2f;
+    }
+
+    .right {
+      flex: 1;
+      background-color: #2a2a40;
+      color: white;
+    }
+
     header {
       text-align: center;
       margin: 2rem 0;
     }
+
     header h1 {
       font-family: 'Outfit', sans-serif;
       font-size: 3rem;
       color: var(--accent);
     }
+
     .banner img {
       width: 80%;
       max-width: 800px;
@@ -84,17 +122,21 @@
       display: block;
       border-radius: 15px;
     }
+
     .content {
       text-align: center;
       padding: 2rem;
     }
+
     .content ul {
       list-style: none;
       margin-top: 1rem;
     }
+
     .content ul li {
       margin: 0.5rem 0;
     }
+
     .button {
       background-color: var(--accent);
       color: #fff;
@@ -107,67 +149,67 @@
       text-decoration: none;
       display: inline-block;
     }
+
     .button:hover {
       background-color: #5b90ff;
     }
+
     .discord-widget, .music-player, .weather-widget {
       margin-top: 2rem;
       text-align: center;
     }
+
     .weather-container {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-top: 1rem;
     }
+
     .weather-icon {
       width: 50px;
       height: 50px;
       background-size: cover;
       margin-right: 10px;
     }
+
     .gif-section, .gallery-section {
       padding: 2rem;
       text-align: center;
     }
+
     .scrolling-wrapper {
       overflow-x: auto;
       white-space: nowrap;
     }
+
     .gif-track img {
       height: 150px;
       margin: 0 10px;
       border-radius: 15px;
     }
+
     .gallery-wrapper {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
     }
+
     .gallery-item img {
       border-radius: 15px;
       width: 100%;
       height: auto;
     }
+
     .large-item {
       flex: 2 1 400px;
     }
+
     .small-item {
       flex: 1 1 200px;
     }
-    .cookie-game {
-      text-align: center;
-      margin: 2rem;
-    }
-    .cookie-game img.cookie {
-      width: 120px;
-      cursor: pointer;
-      margin-top: 1rem;
-    }
-    .shop, .leaderboard {
-      margin-top: 1.5rem;
-    }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -179,155 +221,101 @@
 </head>
 <body>
 
-  <div class="theme-toggle">
-    <button onclick="document.body.classList.toggle('light-theme')" class="button">🌓 Toggle Theme</button>
-  </div>
-
-  <div class="sidebar">
-    <h2>Categories</h2>
-    <ul>
-      <li><a href="#">Gaming</a></li>
-      <li><a href="#">Movies</a></li>
-      <li><a href="#">Music</a></li>
-      <li><a href="#">Art</a></li>
-      <li><a href="#">Tech</a></li>
-      <li><a href="#">Community</a></li>
-    </ul>
-  </div>
-
-  <header>
-    <h1>GLHF Republic</h1>
-    <p>Welcome To The Home Of G.L.H.F. 🌸✨</p>
-  </header>
-
-  <div class="banner">
-    <img src="https://media2.giphy.com/media/mCbdyB4ljtTBRTex7b/giphy.gif" alt="Main Banner GIF">
-  </div>
-
-  <div class="content">
-    <h2>✨ Join Our Community ✨</h2>
-    <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
-    <ul>
-      <li>Friendly 18+ environment 💬</li>
-      <li>Weekly movie nights 🍿</li>
-      <li>Gamer channels & squads 🎮</li>
-      <li>Leveling system + ranks 💎</li>
-      <li>Arcade bots & fun commands 🤖</li>
-      <li>LGBTQ+ inclusive 🏳️‍🌈</li>
-      <li>Streamer-friendly 📸</li>
-      <li>420 & BYOB friendly 🍃🍻</li>
-    </ul>
-
-    <a href="https://discord.com/oauth2/authorize?client_id=1358599573328887946&scope=identify%20guilds&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdiscord%2Fcallback" class="button">Login with Discord</a>
-
-    <a href="https://discord.gg/glhf" class="button">💖 Join the Server</a>
-
-    <div class="discord-widget">
-      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-same-origin allow-scripts"></iframe>
+  <div class="page">
+    <div class="left">
+      <h2>Categories</h2>
+      <ul>
+        <li><a href="#">Gaming</a></li>
+        <li><a href="#">Movies</a></li>
+        <li><a href="#">Music</a></li>
+        <li><a href="#">Art</a></li>
+        <li><a href="#">Tech</a></li>
+        <li><a href="#">Community</a></li>
+      </ul>
     </div>
 
-    <div class="music-player">
-      <h3>🎵 Lofi Vibes 🎧</h3>
-      <iframe style="border-radius:12px" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" width="300" height="180" allowfullscreen allow="autoplay"></iframe>
-    </div>
+    <div class="middle">
+      <header>
+        <h1>GLHF Republic</h1>
+        <p>Welcome To The Home Of G.L.H.F. 🌸✨</p>
+      </header>
 
-    <div class="weather-widget">
-      <h3>Current Weather</h3>
-      <div class="weather-container">
-        <div id="weather-icon" class="weather-icon"></div>
-        <div id="weather-info" class="weather-info">
-          <p id="temperature"></p>
-          <p id="condition"></p>
+      <div class="banner">
+        <img src="https://media2.giphy.com/media/mCbdyB4ljtTBRTex7b/giphy.gif" alt="Main Banner GIF">
+      </div>
+
+      <div class="content">
+        <h2>✨ Join Our Community ✨</h2>
+        <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
+        <ul>
+          <li>Friendly 18+ environment 💬</li>
+          <li>Weekly movie nights 🍿</li>
+          <li>Gamer channels & squads 🎮</li>
+          <li>Leveling system + ranks 💎</li>
+          <li>Arcade bots & fun commands 🤖</li>
+          <li>LGBTQ+ inclusive 🏳️‍🌈</li>
+          <li>Streamer-friendly 📸</li>
+          <li>420 & BYOB friendly 🍃🍻</li>
+        </ul>
+        <a href="https://discord.com/oauth2/authorize?client_id=1358599573328887946&scope=identify%20guilds&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdiscord%2Fcallback" class="button">Login with Discord</a>
+        <a href="https://discord.gg/glhf" class="button">💖 Join the Server</a>
+
+        <div class="discord-widget">
+          <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-same-origin allow-scripts"></iframe>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="gif-section">
-    <h3>✨ Cute & Cozy Vibes ✨</h3>
-    <div class="scrolling-wrapper">
-      <div class="gif-track">
-        <div style="display: inline-flex;">
-          <img src="https://media.giphy.com/media/3oEjHEMzT5R53QYjgk/giphy.gif" />
-          <img src="https://media.giphy.com/media/b4ab9TBk9Ornvrt9W8/giphy.gif" />
-          <img src="https://media.giphy.com/media/zWs1QFtBkzMLE7B04A/giphy.gif" />
-          <img src="https://media.giphy.com/media/3og0Iwmo4TUQXIxH44/giphy.gif" />
-          <img src="https://media.giphy.com/media/l4FGs65VfUSS8pf1e/giphy.gif" />
+    <div class="right">
+      <div class="music-player">
+        <h3>🎵 Lofi Vibes 🎧</h3>
+        <iframe style="border-radius:12px" src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1" width="300" height="180" allowfullscreen allow="autoplay"></iframe>
+      </div>
+
+      <div class="weather-widget">
+        <h3>Current Weather</h3>
+        <div class="weather-container">
+          <div id="weather-icon" class="weather-icon"></div>
+          <div id="weather-info" class="weather-info">
+            <p id="temperature"></p>
+            <p id="condition"></p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="gallery-section">
-    <h3>✨ Gallery of Cute Moments ✨</h3>
-    <div class="gallery-wrapper">
-      <div class="gallery-item large-item">
-        <img src="https://i.imgur.com/0PZVjVc.png" alt="Gallery Image 1" />
+      <div class="gif-section">
+        <h3>✨ Cute & Cozy Vibes ✨</h3>
+        <div class="scrolling-wrapper">
+          <div class="gif-track">
+            <div style="display: inline-flex;">
+              <img src="https://media.giphy.com/media/3oEjHEMzT5R53QYjgk/giphy.gif" />
+              <img src="https://media.giphy.com/media/l378kzYtQp4Zb0N3K/giphy.gif" />
+              <img src="https://media.giphy.com/media/3oEjHFJ6uT6D0OcvEC/giphy.gif" />
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="gallery-item small-item">
-        <img src="https://i.imgur.com/prVoFUS.png" alt="Gallery Image 2" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://imgur.com/9b1uu7C.png" alt="Gallery Image 3" />
-      </div>
-      <div class="gallery-item small-item">
-        <img src="https://i.imgur.com/XvqyvOM.png" alt="Gallery Image 4" />
-      </div>
-    </div>
-  </div>
 
-  <div class="cookie-game">
-    <h2>🍪 Cozy Cookie Clicker</h2>
-    <p>Cookies: <span id="cookieCount">0</span></p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Cookie_clicker_icon.svg" alt="Cookie Icon" class="cookie" onclick="clickCookie()">
-    <div class="shop">
-      <h3>Shop</h3>
-      <button onclick="buyUpgrade(10, 1)">Upgrade 1 (10 Cookies)</button>
-      <button onclick="buyUpgrade(50, 2)">Upgrade 2 (50 Cookies)</button>
-    </div>
-    <div class="leaderboard">
-      <h3>Leaderboard</h3>
-      <ul id="leaderboard"></ul>
-      <input type="text" id="username" placeholder="Enter your name" />
-      <button onclick="saveScore()">Save Score</button>
+      <div class="gallery-section">
+        <h3>🌸 Art & Fanwork</h3>
+        <div class="gallery-wrapper">
+          <div class="gallery-item large-item">
+            <img src="https://imgur.com/hFNrb9j.png" alt="Art Piece">
+          </div>
+          <div class="gallery-item small-item">
+            <img src="https://imgur.com/kyzxy7M.png" alt="Art Piece">
+          </div>
+          <div class="gallery-item small-item">
+            <img src="https://imgur.com/WYwHNY7.png" alt="Art Piece">
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <footer>
-    <p>&copy; 2025 GLHF Republic - All rights reserved.</p>
+    <p>GLHF Republic &copy; 2025. All rights reserved.</p>
   </footer>
-
-  <script>
-    let cookieCount = 0;
-    let upgrades = [1, 2];
-
-    function clickCookie() {
-      cookieCount++;
-      document.getElementById("cookieCount").textContent = cookieCount;
-    }
-
-    function buyUpgrade(cost, upgradeId) {
-      if (cookieCount >= cost) {
-        cookieCount -= cost;
-        upgrades[upgradeId - 1]++;
-        document.getElementById("cookieCount").textContent = cookieCount;
-      } else {
-        alert("Not enough cookies!");
-      }
-    }
-
-    function saveScore() {
-      const username = document.getElementById("username").value.trim();
-      if (username) {
-        const leaderboard = document.getElementById("leaderboard");
-        const li = document.createElement("li");
-        li.textContent = `${username}: ${cookieCount} cookies`;
-        leaderboard.appendChild(li);
-      } else {
-        alert("Please enter a username!");
-      }
-    }
-  </script>
 
 </body>
 </html>
