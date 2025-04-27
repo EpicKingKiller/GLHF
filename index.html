@@ -98,37 +98,16 @@
       margin-top: 2rem;
     }
     .side-text {
-      width: 250px; /* Increased width for staff section */
+      width: 150px;
       text-align: center;
       color: var(--text);
       font-size: .9rem;
-      padding: 15px;
-      background: #333;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     }
     .discord-widget iframe {
       display: block;
       width: 350px;
       height: 500px;
       border: none;
-    }
-    .staff-role {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .staff-role img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background-color: #444;
-    }
-    .staff-role span {
-      color: var(--accent);
-      margin-left: 15px;
-      font-weight: bold;
     }
     .music-player, .weather-widget, .gif-section,
     .gallery-section, .cookie-game { margin-top: 2rem; text-align: center; }
@@ -168,6 +147,29 @@
       margin-top: 2rem;
     }
     footer p { color: #aaa; font-size: .8rem; }
+
+    /* Add styles for the staff section */
+    .staff-list {
+      width: 250px;
+      text-align: left;
+      color: var(--text);
+      font-size: .9rem;
+      padding: 1rem;
+      background: #292940;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    .staff-list h3 {
+      color: var(--accent);
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .staff-list ul { list-style: none; padding: 0; }
+    .staff-list ul li {
+      margin: .5rem 0;
+    }
   </style>
 </head>
 <body>
@@ -201,37 +203,61 @@
   <img class="avatar" src="https://cdn.discordapp.com/avatars/554660797947838464/ffada095aea546ad5db2f9024fbc5704.png?size=4096" alt="Booster 1">
   <img class="avatar" src="https://cdn.discordapp.com/avatars/1002311296177410049/623d6b93dfb5c85364121e66c307e149.png?size=4096" alt="Booster 2">
   <img class="avatar" src="https://cdn.discordapp.com/avatars/234550567865810944/a32fc3b7551aec11579df919ecaf29be.png?size=4096" alt="Booster 3">
-  <img class="avatar" src="https://cdn.discordapp.com/avatars/845473228687701073/a7ef38e8d66fc49b7dce22b77e505678.png?size=4096" alt="Booster 4">
+  <img class="avatar" src="https://cdn.discordapp.com/avatars/758473963365728266/632ba5cb0e59b70159fa82d0a331d5a0.png?size=4096" alt="Booster 4">
+  <img class="avatar" src="https://cdn.discordapp.com/guilds/1081685780621181010/users/795150365799612437/avatars/a_46be40636edfa51dbc02dccb31549b33.gif?size=4096" alt="Owner Booster">
 </div>
 
-<div class="discord-layout">
-  <div class="side-text">
-    <h2>Staff Roles</h2>
-    <div class="staff-role">
-      <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar">
-      <span>Event Planner</span>
+<div class="content">
+  <h2>✨ Join Our Community ✨</h2>
+  <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
+  <ul>
+    <li>Friendly 18+ environment 💬</li>
+    <li>Weekly movie nights 🍿</li>
+    <li>Gamer channels & squads 🎮</li>
+    <li>Leveling system + ranks 💎</li>
+    <li>Arcade bots & fun commands 🤖</li>
+    <li>LGBTQ+ inclusive 🏳️‍🌈</li>
+    <li>Streamer-friendly 📸</li>
+    <li>420 & BYOB friendly 🍃🍻</li>
+  </ul>
+
+  <a href="https://discord.com/oauth2/authorize?client_id=1358599573328887946&scope=identify%20guilds&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdiscord%2Fcallback" class="button">Login with Discord</a>
+  <a href="https://discord.gg/glhf" class="button">💖 Join the Server</a>
+
+  <div class="discord-layout">
+    <div class="discord-widget">
+      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark"
+              allowtransparency="true"
+              frameborder="0"
+              sandbox="allow-popups allow-same-origin allow-scripts">
+      </iframe>
     </div>
-    <div class="staff-role">
-      <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar">
-      <span>Moderator</span>
-    </div>
-    <div class="staff-role">
-      <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar">
-      <span>Support Staff</span>
-    </div>
-    <div class="staff-role">
-      <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar">
-      <span>Admin</span>
+
+    <!-- Staff List Section (Added to the right) -->
+    <div class="staff-list">
+      <h3>👑 Meet Our Staff</h3>
+      <ul>
+        <li>Event Planner: [Staff Name]</li>
+        <li>Moderator: [Staff Name]</li>
+        <li>Support: [Staff Name]</li>
+        <li>Admin: [Staff Name]</li>
+      </ul>
     </div>
   </div>
 
-  <div class="discord-widget">
-    <iframe src="https://discord.com/widget?id=739402308535597116&theme=dark" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+  <div class="music-player">
+    <h3>🎵 Lofi Vibes 🎧</h3>
+    <iframe style="border-radius:12px"
+            src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1"
+            width="300" height="180"
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+    </iframe>
   </div>
 </div>
 
+<!-- Footer Section -->
 <footer>
-  <p>&copy; 2025 GLHF Republic. All Rights Reserved.</p>
+  <p>© 2025 GLHF Republic | All rights reserved</p>
 </footer>
 
 </body>
