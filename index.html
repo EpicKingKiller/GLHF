@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,40 +99,55 @@
       margin-top: 2rem;
     }
     .side-text {
-      width: 250px;
+      width: 150px;
       text-align: center;
       color: var(--text);
       font-size: .9rem;
-      background-color: #36393F;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
-    .side-text h3 {
-      font-size: 1.5rem;
-      color: white;
-      background: #2f3136;
-      padding: 10px;
-      border-radius: 8px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    .discord-widget iframe {
+      display: block;
+      width: 350px;
+      height: 500px;
+      border: none;
     }
-    .announcement-tab {
-      background-color: var(--accent);
-      color: #fff;
-      font-size: 1.5rem;
-      padding: 15px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-      width: 100%;
-    }
-    .announcement-tab h3 {
-      margin-bottom: 1rem;
-    }
-    .announcement-tab p {
-      font-size: 1rem;
+    .music-player, .weather-widget, .gif-section,
+    .gallery-section, .cookie-game { margin-top: 2rem; text-align: center; }
+    .weather-container {
+      display: flex; justify-content: center; align-items: center;
       margin-top: 1rem;
     }
+    .weather-icon {
+      width: 50px; height: 50px; background-size: cover;
+      margin-right: 10px;
+    }
+    .scrolling-wrapper { overflow-x: auto; white-space: nowrap; }
+    .gif-track img {
+      height: 150px; margin: 0 10px; border-radius: 15px;
+    }
+    .gallery-wrapper {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 1rem;
+    }
+    .gallery-item img { border-radius: 15px; width: 100%; height: auto; }
+    .cookie-game img.cookie {
+      width: 150px; cursor: pointer;
+      transition: transform .2s ease;
+    }
+    .cookie-game img.cookie:hover { transform: scale(1.1); }
+    .shop button {
+      margin: 10px; padding: 10px 20px;
+      background: var(--accent); color: #fff;
+      border: none; border-radius: 8px; cursor: pointer;
+      transition: background .3s;
+    }
+    .shop button:hover { background: #3456a6; }
+    .leaderboard ul { list-style: none; padding: 0; }
+    .leaderboard li { margin: 1rem 0; font-size: 1.2rem; color: #fff; }
+    footer {
+      background: #2a2a40; padding: 2rem; text-align: center;
+      margin-top: 2rem;
+    }
+    footer p { color: #aaa; font-size: .8rem; }
   </style>
 </head>
 <body>
@@ -194,32 +210,52 @@
               sandbox="allow-popups allow-same-origin allow-scripts">
       </iframe>
     </div>
-
     <div class="side-text">
-      <h3>Staff Members</h3>
-      <p>Meet the amazing staff keeping GLHF running!</p>
-      <!-- Staff Members List -->
-      <ul>
-        <li><strong>✨ Mino</strong> (Owner)</li>
-        <li><strong>🎬 Megumi</strong> (Event Planner)</li>
-        <li><strong>⚡ Riot</strong> (Head Admin)</li>
-        <li><strong>🎮 Kaze</strong> (Moderator)</li>
-      </ul>
+      <p>👋 Welcome to GLHF Republic!</p>
+      <p>Chat, game, and hang out with us.</p>
+    </div>
+    <div class="side-text">
+      <p>📢 Latest Announcements</p>
+      <p>Stay updated on events!</p>
     </div>
   </div>
 
-  <div class="announcement-tab">
-    <h3>Latest Announcements</h3>
-    <p>🚀 We are adding new mini-games to the server soon! Stay tuned for updates.</p>
-    <p>💻 Server upgrades in progress, more channels coming!</p>
-    <p>🎉 Thank you to all our boosters for supporting GLHF!</p>
+  <div class="music-player">
+    <h3>🎵 Lofi Vibes 🎧</h3>
+    <iframe style="border-radius:12px"
+            src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1"
+            width="300" height="180"
+            allowfullscreen allow="autoplay">
+    </iframe>
   </div>
 
+  <div class="weather-widget">
+    <h3>Current Weather</h3>
+    <div class="weather-container">
+      <div id="weather-icon" class="weather-icon"></div>
+      <div id="weather-info">
+        <p id="temperature"></p>
+        <p id="condition"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gif-section">
+    <h3>✨ Cute & Cozy Vibes ✨</h3>
+    <div class="scrolling-wrapper gif-track">
+      <img src="https://media.giphy.com/media/xT0GqeSlGSRQut4p5i/giphy.gif" alt="cozy1">
+      <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif" alt="cozy2">
+      <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="cozy3">
+    </div>
+  </div>
 </div>
 
 <footer>
-  <p>&copy; 2025 GLHF Republic | All Rights Reserved</p>
+  <p>&copy; 2025 GLHF Republic. All rights reserved.</p>
 </footer>
 
 </body>
 </html>
+
+
+this is the fuill code!!!
