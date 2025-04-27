@@ -67,27 +67,26 @@
       width: 100%; max-height: 400px;
       object-fit: cover; display: block;
     }
-    /* Bigger supporter avatars */
     .top-supporters {
       display: flex; justify-content: center;
       margin: 1rem 0;
     }
     .avatar {
-      width: 100px;   /* increased size */
-      height: 100px;  /* increased size */
+      width: 100px; height: 100px;
       background: #2a2a40;
       border: 3px solid var(--accent);
       border-radius: 50%;
       margin: 0 12px;
-.content {
-  max-width: 1200px;  /* wider but still capped */
-  width: 100%;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #292940;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #4476d677;
-}
+    }
+    .content {
+      max-width: 1200px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: #292940;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #4476d677;
+    }
     .content h2 { color: var(--accent); font-family: 'Outfit', sans-serif; }
     .content ul { list-style: none; margin-top: 1rem; }
     .content ul li { margin: .5rem 0; }
@@ -142,196 +141,108 @@
 </head>
 <body>
 
-  <div class="theme-toggle">
-    <button onclick="document.body.classList.toggle('light-theme')" class="button">🌓 Toggle Theme</button>
-  </div>
+<div class="theme-toggle">
+  <button onclick="document.body.classList.toggle('light-theme')" class="button">🌓 Toggle Theme</button>
+</div>
 
-  <div class="sidebar">
-    <h2>Categories</h2>
-    <ul>
-      <li><a href="#">Gaming</a></li>
-      <li><a href="#">Movies</a></li>
-      <li><a href="#">Music</a></li>
-      <li><a href="#">Art</a></li>
-      <li><a href="#">Tech</a></li>
-      <li><a href="#">Community</a></li>
-    </ul>
-  </div>
+<div class="sidebar">
+  <h2>Categories</h2>
+  <ul>
+    <li><a href="#">Gaming</a></li>
+    <li><a href="#">Movies</a></li>
+    <li><a href="#">Music</a></li>
+    <li><a href="#">Art</a></li>
+    <li><a href="#">Tech</a></li>
+    <li><a href="#">Community</a></li>
+  </ul>
+</div>
 
-  <header>
-    <h1>GLHF Republic</h1>
-    <p>Welcome To The Home Of G.L.H.F. 🌸✨</p>
-  </header>
+<header>
+  <h1>GLHF Republic</h1>
+  <p>Welcome To The Home Of G.L.H.F. 🌸✨</p>
+</header>
 
 <div class="banner">
   <img src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZnI0bWc3a3U3em91czJrdWpucndvbmZsMTZocGZvZGh4MzBtMTN3dyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/feljaavzevM0oLpKww/giphy.gif" alt="Main Banner GIF">
 </div>
 
-
 <div class="top-supporters">
-  <!-- Booster 1 -->
-  <img class="avatar"
-       src="https://cdn.discordapp.com/avatars/554660797947838464/ffada095aea546ad5db2f9024fbc5704.png?size=4096"
-       alt="Booster 1">
-  <!-- Booster 2 -->
-  <img class="avatar"
-       src="https://cdn.discordapp.com/avatars/1002311296177410049/623d6b93dfb5c85364121e66c307e149.png?size=4096"
-       alt="Booster 2">
-  <!-- Booster 3 -->
-  <img class="avatar"
-       src="https://cdn.discordapp.com/avatars/234550567865810944/a32fc3b7551aec11579df919ecaf29be.png?size=4096"
-       alt="Booster 3">
-  <!-- Booster 4 -->
-  <img class="avatar"
-       src="https://cdn.discordapp.com/avatars/758473963365728266/632ba5cb0e59b70159fa82d0a331d5a0.png?size=4096"
-       alt="Booster 4">
-  <!-- Booster 5 (Owner) -->
-  <img class="avatar"
-       src="https://cdn.discordapp.com/guilds/1081685780621181010/users/795150365799612437/avatars/a_46be40636edfa51dbc02dccb31549b33.gif?size=4096"
-       alt="Owner Booster">
-</div>>
+  <img class="avatar" src="https://cdn.discordapp.com/avatars/554660797947838464/ffada095aea546ad5db2f9024fbc5704.png?size=4096" alt="Booster 1">
+  <img class="avatar" src="https://cdn.discordapp.com/avatars/1002311296177410049/623d6b93dfb5c85364121e66c307e149.png?size=4096" alt="Booster 2">
+  <img class="avatar" src="https://cdn.discordapp.com/avatars/234550567865810944/a32fc3b7551aec11579df919ecaf29be.png?size=4096" alt="Booster 3">
+  <img class="avatar" src="https://cdn.discordapp.com/avatars/758473963365728266/632ba5cb0e59b70159fa82d0a331d5a0.png?size=4096" alt="Booster 4">
+  <img class="avatar" src="https://cdn.discordapp.com/guilds/1081685780621181010/users/795150365799612437/avatars/a_46be40636edfa51dbc02dccb31549b33.gif?size=4096" alt="Owner Booster">
+</div>
 
-  <div class="content">
-    <h2>✨ Join Our Community ✨</h2>
-    <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
-    <ul>
-      <li>Friendly 18+ environment 💬</li>
-      <li>Weekly movie nights 🍿</li>
-      <li>Gamer channels & squads 🎮</li>
-      <li>Leveling system + ranks 💎</li>
-      <li>Arcade bots & fun commands 🤖</li>
-      <li>LGBTQ+ inclusive 🏳️‍🌈</li>
-      <li>Streamer-friendly 📸</li>
-      <li>420 & BYOB friendly 🍃🍻</li>
-    </ul>
+<div class="content">
+  <h2>✨ Join Our Community ✨</h2>
+  <p>Come chill in our SFW gaming Discord server! We’re all about community, cozy vibes, and fun times 💻🌸</p>
+  <ul>
+    <li>Friendly 18+ environment 💬</li>
+    <li>Weekly movie nights 🍿</li>
+    <li>Gamer channels & squads 🎮</li>
+    <li>Leveling system + ranks 💎</li>
+    <li>Arcade bots & fun commands 🤖</li>
+    <li>LGBTQ+ inclusive 🏳️‍🌈</li>
+    <li>Streamer-friendly 📸</li>
+    <li>420 & BYOB friendly 🍃🍻</li>
+  </ul>
 
-    <a href="https://discord.com/oauth2/authorize?client_id=1358599573328887946&scope=identify%20guilds&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdiscord%2Fcallback" class="button">Login with Discord</a>
-    <a href="https://discord.gg/glhf" class="button">💖 Join the Server</a>
+  <a href="https://discord.com/oauth2/authorize?client_id=1358599573328887946&scope=identify%20guilds&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fdiscord%2Fcallback" class="button">Login with Discord</a>
+  <a href="https://discord.gg/glhf" class="button">💖 Join the Server</a>
 
-    <div class="discord-layout">
-      <div class="side-text">
-        <p>👋 Welcome to GLHF Republic!</p>
-        <p>Chat, game, and hang out with us.</p>
-      </div>
-      <div class="discord-widget">
-        <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark"
-                width="350" height="500"
-                allowtransparency="true"
-                frameborder="0"
-                sandbox="allow-popups allow-same-origin allow-scripts">
-        </iframe>
-      </div>
-      <div class="side-text">
-        <p>📢 Latest Announcements</p>
-        <p>Stay updated on events!</p>
-      </div>
+  <div class="discord-layout">
+    <div class="side-text">
+      <p>👋 Welcome to GLHF Republic!</p>
+      <p>Chat, game, and hang out with us.</p>
     </div>
-
-    <div class="music-player">
-      <h3>🎵 Lofi Vibes 🎧</h3>
-      <iframe style="border-radius:12px"
-              src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1"
-              width="300" height="180"
-              allowfullscreen allow="autoplay">
+    <div class="discord-widget">
+      <iframe src="https://discord.com/widget?id=1081685780621181010&theme=dark"
+              width="350" height="500"
+              allowtransparency="true"
+              frameborder="0"
+              sandbox="allow-popups allow-same-origin allow-scripts">
       </iframe>
     </div>
-
-    <div class="weather-widget">
-      <h3>Current Weather</h3>
-      <div class="weather-container">
-        <div id="weather-icon" class="weather-icon"></div>
-        <div id="weather-info">
-          <p id="temperature"></p>
-          <p id="condition"></p>
-        </div>
-      </div>
+    <div class="side-text">
+      <p>📢 Latest Announcements</p>
+      <p>Stay updated on events!</p>
     </div>
-
-    <div class="gif-section">
-      <h3>✨ Cute & Cozy Vibes ✨</h3>
-      <div class="scrolling-wrapper">
-        <div class="gif-track" style="display:inline-flex;">
-          <img src="https://media.giphy.com/media/3oEjHEMzT5R53QYjgk/giphy.gif" alt="GIF1"/>
-          <img src="https://media.giphy.com/media/b4ab9TBk9Ornvrt9W8/giphy.gif" alt="GIF2"/>
-          <img src="https://media.giphy.com/media/zWs1QFtBkzMLE7B04A/giphy.gif" alt="GIF3"/>
-          <img src="https://media.giphy.com/media/3og0Iwmo4TUQXIxH44/giphy.gif" alt="GIF4"/>
-          <img src="https://media.giphy.com/media/l4FGs65VfUSS8pf1e/giphy.gif" alt="GIF5"/>
-        </div>
-      </div>
-    </div>
-
-    <div class="gallery-section">
-      <h3>✨ Gallery of Cute Moments ✨</h3>
-      <div class="gallery-wrapper">
-        <div class="gallery-item large-item">
-          <img src="https://i.imgur.com/0PZVjVc.png" alt="Gallery Image 1"/>
-        </div>
-        <div class="gallery-item small-item">
-          <img src="https://i.imgur.com/prVoFUS.png" alt="Gallery Image 2"/>
-        </div>
-        <div class="gallery-item small-item">
-          <img src="https://imgur.com/9b1uu7C.png" alt="Gallery Image 3"/>
-        </div>
-        <div class="gallery-item small-item">
-          <img src="https://i.imgur.com/XvqyvOM.png" alt="Gallery Image 4"/>
-        </div>
-      </div>
-    </div>
-
-    <div class="cookie-game">
-      <h2>🍪 Cozy Cookie Clicker</h2>
-      <p>Cookies: <span id="cookieCount">0</span></p>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Cookie_clicker_icon.svg"
-           alt="Cookie Icon" class="cookie" onclick="clickCookie()"/>
-      <div class="shop">
-        <h3>Shop</h3>
-        <button onclick="buyUpgrade(10,1)">Upgrade 1 (10 Cookies)</button>
-        <button onclick="buyUpgrade(50,2)">Upgrade 2 (50 Cookies)</button>
-      </div>
-      <div class="leaderboard">
-        <h3>Leaderboard</h3>
-        <ul id="leaderboard"></ul>
-        <input type="text" id="username" placeholder="Enter your name"/>
-        <button onclick="saveScore()">Save Score</button>
-      </div>
-    </div>
-
   </div>
 
-  <footer>
-    <p>&copy; 2025 GLHF Republic - All rights reserved.</p>
-  </footer>
+  <div class="music-player">
+    <h3>🎵 Lofi Vibes 🎧</h3>
+    <iframe style="border-radius:12px"
+            src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1&mute=1"
+            width="300" height="180"
+            allowfullscreen allow="autoplay">
+    </iframe>
+  </div>
 
-  <script>
-    let cookieCount=0, upgrades=[1,2];
-    function clickCookie(){
-      cookieCount++; document.getElementById("cookieCount").textContent=cookieCount;
-    }
-    function buyUpgrade(cost,id){
-      if(cookieCount>=cost){
-        cookieCount-=cost; upgrades[id-1]++;
-        document.getElementById("cookieCount").textContent=cookieCount;
-      } else alert("Not enough cookies!");
-    }
-    function saveScore(){
-      const u=document.getElementById("username").value.trim();
-      if(!u){alert("Please enter a name!");return;}
-      const li=document.createElement("li");
-      li.textContent=`${u}: ${cookieCount}`;
-      document.getElementById("leaderboard").appendChild(li);
-    }
-    const apiKey='YOUR_API_KEY', city='YOUR_CITY';
-    async function fetchWeather(){
-      try{
-        const r=await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`);
-        const d=await r.json();
-        document.getElementById("temperature").textContent=`${d.main.temp}°C`;
-        document.getElementById("condition").textContent=d.weather[0].description;
-        document.getElementById("weather-icon").style.backgroundImage=
-          `url('https://openweathermap.org/img/wn/${d.weather[0].icon}.png')`;
-      }catch{}
-    }
-    window.onload=fetchWeather;
-  </script>
+  <div class="weather-widget">
+    <h3>Current Weather</h3>
+    <div class="weather-container">
+      <div id="weather-icon" class="weather-icon"></div>
+      <div id="weather-info">
+        <p id="temperature"></p>
+        <p id="condition"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="gif-section">
+    <h3>✨ Cute & Cozy Vibes ✨</h3>
+    <div class="scrolling-wrapper gif-track">
+      <img src="https://media.giphy.com/media/xT0GqeSlGSRQut4p5i/giphy.gif" alt="cozy1">
+      <img src="https://media.giphy.com/media/l0MYC0LajbaPoEADu/giphy.gif" alt="cozy2">
+      <img src="https://media.giphy.com/media/3o7abKhOpu0NwenH3O/giphy.gif" alt="cozy3">
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 GLHF Republic. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
