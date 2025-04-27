@@ -1,71 +1,60 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GLHF Republic</title>
   <link rel="icon" href="https://imgur.com/hFNrb9j.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      box-sizing: border-box; margin: 0; padding: 0;
       cursor: url('https://cur.cursors-4u.net/games/gam-14/gam1328.cur'), auto;
     }
     body {
       font-family: 'Quicksand', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      background-color: var(--bg); color: var(--text);
       padding-left: 220px;
-      transition: background 0.3s ease, color 0.3s ease;
+      transition: background 0.3s, color 0.3s;
     }
     :root {
-      --bg: #1e1e2f;
-      --text: #ffffff;
-      --accent: #4476d6;
+      --bg: #1e1e2f; --text: #ffffff; --accent: #4476d6;
     }
     .light-theme {
-      --bg: #ffffff;
-      --text: #1e1e2f;
-      --accent: #b38bfa;
+      --bg: #ffffff; --text: #1e1e2f; --accent: #b38bfa;
     }
     .sidebar {
-      position: fixed;
-      top: 0; left: 0;
+      position: fixed; top: 0; left: 0;
       width: 220px; height: 100vh;
-      background-color: #2a2a40;
-      padding-top: 2rem;
+      background: #2a2a40; padding-top: 2rem;
       box-shadow: 2px 0 5px rgba(0,0,0,0.5);
       overflow-y: auto;
     }
     .sidebar h2 {
       font-family: 'Outfit', sans-serif;
-      color: var(--accent);
-      text-align: center; margin-bottom: 1.5rem;
+      color: var(--accent); text-align: center;
+      margin-bottom: 1.5rem;
     }
     .sidebar ul { list-style: none; }
     .sidebar ul li { margin: 1rem 0; text-align: center; }
     .sidebar ul li a {
       text-decoration: none; color: var(--accent);
-      font-weight: bold; display: block; padding: 0.5rem;
+      font-weight: bold; padding: .5rem; display: block;
       transition: background 0.3s;
     }
     .sidebar ul li a:hover {
-      background-color: var(--accent); color: #fff; border-radius: 5px;
+      background: var(--accent); color: #fff; border-radius: 5px;
     }
     .theme-toggle {
       position: fixed; top: 1rem; right: 1rem;
     }
     .button {
-      background-color: var(--accent); color: #fff;
+      background: var(--accent); color: #fff;
       border: none; padding: 10px 20px; margin: 10px;
       border-radius: 25px; cursor: pointer;
       font-weight: bold; text-decoration: none;
-      display: inline-block;
     }
-    .button:hover { background-color: #5b90ff; }
+    .button:hover { background: #5b90ff; }
     header {
       text-align: center; margin: 2rem 0;
     }
@@ -75,21 +64,26 @@
     }
     header p { font-size: 1.2rem; color: var(--accent); }
     .banner img {
-      width: 100%; max-height: 400px; object-fit: cover;
-      display: block;
+      width: 100%; max-height: 400px;
+      object-fit: cover; display: block;
     }
+    /* Bigger supporter avatars */
     .top-supporters {
-      display: flex; justify-content: center; margin: 1rem 0;
+      display: flex; justify-content: center;
+      margin: 1rem 0;
     }
     .avatar {
-      width: 50px; height: 50px;
-      background-color: #2a2a40; border: 2px solid var(--accent);
-      border-radius: 50%; margin: 0 8px;
+      width: 100px;   /* increased size */
+      height: 100px;  /* increased size */
+      background: #2a2a40;
+      border: 3px solid var(--accent);
+      border-radius: 50%;
+      margin: 0 12px;
     }
     .content {
-      max-width: 900px; margin: 2rem auto; padding: 2rem;
-      background-color: #292940; border-radius: 12px;
-      box-shadow: 0 0 20px #4476d677;
+      max-width: 900px; margin: 2rem auto;
+      padding: 2rem; background: #292940;
+      border-radius: 12px; box-shadow: 0 0 20px #4476d677;
     }
     .content h2 { color: var(--accent); font-family: 'Outfit', sans-serif; }
     .content ul { list-style: none; margin-top: 1rem; }
@@ -99,34 +93,48 @@
       margin-top: 2rem;
     }
     .side-text {
-      width: 120px; text-align: center; color: var(--text); font-size: .9rem;
+      width: 120px; text-align: center; color: var(--text);
+      font-size: .9rem;
     }
     .discord-widget iframe { display: block; margin: 0 auto; }
-    .music-player, .weather-widget, .gif-section, .gallery-section, .cookie-game {
-      margin-top: 2rem; text-align: center;
+    .music-player, .weather-widget, .gif-section,
+    .gallery-section, .cookie-game { margin-top: 2rem; text-align: center; }
+    .weather-container {
+      display: flex; justify-content: center; align-items: center;
+      margin-top: 1rem;
     }
-    .weather-container { display: flex; justify-content: center; align-items: center; margin-top: 1rem; }
-    .weather-icon { width: 50px; height: 50px; background-size: cover; margin-right: 10px; }
+    .weather-icon {
+      width: 50px; height: 50px; background-size: cover;
+      margin-right: 10px;
+    }
     .scrolling-wrapper { overflow-x: auto; white-space: nowrap; }
     .gif-track img {
-      height: 150px; margin: 0 10px; border-radius:15px;
+      height: 150px; margin: 0 10px; border-radius: 15px;
     }
-    .gallery-wrapper { display:flex; flex-wrap:wrap; justify-content:center; gap:1rem; }
-    .gallery-item img { border-radius:15px; width:100%; height:auto; }
-    .cookie-game img.cookie { width:150px; cursor:pointer; transition:transform .2s ease; }
-    .cookie-game img.cookie:hover { transform:scale(1.1); }
+    .gallery-wrapper {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 1rem;
+    }
+    .gallery-item img { border-radius: 15px; width: 100%; height: auto; }
+    .cookie-game img.cookie {
+      width: 150px; cursor: pointer;
+      transition: transform .2s ease;
+    }
+    .cookie-game img.cookie:hover { transform: scale(1.1); }
     .shop button {
-      margin:10px; padding:10px 20px;
-      background-color: var(--accent); color:#fff; border:none; border-radius:8px; cursor:pointer;
-      transition:background .3s;
+      margin: 10px; padding: 10px 20px;
+      background: var(--accent); color: #fff;
+      border: none; border-radius: 8px; cursor: pointer;
+      transition: background .3s;
     }
-    .shop button:hover { background-color:#3456a6; }
-    .leaderboard ul { list-style:none; padding:0; }
-    .leaderboard li { margin:1rem 0; font-size:1.2rem; color:#fff; }
+    .shop button:hover { background: #3456a6; }
+    .leaderboard ul { list-style: none; padding: 0; }
+    .leaderboard li { margin: 1rem 0; font-size: 1.2rem; color: #fff; }
     footer {
-      background-color:#2a2a40; padding:2rem; text-align:center; margin-top:2rem;
+      background: #2a2a40; padding: 2rem; text-align: center;
+      margin-top: 2rem;
     }
-    footer p { color:#aaa; font-size:.8rem; }
+    footer p { color: #aaa; font-size: .8rem; }
   </style>
 </head>
 <body>
@@ -156,7 +164,7 @@
     <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExeHNjZzU1NnV5ZXZ0YTEzdHBlcTVoeDZzaWNvcmV4NXRua2I3eGFtZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/mCbdyB4ljtTBRTex7b/giphy.gif" alt="Main Banner GIF">
   </div>
 
-  <!-- Top Supporters -->
+  <!-- Top Supporters (now bigger) -->
   <div class="top-supporters">
     <div class="avatar"></div>
     <div class="avatar"></div>
@@ -225,11 +233,11 @@
       <h3>✨ Cute & Cozy Vibes ✨</h3>
       <div class="scrolling-wrapper">
         <div class="gif-track" style="display:inline-flex;">
-          <img src="https://media.giphy.com/media/3oEjHEMzT5R53QYjgk/giphy.gif" />
-          <img src="https://media.giphy.com/media/b4ab9TBk9Ornvrt9W8/giphy.gif" />
-          <img src="https://media.giphy.com/media/zWs1QFtBkzMLE7B04A/giphy.gif" />
-          <img src="https://media.giphy.com/media/3og0Iwmo4TUQXIxH44/giphy.gif" />
-          <img src="https://media.giphy.com/media/l4FGs65VfUSS8pf1e/giphy.gif" />
+          <img src="https://media.giphy.com/media/3oEjHEMzT5R53QYjgk/giphy.gif" alt="GIF1"/>
+          <img src="https://media.giphy.com/media/b4ab9TBk9Ornvrt9W8/giphy.gif" alt="GIF2"/>
+          <img src="https://media.giphy.com/media/zWs1QFtBkzMLE7B04A/giphy.gif" alt="GIF3"/>
+          <img src="https://media.giphy.com/media/3og0Iwmo4TUQXIxH44/giphy.gif" alt="GIF4"/>
+          <img src="https://media.giphy.com/media/l4FGs65VfUSS8pf1e/giphy.gif" alt="GIF5"/>
         </div>
       </div>
     </div>
@@ -238,16 +246,16 @@
       <h3>✨ Gallery of Cute Moments ✨</h3>
       <div class="gallery-wrapper">
         <div class="gallery-item large-item">
-          <img src="https://i.imgur.com/0PZVjVc.png" alt="Gallery Image 1" />
+          <img src="https://i.imgur.com/0PZVjVc.png" alt="Gallery Image 1"/>
         </div>
         <div class="gallery-item small-item">
-          <img src="https://i.imgur.com/prVoFUS.png" alt="Gallery Image 2" />
+          <img src="https://i.imgur.com/prVoFUS.png" alt="Gallery Image 2"/>
         </div>
         <div class="gallery-item small-item">
-          <img src="https://imgur.com/9b1uu7C.png" alt="Gallery Image 3" />
+          <img src="https://imgur.com/9b1uu7C.png" alt="Gallery Image 3"/>
         </div>
         <div class="gallery-item small-item">
-          <img src="https://i.imgur.com/XvqyvOM.png" alt="Gallery Image 4" />
+          <img src="https://i.imgur.com/XvqyvOM.png" alt="Gallery Image 4"/>
         </div>
       </div>
     </div>
@@ -256,7 +264,7 @@
       <h2>🍪 Cozy Cookie Clicker</h2>
       <p>Cookies: <span id="cookieCount">0</span></p>
       <img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Cookie_clicker_icon.svg"
-           alt="Cookie Icon" class="cookie" onclick="clickCookie()">
+           alt="Cookie Icon" class="cookie" onclick="clickCookie()"/>
       <div class="shop">
         <h3>Shop</h3>
         <button onclick="buyUpgrade(10,1)">Upgrade 1 (10 Cookies)</button>
@@ -265,7 +273,7 @@
       <div class="leaderboard">
         <h3>Leaderboard</h3>
         <ul id="leaderboard"></ul>
-        <input type="text" id="username" placeholder="Enter your name" />
+        <input type="text" id="username" placeholder="Enter your name"/>
         <button onclick="saveScore()">Save Score</button>
       </div>
     </div>
@@ -277,11 +285,9 @@
   </footer>
 
   <script>
-    // Cookie clicker
     let cookieCount=0, upgrades=[1,2];
     function clickCookie(){
-      cookieCount++;
-      document.getElementById("cookieCount").textContent=cookieCount;
+      cookieCount++; document.getElementById("cookieCount").textContent=cookieCount;
     }
     function buyUpgrade(cost,id){
       if(cookieCount>=cost){
@@ -291,13 +297,11 @@
     }
     function saveScore(){
       const u=document.getElementById("username").value.trim();
-      if(!u){alert("Enter username!");return;}
+      if(!u){alert("Please enter a name!");return;}
       const li=document.createElement("li");
       li.textContent=`${u}: ${cookieCount}`;
       document.getElementById("leaderboard").appendChild(li);
     }
-
-    // Weather
     const apiKey='YOUR_API_KEY', city='YOUR_CITY';
     async function fetchWeather(){
       try{
@@ -313,4 +317,3 @@
   </script>
 </body>
 </html>
-```
