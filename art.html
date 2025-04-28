@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery - GLHF Republic</title>
+  <link rel="icon" href="https://imgur.com/hFNrb9j.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      cursor: url('https://cur.cursors-4u.net/games/gam-14/gam1328.cur'), auto;
+    }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 2rem;
+      transition: background 0.3s, color 0.3s;
+    }
+    :root {
+      --bg: #1e1e2f;
+      --text: #ffffff;
+      --accent: #4476d6;
+    }
+    .light-theme {
+      --bg: #ffffff;
+      --text: #1e1e2f;
+      --accent: #b38bfa;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      color: var(--accent);
+    }
+    .gallery-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .gallery-item {
+      width: 300px;
+      border-radius: 15px;
+      overflow: hidden;
+      background: #292940;
+      box-shadow: 0 0 10px rgba(68, 118, 214, 0.5);
+      transition: transform 0.3s;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+    .back-button {
+      display: block;
+      margin: 2rem auto 0;
+      text-align: center;
+      text-decoration: none;
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+      width: 220px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .back-button:hover {
+      background: #5b90ff;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+<div class="theme-toggle" style="position:fixed;top:1rem;right:1rem;">
+  <button onclick="document.body.classList.toggle('light-theme')" class="back-button">🌓 Toggle Theme</button>
+</div>
+
+<header>
+  <h1>Gallery ✨</h1>
+</header>
+
+<div class="gallery-wrapper">
+  <div class="gallery-item">
+    <img src="https://placekitten.com/400/300" alt="Gallery Image 1">
+  </div>
+  <div class="gallery-item">
+    <img src="https://placekitten.com/401/300" alt="Gallery Image 2">
+  </div>
+  <div class="gallery-item">
+    <img src="https://placekitten.com/402/300" alt="Gallery Image 3">
+  </div>
+  <div class="gallery-item">
+    <img src="https://placekitten.com/403/300" alt="Gallery Image 4">
+  </div>
+  <div class="gallery-item">
+    <img src="https://placekitten.com/404/300" alt="Gallery Image 5">
+  </div>
+  <div class="gallery-item">
+    <img src="https://placekitten.com/405/300" alt="Gallery Image 6">
+  </div>
+</div>
+
+<!-- This button will send them to /gl-hfnet/subcat -->
+<a href="/gl-hfnet/subcat" class="back-button">← Back to Subcategories</a>
+
+</body>
+</html>
