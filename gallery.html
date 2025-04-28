@@ -61,6 +61,19 @@
     .gallery-item:hover {
       transform: scale(1.05);
     }
+    .divider {
+      width: 100%;
+      height: 2px;
+      background-color: var(--accent);
+      margin: 1rem 0;
+    }
+    .banner {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: #fff;
+      margin-bottom: 2rem;
+    }
     .back-button {
       display: block;
       margin: 2rem auto 0;
@@ -90,6 +103,12 @@
   <h1>Gallery ✨</h1>
 </header>
 
+<!-- Minecraft Archive Banner -->
+<div class="banner">
+  <h2>Minecraft Archive</h2>
+  <p>Explore our Minecraft-related collection!</p>
+</div>
+
 <div class="gallery-wrapper">
   <div class="gallery-item">
     <img src="https://placekitten.com/400/300" alt="Gallery Image 1">
@@ -111,8 +130,11 @@
   </div>
 </div>
 
+<!-- Divider between gallery items -->
+<div class="divider"></div>
+
 <!-- Update the href with your main website URL -->
-<a href="https://gl-hf.net/">🏠 Back to Home</a>
+<a href="https://yourmainwebsite.com" class="back-button">🏠 Back to Home</a>
 
 </body>
 </html>
